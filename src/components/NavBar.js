@@ -72,6 +72,23 @@ export default function NavBar () {
                     </a>
                   ))}
                 </div>
+
+                {/* debugger for window size breakpoints */}
+                <span className='flex justify-center items-center ml-20'>
+                  <div className='hidden sm:block md:hidden text-red-700'>
+                    small
+                  </div>
+                  <div className='hidden md:block lg:hidden text-red-700'>
+                    medium
+                  </div>
+                  <div className='hidden lg:block xl:hidden text-red-700'>
+                    large
+                  </div>
+                  <div className='hidden xl:block text-red-700'>
+                    extra large
+                  </div>
+                </span>
+
               </div>
               <div className='flex items-center'>
                 <div className='flex-shrink-0'>
