@@ -28,7 +28,7 @@ function classNames (...classes) {
 
 export default function NavBar () {
   return (
-    <Disclosure as='nav' className='bg-gray-800'>
+    <Disclosure as='nav' className='bg-gray-800 fixed top-0 w-full'>
       {({ open }) => (
         <>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
@@ -38,11 +38,13 @@ export default function NavBar () {
                   {/* Mobile menu button */}
                   <Disclosure.Button className='inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'>
                     <span className='sr-only'>Open main menu</span>
-                    {open ? (
-                      <XIcon className='block h-6 w-6' aria-hidden='true' />
-                    ) : (
-                      <MenuIcon className='block h-6 w-6' aria-hidden='true' />
-                    )}
+                    {open
+                      ? (
+                        <XIcon className='block h-6 w-6' aria-hidden='true' />
+                        )
+                      : (
+                        <MenuIcon className='block h-6 w-6' aria-hidden='true' />
+                        )}
                   </Disclosure.Button>
                 </div>
                 {/* <div className='flex-shrink-0 flex items-center'>
@@ -72,6 +74,23 @@ export default function NavBar () {
                     </a>
                   ))}
                 </div>
+
+                {/* debugger for window size breakpoints */}
+                <span className='flex justify-center items-center ml-20'>
+                  <div className='hidden sm:block md:hidden text-red-700'>
+                    small
+                  </div>
+                  <div className='hidden md:block lg:hidden text-red-700'>
+                    medium
+                  </div>
+                  <div className='hidden lg:block xl:hidden text-red-700'>
+                    large
+                  </div>
+                  <div className='hidden xl:block text-red-700'>
+                    extra large
+                  </div>
+                </span>
+
               </div>
               <div className='flex items-center'>
                 <div className='flex-shrink-0'>
