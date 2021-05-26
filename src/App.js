@@ -5,7 +5,7 @@ import VideoMobile from './components/VideoMobile'
 
 function App () {
   return (
-    <div className='h-full'>
+    <div className='h-screen'>
       <NavBar />
       <Header />
       <VideoMobile />
