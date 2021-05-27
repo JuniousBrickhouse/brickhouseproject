@@ -2,7 +2,7 @@ import { Transition } from '@headlessui/react'
 
 const SHOTR_BIO = 'I am a product of a folk tradition, urban dance. From my mother teaching my sister and me to do the hustle in the living room, to riding on the handlebars of my cousin’s bike in Norfolk, Virginia to the rec center to learn break dancing from the older children, I received an education in urban dance (breaking, popping, house dance, locking, and hip-hop) and the culture that surrounded it. I was brought up and educated within this tradition and have become an educator and tradition bearer.'
 
-export default function ShortBio ({ showImage }) {
+export default function ShortBio ({ showAnimation }) {
   return (
     <div className='relative py-16 bg-white'>
       <div className='hidden absolute top-0 inset-x-0 h-1/2 bg-gray-50 lg:block' aria-hidden='true' />
@@ -13,7 +13,7 @@ export default function ShortBio ({ showImage }) {
             <div className='max-w-md mx-auto px-4 sm:max-w-3xl sm:px-6 lg:max-w-none lg:p-0'>
               <div className='aspect-w-10 aspect-h-6 sm:aspect-w-2 sm:aspect-h-1 lg:aspect-w-1'>
                 <Transition
-                  show={showImage}
+                  show={showAnimation.bioImage}
                   as='img'
                   enter='transition-all duration-1000 transform ease-out'
                   enterFrom='opacity-0 -translate-x-full'

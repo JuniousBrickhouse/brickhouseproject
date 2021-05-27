@@ -3,22 +3,22 @@ import { Fragment, useState } from 'react'
 import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { PlusIcon } from '@heroicons/react/solid'
-import useDocumentScrollThrottled from './customeComponents/useDocumentScrollThrottle'
 import { NAVIGATION } from './Lists'
 import { changeCurrentStatus } from './helperFunctions'
+import useDocumentScrollThrottle from './customeComponents/useDocumentScrollThrottle'
 
 function classNames (...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function NavBar ({ handleScroll, handleAnimationOnClick }) {
+export default function NavBar ({ handleScroll }) {
   const [showSolidNav, setShowSolidNav] = useState(false)
 
-  // scroll on click feature
+  // handles nav bar transition from bg-none to bg-color and back based on scroll position
   const MINIMUM_SCROLL = 0
   const TIMEOUT_DELAY = 0
 
-  useDocumentScrollThrottled(callbackData => {
+  useDocumentScrollThrottle(callbackData => {
     const { previousScrollTop, currentScrollTop } = callbackData
     const isScrolledDown = previousScrollTop < currentScrollTop
     const isMinimumScrolled = currentScrollTop > MINIMUM_SCROLL
@@ -72,9 +72,9 @@ export default function NavBar ({ handleScroll, handleAnimationOnClick }) {
                       )}
                       aria-current={item.current ? 'page' : undefined}
                       onClick={() => {
-                        changeCurrentStatus(item.ref)
+                        // changeCurrentStatus(item.ref)
                         handleScroll(item.ref)
-                        handleAnimationOnClick(item.ref)
+                        // handleAnimationOnClick(item.ref)
                       }}
                     >
                       {item.name}
@@ -126,7 +126,7 @@ export default function NavBar ({ handleScroll, handleAnimationOnClick }) {
                   aria-current={item.current ? 'page' : undefined}
                   onClick={() => {
                     handleScroll(item.ref)
-                    handleAnimationOnClick(item.ref)
+                    // handleAnimationOnClick(item.ref)
                   }}
                 >
                   {item.name}

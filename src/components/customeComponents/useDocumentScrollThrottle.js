@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 import { throttle } from 'lodash'
 
 const useDocumentScrollThrottle = callback => {
@@ -17,11 +17,11 @@ const useDocumentScrollThrottle = callback => {
 
   const handleDocumentScrollThrottled = throttle(handleDocumentScroll, 250)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     window.addEventListener('scroll', handleDocumentScrollThrottled)
     return () =>
       window.removeEventListener('scroll', handleDocumentScrollThrottled)
-  }, [])
+  }, [handleDocumentScrollThrottled])
 }
 
 export default useDocumentScrollThrottle

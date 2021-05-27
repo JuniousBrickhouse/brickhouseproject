@@ -5,8 +5,9 @@ import NavBar from './components/NavBar'
 import OrgAffiliations from './components/OrgAffiliations'
 import ShortBio from './components/ShortBio'
 import VideoMobile from './components/VideoMobile'
-import { useRef, useState } from 'react'
-// import { changeCurrentStatus } from './components/helperFunctions'
+import { useLayoutEffect, useRef, useState } from 'react'
+import useDocumentScrollThrottle from './components/customeComponents/useDocumentScrollThrottle'
+import { changeCurrentStatus } from './components/helperFunctions'
 
 // makes the scroll feature work on safari
 smoothscroll.polyfill()
@@ -16,10 +17,41 @@ function App () {
   const bioRef = useRef(null)
   const videosRef = useRef(null)
   const hatsRef = useRef(null)
-  const [showImage, setShowImage] = useState(false)
+  const [showAnimation, setShowAnimation] = useState({
+    bioImage: false,
+    videosImage: false
+  })
 
-  console.log('bioRef', bioRef)
-  // console.log('videosRef', bioRef)
+  useLayoutEffect(() => {
+    const topPos = element => element.getBoundingClientRect().top
+    const headerPos = topPos(topRef.current)
+    const bioPos = topPos(bioRef.current)
+    const videosPos = topPos(videosRef.current)
+    const hatsPos = topPos(hatsRef.current)
+    console.log('topPos', topPos)
+    console.log('headerPos', headerPos)
+    console.log('bioPos', bioPos)
+    console.log('bioRef.current', bioRef.current)
+    console.log('videosPos', videosPos)
+
+    const onScroll = () => {
+      const scrollPos = window.scrollY + window.innerHeight
+      console.log('scrollPos', scrollPos)
+      if (scrollPos < bioPos) {
+        changeCurrentStatus('topRef')
+      } else if (bioPos < scrollPos) {
+        setShowAnimation(state => ({ ...state, bioImage: true }))
+        changeCurrentStatus('bioRef')
+      } else if (videosPos < scrollPos) {
+        setShowAnimation(state => ({ ...state, videosImage: true }))
+        changeCurrentStatus('videosRef')
+      }
+    }
+
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   const handleScroll = ref => {
     if (ref === 'topRef') {
       // changeCurrentStatus('topRef')
@@ -33,23 +65,23 @@ function App () {
     }
   }
 
-  const handleAnimationOnClick = (ref) => {
+  const handleAnimationOnScroll = (ref) => {
     if (ref === 'bioRef') {
-      setShowImage(true)
+      setShowAnimation(true)
     }
   }
 
   return (
     <div className='h-screen'>
-      <NavBar handleScroll={handleScroll} handleAnimationOnClick={handleAnimationOnClick} />
+      <NavBar handleScroll={handleScroll} />
       <span ref={topRef}>
         <Header />
       </span>
       <span ref={bioRef}>
-        <ShortBio showImage={showImage} />
+        <ShortBio showAnimation={showAnimation} />
       </span>
       <span ref={videosRef}>
-        <VideoMobile />
+        <VideoMobile showAnimation={showAnimation} />
       </span>
       <span ref={hatsRef}>
         <OrgAffiliations />
