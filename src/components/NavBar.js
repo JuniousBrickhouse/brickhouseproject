@@ -47,7 +47,7 @@ export default function NavBar ({ handleScroll }) {
   })
 
   return (
-    <Disclosure as='nav' className=' fixed top-0 w-full bg-gray-100 z-30'>
+    <Disclosure as='nav' className={`${showSolidNav ? 'bg-gray-100' : 'bg-none'} fixed top-0 w-full z-30`}>
       {({ open }) => (
         <>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
@@ -83,7 +83,7 @@ export default function NavBar ({ handleScroll }) {
                     <button
                       key={item.name}
                       className={classNames(
-                        item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                        item.current ? 'bg-gray-900 text-white' : 'text-gray-500 hover:bg-gray-700 hover:text-white',
                         'px-3 py-2 rounded-md text-sm font-medium'
                       )}
                       aria-current={item.current ? 'page' : undefined}
@@ -97,7 +97,7 @@ export default function NavBar ({ handleScroll }) {
                   ))}
                 </div>
 
-                {/* debugger for window size breakpoints */}
+                {/* debugger for larger window size breakpoints */}
                 <span className='flex justify-center items-center ml-20'>
                   <div className='hidden sm:block md:hidden text-red-700'>
                     small
@@ -121,7 +121,7 @@ export default function NavBar ({ handleScroll }) {
                     className='relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500'
                   >
                     <PlusIcon className='-ml-1 mr-2 h-5 w-5' aria-hidden='true' />
-                    <span>New Job</span>
+                    <span>Consultation</span>
                   </button>
                 </div>
 
@@ -149,16 +149,6 @@ export default function NavBar ({ handleScroll }) {
               ))}
             </div>
             <div className='pt-4 pb-3 border-t border-gray-700'>
-              <div className='flex items-center px-5 sm:px-6'>
-                <div className='flex-shrink-0'>
-                  <img className='h-10 w-10 rounded-full' src={user.imageUrl} alt='' />
-                </div>
-                <div className='ml-3'>
-                  <div className='text-base font-medium text-white'>{user.name}</div>
-                  <div className='text-sm font-medium text-gray-400'>{user.email}</div>
-                </div>
-
-              </div>
               <div className='mt-3 px-2 space-y-1 sm:px-3'>
                 {userNavigation.map((item) => (
                   <button
@@ -169,7 +159,7 @@ export default function NavBar ({ handleScroll }) {
                   </button>
                 ))}
               </div>
-              {/* debugger for window size breakpoints */}
+              {/* debugger for smaller window size breakpoints */}
               <span className='flex justify-center items-center ml-20'>
                 <div className='hidden sm:block md:hidden text-red-700'>
                   small
