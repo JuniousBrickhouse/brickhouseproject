@@ -11,7 +11,7 @@ function classNames (...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function NavBar ({ handleScroll }) {
+export default function NavBar ({ handleScroll, handleAnimationOnClick }) {
   const [showSolidNav, setShowSolidNav] = useState(false)
 
   // scroll on click feature
@@ -22,12 +22,8 @@ export default function NavBar ({ handleScroll }) {
     const { previousScrollTop, currentScrollTop } = callbackData
     const isScrolledDown = previousScrollTop < currentScrollTop
     const isMinimumScrolled = currentScrollTop > MINIMUM_SCROLL
-    console.log('currentScrollTop', currentScrollTop)
-    setShowSolidNav(currentScrollTop > 2)
 
-    // if (currentScrollTop >= 612 && currentScrollTop < 1229) {
-    //   changeCurrentStatus('bioRef')
-    // }
+    setShowSolidNav(currentScrollTop > 2)
 
     setTimeout(() => {
       setShowSolidNav(isScrolledDown && isMinimumScrolled)
@@ -78,6 +74,7 @@ export default function NavBar ({ handleScroll }) {
                       onClick={() => {
                         changeCurrentStatus(item.ref)
                         handleScroll(item.ref)
+                        handleAnimationOnClick(item.ref)
                       }}
                     >
                       {item.name}
@@ -128,8 +125,8 @@ export default function NavBar ({ handleScroll }) {
                   )}
                   aria-current={item.current ? 'page' : undefined}
                   onClick={() => {
-                    console.log('btn clicked')
                     handleScroll(item.ref)
+                    handleAnimationOnClick(item.ref)
                   }}
                 >
                   {item.name}

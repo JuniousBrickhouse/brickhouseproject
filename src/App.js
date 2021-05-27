@@ -5,8 +5,8 @@ import NavBar from './components/NavBar'
 import OrgAffiliations from './components/OrgAffiliations'
 import ShortBio from './components/ShortBio'
 import VideoMobile from './components/VideoMobile'
-import { useRef } from 'react'
-import { changeCurrentStatus } from './components/helperFunctions'
+import { useRef, useState } from 'react'
+// import { changeCurrentStatus } from './components/helperFunctions'
 
 // makes the scroll feature work on safari
 smoothscroll.polyfill()
@@ -16,6 +16,7 @@ function App () {
   const bioRef = useRef(null)
   const videosRef = useRef(null)
   const hatsRef = useRef(null)
+  const [showImage, setShowImage] = useState(false)
 
   console.log('bioRef', bioRef)
   // console.log('videosRef', bioRef)
@@ -24,7 +25,6 @@ function App () {
       // changeCurrentStatus('topRef')
       return topRef.current.scrollIntoView({ behavior: 'smooth' })
     } else if (ref === 'bioRef') {
-      // changeCurrentStatus('bioRef')
       return bioRef.current.scrollIntoView({ behavior: 'smooth' })
     } else if (ref === 'videosRef') {
       return videosRef.current.scrollIntoView({ behavior: 'smooth' })
@@ -33,14 +33,20 @@ function App () {
     }
   }
 
+  const handleAnimationOnClick = (ref) => {
+    if (ref === 'bioRef') {
+      setShowImage(true)
+    }
+  }
+
   return (
     <div className='h-screen'>
-      <NavBar handleScroll={handleScroll} />
+      <NavBar handleScroll={handleScroll} handleAnimationOnClick={handleAnimationOnClick} />
       <span ref={topRef}>
         <Header />
       </span>
       <span ref={bioRef}>
-        <ShortBio />
+        <ShortBio showImage={showImage} />
       </span>
       <span ref={videosRef}>
         <VideoMobile />
