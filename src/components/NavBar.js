@@ -1,34 +1,36 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import { Fragment, useState } from 'react'
+import { Disclosure } from '@headlessui/react'
+import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { PlusIcon } from '@heroicons/react/solid'
-
-const user = {
-  name: 'Tom Cook',
-  email: 'tom@example.com',
-  imageUrl:
-    'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
-}
-const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false }
-]
-const userNavigation = [
-  { name: 'Your Profile', href: '#' },
-  { name: 'Settings', href: '#' },
-  { name: 'Sign out', href: '#' }
-]
+import { NAVIGATION } from './Lists'
+import useDocumentScrollThrottle from './customComponents/useDocumentScrollThrottle'
 
 function classNames (...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function NavBar () {
+export default function NavBar ({ handleScroll }) {
+  const [showSolidNav, setShowSolidNav] = useState(false)
+
+  // handles nav bar transition from bg-none to bg-color and back based on scroll position
+  const MINIMUM_SCROLL = 0
+  const TIMEOUT_DELAY = 0
+
+  useDocumentScrollThrottle(callbackData => {
+    const { previousScrollTop, currentScrollTop } = callbackData
+    const isScrolledDown = previousScrollTop < currentScrollTop
+    const isMinimumScrolled = currentScrollTop > MINIMUM_SCROLL
+
+    setShowSolidNav(currentScrollTop > 2)
+
+    setTimeout(() => {
+      setShowSolidNav(isScrolledDown && isMinimumScrolled)
+    }, TIMEOUT_DELAY)
+  })
+
   return (
-    <Disclosure as='nav' className=' fixed top-0 w-full bg-gray-100'>
+    <Disclosure as='nav' className={`${showSolidNav ? 'bg-gray-100' : 'bg-none'} fixed top-0 w-full z-30`}>
       {({ open }) => (
         <>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
@@ -60,22 +62,26 @@ export default function NavBar () {
                   />
                 </div> */}
                 <div className='hidden md:ml-6 md:flex md:items-center md:space-x-4'>
-                  {navigation.map((item) => (
-                    <a
+                  {NAVIGATION.map((item) => (
+                    <button
                       key={item.name}
-                      href={item.href}
                       className={classNames(
-                        item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                        'px-3 py-2 rounded-md text-sm font-medium'
+                        item.current ? 'bg-gray-900 text-white' : 'text-gray-500 hover:bg-gray-700 hover:text-white',
+                        'px-3 py-2 rounded-md text-sm font-medium focus ring-0'
                       )}
                       aria-current={item.current ? 'page' : undefined}
+                      onClick={() => {
+                        // changeCurrentStatus(item.ref)
+                        handleScroll(item.ref)
+                        // handleAnimationOnClick(item.ref)
+                      }}
                     >
                       {item.name}
-                    </a>
+                    </button>
                   ))}
                 </div>
 
-                {/* debugger for window size breakpoints */}
+                {/* debugger for larger window size breakpoints */}
                 <span className='flex justify-center items-center ml-20'>
                   <div className='hidden sm:block md:hidden text-red-700'>
                     small
@@ -99,7 +105,7 @@ export default function NavBar () {
                     className='relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500'
                   >
                     <PlusIcon className='-ml-1 mr-2 h-5 w-5' aria-hidden='true' />
-                    <span>New Job</span>
+                    <span>Consultation</span>
                   </button>
                 </div>
 
@@ -109,42 +115,39 @@ export default function NavBar () {
 
           <Disclosure.Panel className='md:hidden'>
             <div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
-              {navigation.map((item) => (
-                <a
+              {NAVIGATION.map((item) => (
+                <button
                   key={item.name}
-                  href={item.href}
                   className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    item.current ? 'bg-gray-900 text-white' : 'text-gray-500 hover:bg-gray-700 hover:text-white',
                     'block px-3 py-2 rounded-md text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}
+                  onClick={() => {
+                    handleScroll(item.ref)
+                    // handleAnimationOnClick(item.ref)
+                  }}
                 >
                   {item.name}
-                </a>
+                </button>
               ))}
             </div>
             <div className='pt-4 pb-3 border-t border-gray-700'>
-              <div className='flex items-center px-5 sm:px-6'>
-                <div className='flex-shrink-0'>
-                  <img className='h-10 w-10 rounded-full' src={user.imageUrl} alt='' />
+              {/* debugger for smaller window size breakpoints */}
+              <span className='flex justify-center items-center ml-20'>
+                <div className='hidden sm:block md:hidden text-red-700'>
+                  small
                 </div>
-                <div className='ml-3'>
-                  <div className='text-base font-medium text-white'>{user.name}</div>
-                  <div className='text-sm font-medium text-gray-400'>{user.email}</div>
+                <div className='hidden md:block lg:hidden text-red-700'>
+                  medium
                 </div>
-
-              </div>
-              <div className='mt-3 px-2 space-y-1 sm:px-3'>
-                {userNavigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className='block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700'
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </div>
+                <div className='hidden lg:block xl:hidden text-red-700'>
+                  large
+                </div>
+                <div className='hidden xl:block text-red-700'>
+                  extra large
+                </div>
+              </span>
             </div>
           </Disclosure.Panel>
         </>

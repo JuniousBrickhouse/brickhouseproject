@@ -2,7 +2,7 @@ import { VIDEOS } from './Lists'
 
 // video screen sizes/ratios: 640x360; 480x270
 
-export default function VideoCard () {
+export default function VideoCard ({ showAnimation }) {
   return (
     <ul className='grid grid-cols-1 gap-6 sm:grid-cols-1 lg:grid-cols-2 mt-4'>
       {VIDEOS.map((video, idx) => (

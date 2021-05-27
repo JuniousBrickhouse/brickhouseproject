@@ -1,5 +1,5 @@
 import VideoCard from './VideoCard'
-import VideoCarousel from './videoCarousel/VideoCarousel'
+// import VideoCarousel from './videoCarousel/VideoCarousel'
 
 export default function VideoMobile () {
   return (
