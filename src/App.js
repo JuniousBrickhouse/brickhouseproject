@@ -10,7 +10,7 @@ import useBioAnimNavBtnOnScroll from './components/customComponents/useBioAnimNa
 import { changeCurrentStatus } from './components/helperFunctions'
 import useVideoNavBtnOnScroll from './components/customComponents/useVideoNavBtnOnScroll'
 import useOrgAfillNavBtnOnScroll from './components/customComponents/useOrgAfillNavBtnOnScroll'
-import useHeaderAnimNavBtnOnScroll from './components/customComponents/useHeaderAnimNavBtnOnScroll'
+// import useHeaderAnimNavBtnOnScroll from './components/customComponents/useHeaderAnimNavBtnOnScroll'
 
 // makes the scroll feature work on safari
 smoothscroll.polyfill()
@@ -31,13 +31,21 @@ function App () {
   // figure out how to pass an array of useRef items to the
   // single custom component.
   // changeCurrentStatus is in helperFunction.js
-  useHeaderAnimNavBtnOnScroll(topRef, (triggered) => {
-    changeCurrentStatus('topRef')
-  })
 
+  // useHeaderAnimNavBtnOnScroll(topRef, (triggered) => {
+  //   changeCurrentStatus('topRef')
+  // })
+
+  // Have to use the bio custom componenet to trigger the nav btn
+  // highlight change to topRef
   useBioAnimNavBtnOnScroll(bioRef, (triggered) => {
-    setShowAnimation(state => ({ ...state, bioImage: triggered }))
-    changeCurrentStatus('bioRef')
+    if (triggered) {
+      setShowAnimation(state => ({ ...state, bioImage: triggered }))
+      changeCurrentStatus('bioRef')
+    } else {
+      setShowAnimation(state => ({ ...state, bioImage: triggered }))
+      changeCurrentStatus('topRef')
+    }
   })
 
   useVideoNavBtnOnScroll(videosRef, (triggered) => {

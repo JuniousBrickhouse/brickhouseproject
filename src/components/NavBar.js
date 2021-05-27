@@ -4,7 +4,6 @@ import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { PlusIcon } from '@heroicons/react/solid'
 import { NAVIGATION } from './Lists'
-import { changeCurrentStatus } from './helperFunctions'
 import useDocumentScrollThrottle from './customComponents/useDocumentScrollThrottle'
 
 function classNames (...classes) {

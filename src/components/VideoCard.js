@@ -1,4 +1,3 @@
-import { Transition } from '@headlessui/react'
 import { VIDEOS } from './Lists'
 
 // video screen sizes/ratios: 640x360; 480x270
