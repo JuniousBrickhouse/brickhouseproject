@@ -16,7 +16,6 @@ import useOrgAfillNavBtnOnScroll from './components/customComponents/useOrgAfill
 // makes the scroll feature work on safari
 smoothscroll.polyfill()
 
-
 function App () {
   const topRef = useRef(null)
   const bioRef = useRef(null)
@@ -80,9 +79,11 @@ function App () {
       <span ref={bioRef}>
         <ShortBio showAnimation={showAnimation} targetAnimationRef={targetAnimationRef} />
       </span>
+      <DividerOne />
       <span ref={videosRef}>
         <VideoMobile showAnimation={showAnimation} />
       </span>
+      <DividerTwo />
       <span ref={hatsRef}>
         <OrgAffiliations />
       </span>
