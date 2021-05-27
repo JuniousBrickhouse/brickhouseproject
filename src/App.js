@@ -6,14 +6,16 @@ import NavBar from './components/NavBar'
 import OrgAffiliations from './components/OrgAffiliations'
 import ShortBio from './components/ShortBio'
 import VideoMobile from './components/VideoMobile'
+import DividerOne from './components/DividerOne'
+import DividerTwo from './components/DividerTwo'
 import useBioAnimNavBtnOnScroll from './components/customComponents/useBioAnimNavBtnOnScroll'
 import { changeCurrentStatus } from './components/helperFunctions'
 import useVideoNavBtnOnScroll from './components/customComponents/useVideoNavBtnOnScroll'
 import useOrgAfillNavBtnOnScroll from './components/customComponents/useOrgAfillNavBtnOnScroll'
 // import useHeaderAnimNavBtnOnScroll from './components/customComponents/useHeaderAnimNavBtnOnScroll'
-
 // makes the scroll feature work on safari
 smoothscroll.polyfill()
+
 
 function App () {
   const topRef = useRef(null)
