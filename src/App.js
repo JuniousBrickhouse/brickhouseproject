@@ -21,10 +21,10 @@ function App () {
   // console.log('videosRef', bioRef)
   const handleScroll = ref => {
     if (ref === 'topRef') {
-      changeCurrentStatus('topRef')
+      // changeCurrentStatus('topRef')
       return topRef.current.scrollIntoView({ behavior: 'smooth' })
     } else if (ref === 'bioRef') {
-      changeCurrentStatus('bioRef')
+      // changeCurrentStatus('bioRef')
       return bioRef.current.scrollIntoView({ behavior: 'smooth' })
     } else if (ref === 'videosRef') {
       return videosRef.current.scrollIntoView({ behavior: 'smooth' })
