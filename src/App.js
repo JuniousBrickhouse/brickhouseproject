@@ -4,6 +4,8 @@ import NavBar from './components/NavBar'
 import OrgAffiliations from './components/OrgAffiliations'
 import ShortBio from './components/ShortBio'
 import VideoMobile from './components/VideoMobile'
+import DividerOne from './components/DividerOne'
+import DividerTwo from './components/DividerTwo'
 
 function App () {
   return (
@@ -11,7 +13,9 @@ function App () {
       <NavBar />
       <Header />
       <ShortBio />
+      <DividerOne />
       <VideoMobile />
+      <DividerTwo />
       <OrgAffiliations />
     </div>
   )
