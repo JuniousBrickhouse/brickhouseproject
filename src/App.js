@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react'
 import './App.css'
 import smoothscroll from 'smoothscroll-polyfill'
 import Header from './components/Header'
@@ -5,9 +6,11 @@ import NavBar from './components/NavBar'
 import OrgAffiliations from './components/OrgAffiliations'
 import ShortBio from './components/ShortBio'
 import VideoMobile from './components/VideoMobile'
-import { useLayoutEffect, useRef, useState } from 'react'
-import useDocumentScrollThrottle from './components/customeComponents/useDocumentScrollThrottle'
+import useBioAnimNavBtnOnScroll from './components/customComponents/useBioAnimNavBtnOnScroll'
 import { changeCurrentStatus } from './components/helperFunctions'
+import useVideoNavBtnOnScroll from './components/customComponents/useVideoNavBtnOnScroll'
+import useOrgAfillNavBtnOnScroll from './components/customComponents/useOrgAfillNavBtnOnScroll'
+import useHeaderAnimNavBtnOnScroll from './components/customComponents/useHeaderAnimNavBtnOnScroll'
 
 // makes the scroll feature work on safari
 smoothscroll.polyfill()
@@ -17,40 +20,33 @@ function App () {
   const bioRef = useRef(null)
   const videosRef = useRef(null)
   const hatsRef = useRef(null)
+  const targetAnimationRef = useRef([])
   const [showAnimation, setShowAnimation] = useState({
-    bioImage: false,
-    videosImage: false
+    bioImage: false
   })
 
-  useLayoutEffect(() => {
-    const topPos = element => element.getBoundingClientRect().top
-    const headerPos = topPos(topRef.current)
-    const bioPos = topPos(bioRef.current)
-    const videosPos = topPos(videosRef.current)
-    const hatsPos = topPos(hatsRef.current)
-    console.log('topPos', topPos)
-    console.log('headerPos', headerPos)
-    console.log('bioPos', bioPos)
-    console.log('bioRef.current', bioRef.current)
-    console.log('videosPos', videosPos)
+  // group of custom components to handle the nav btn highlight
+  // switch on scroll and to handle any animation on scroll.
+  // Admittedly, this is the opposite of DRY, but I couldn't
+  // figure out how to pass an array of useRef items to the
+  // single custom component.
+  // changeCurrentStatus is in helperFunction.js
+  useHeaderAnimNavBtnOnScroll(topRef, (triggered) => {
+    changeCurrentStatus('topRef')
+  })
 
-    const onScroll = () => {
-      const scrollPos = window.scrollY + window.innerHeight
-      console.log('scrollPos', scrollPos)
-      if (scrollPos < bioPos) {
-        changeCurrentStatus('topRef')
-      } else if (bioPos < scrollPos) {
-        setShowAnimation(state => ({ ...state, bioImage: true }))
-        changeCurrentStatus('bioRef')
-      } else if (videosPos < scrollPos) {
-        setShowAnimation(state => ({ ...state, videosImage: true }))
-        changeCurrentStatus('videosRef')
-      }
-    }
+  useBioAnimNavBtnOnScroll(bioRef, (triggered) => {
+    setShowAnimation(state => ({ ...state, bioImage: triggered }))
+    changeCurrentStatus('bioRef')
+  })
 
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  useVideoNavBtnOnScroll(videosRef, (triggered) => {
+    changeCurrentStatus('videosRef')
+  })
+
+  useOrgAfillNavBtnOnScroll(hatsRef, (triggered) => {
+    changeCurrentStatus('hatsRef')
+  })
 
   const handleScroll = ref => {
     if (ref === 'topRef') {
@@ -65,20 +61,14 @@ function App () {
     }
   }
 
-  const handleAnimationOnScroll = (ref) => {
-    if (ref === 'bioRef') {
-      setShowAnimation(true)
-    }
-  }
-
   return (
     <div className='h-screen'>
       <NavBar handleScroll={handleScroll} />
       <span ref={topRef}>
-        <Header />
+        <Header topRef={topRef} />
       </span>
       <span ref={bioRef}>
-        <ShortBio showAnimation={showAnimation} />
+        <ShortBio showAnimation={showAnimation} targetAnimationRef={targetAnimationRef} />
       </span>
       <span ref={videosRef}>
         <VideoMobile showAnimation={showAnimation} />
