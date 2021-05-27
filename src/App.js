@@ -81,7 +81,7 @@ function App () {
       </span>
       <DividerOne />
       <span ref={videosRef}>
-        <VideoMobile showAnimation={showAnimation} />
+        {/* <VideoMobile showAnimation={showAnimation} /> */}
       </span>
       <DividerTwo />
       <span ref={hatsRef}>

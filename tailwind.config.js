@@ -1,3 +1,5 @@
+const { opacity } = require('tailwindcss/defaultTheme')
+
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false, // or 'media' or 'class'
@@ -32,6 +34,25 @@ module.exports = {
         poppins: ['Poppins'],
         nunito: ['Nunito'],
         allura: ['Allura']
+      },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' }
+        },
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'translateX(-50%)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' }
+        },
+        fadeOut: {
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+          '0%': { opacity: '0', transform: 'translateX(25%)' }
+        }
+      },
+      animation: {
+        wiggle: 'wiggle 1s ease-in-out infinite',
+        fadeIn: 'fadeIn 1s',
+        fadeOut: 'fadeOut 1s'
       }
     }
   },

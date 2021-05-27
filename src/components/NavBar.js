@@ -66,7 +66,7 @@ export default function NavBar ({ handleScroll }) {
                     <button
                       key={item.name}
                       className={classNames(
-                        item.current ? 'bg-gray-900 text-white' : 'text-gray-500 hover:bg-gray-700 hover:text-white',
+                        item.current ? 'bg-gray-900 text-white animate-fadeIn' : 'text-gray-500 hover:bg-gray-700 hover:text-white animate-fadeOut',
                         'px-3 py-2 rounded-md text-sm font-medium focus ring-0'
                       )}
                       aria-current={item.current ? 'page' : undefined}
