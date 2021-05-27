@@ -40,3 +40,10 @@ export const VIDEOS = [
           'https://youtube.com/embed/tkQgEZ4SFmo'
   }
 ]
+
+export const NAVIGATION = [
+  { name: 'Top', ref: 'topRef', current: true },
+  { name: 'Bio', ref: 'bioRef', current: false },
+  { name: 'Videos', ref: 'videosRef', current: false },
+  { name: 'Hats', ref: 'hatsRef', current: false }
+]

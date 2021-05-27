@@ -4,24 +4,8 @@ import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { PlusIcon } from '@heroicons/react/solid'
 import useDocumentScrollThrottled from './customeComponents/useDocumentScrollThrottle'
-
-const user = {
-  name: 'Tom Cook',
-  email: 'tom@example.com',
-  imageUrl:
-    'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
-}
-const NAVIGATION = [
-  { name: 'Top', ref: 'topRef', current: true },
-  { name: 'Bio', ref: 'bioRef', current: false },
-  { name: 'Videos', ref: 'videosRef', current: false },
-  { name: 'Hats', ref: 'hatsRef', current: false }
-]
-const userNavigation = [
-  { name: 'Your Profile', href: '#' },
-  { name: 'Settings', href: '#' },
-  { name: 'Sign out', href: '#' }
-]
+import { NAVIGATION } from './Lists'
+import { changeCurrentStatus } from './helperFunctions'
 
 function classNames (...classes) {
   return classes.filter(Boolean).join(' ')
@@ -40,6 +24,10 @@ export default function NavBar ({ handleScroll }) {
     const isMinimumScrolled = currentScrollTop > MINIMUM_SCROLL
     console.log('currentScrollTop', currentScrollTop)
     setShowSolidNav(currentScrollTop > 2)
+
+    // if (currentScrollTop >= 612 && currentScrollTop < 1229) {
+    //   changeCurrentStatus('bioRef')
+    // }
 
     setTimeout(() => {
       setShowSolidNav(isScrolledDown && isMinimumScrolled)
@@ -84,11 +72,11 @@ export default function NavBar ({ handleScroll }) {
                       key={item.name}
                       className={classNames(
                         item.current ? 'bg-gray-900 text-white' : 'text-gray-500 hover:bg-gray-700 hover:text-white',
-                        'px-3 py-2 rounded-md text-sm font-medium'
+                        'px-3 py-2 rounded-md text-sm font-medium focus ring-0'
                       )}
                       aria-current={item.current ? 'page' : undefined}
                       onClick={() => {
-                        console.log('btn clicked')
+                        changeCurrentStatus(item.ref)
                         handleScroll(item.ref)
                       }}
                     >
@@ -135,7 +123,7 @@ export default function NavBar ({ handleScroll }) {
                 <button
                   key={item.name}
                   className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    item.current ? 'bg-gray-900 text-white' : 'text-gray-500 hover:bg-gray-700 hover:text-white',
                     'block px-3 py-2 rounded-md text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}
@@ -149,16 +137,6 @@ export default function NavBar ({ handleScroll }) {
               ))}
             </div>
             <div className='pt-4 pb-3 border-t border-gray-700'>
-              <div className='mt-3 px-2 space-y-1 sm:px-3'>
-                {userNavigation.map((item) => (
-                  <button
-                    key={item.name}
-                    className='block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700'
-                  >
-                    {item.name}
-                  </button>
-                ))}
-              </div>
               {/* debugger for smaller window size breakpoints */}
               <span className='flex justify-center items-center ml-20'>
                 <div className='hidden sm:block md:hidden text-red-700'>

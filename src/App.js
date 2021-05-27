@@ -6,6 +6,7 @@ import OrgAffiliations from './components/OrgAffiliations'
 import ShortBio from './components/ShortBio'
 import VideoMobile from './components/VideoMobile'
 import { useRef } from 'react'
+import { changeCurrentStatus } from './components/helperFunctions'
 
 // makes the scroll feature work on safari
 smoothscroll.polyfill()
@@ -16,10 +17,14 @@ function App () {
   const videosRef = useRef(null)
   const hatsRef = useRef(null)
 
+  console.log('bioRef', bioRef)
+  // console.log('videosRef', bioRef)
   const handleScroll = ref => {
     if (ref === 'topRef') {
+      changeCurrentStatus('topRef')
       return topRef.current.scrollIntoView({ behavior: 'smooth' })
     } else if (ref === 'bioRef') {
+      changeCurrentStatus('bioRef')
       return bioRef.current.scrollIntoView({ behavior: 'smooth' })
     } else if (ref === 'videosRef') {
       return videosRef.current.scrollIntoView({ behavior: 'smooth' })
