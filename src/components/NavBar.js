@@ -30,7 +30,7 @@ export default function NavBar ({ handleScroll }) {
   })
 
   return (
-    <Disclosure as='nav' className={`${showSolidNav ? 'bg-gray-100' : 'bg-none'} fixed top-0 w-full z-30`}>
+    <Disclosure as='nav' className={`${showSolidNav ? 'bg-platinum' : 'bg-none'} fixed top-0 w-full z-30`}>
       {({ open }) => (
         <>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
@@ -66,8 +66,8 @@ export default function NavBar ({ handleScroll }) {
                     <button
                       key={item.name}
                       className={classNames(
-                        item.current ? 'bg-gray-900 text-white' : 'text-gray-500 hover:bg-gray-700 hover:text-white',
-                        'px-3 py-2 rounded-md text-sm font-medium focus ring-0'
+                        item.current ? 'bg-yNBlue text-platinum' : 'text-daviesGrey hover:bg-yNBlue hover:text-platinum',
+                        'px-5 py-2 rounded-md text-md font-medium font-focus font-poppins ring-0'
                       )}
                       aria-current={item.current ? 'page' : undefined}
                       onClick={() => {
@@ -102,7 +102,7 @@ export default function NavBar ({ handleScroll }) {
                 <div className='flex-shrink-0'>
                   <button
                     type='button'
-                    className='relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500'
+                    className='relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-md font-medium font-poppins rounded-md text-platinum bg-yNBlue hover:bg-glaucous focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500'
                   >
                     <PlusIcon className='-ml-1 mr-2 h-5 w-5' aria-hidden='true' />
                     <span>Consultation</span>

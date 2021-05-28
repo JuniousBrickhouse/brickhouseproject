@@ -6,7 +6,7 @@ export default function ShortBio ({ showAnimation }) {
   return (
     <div className='relative py-16 bg-white'>
       <div className='hidden absolute top-0 inset-x-0 h-1/2 bg-gray-50 lg:block' aria-hidden='true' />
-      <div className='max-w-7xl mx-auto bg-indigo-600 lg:bg-transparent lg:px-8'>
+      <div className='max-w-7xl mx-auto bg-yNBlue lg:bg-transparent lg:px-8'>
         <div className='lg:grid lg:grid-cols-12'>
           <div className='relative z-10 lg:col-start-1 lg:row-start-1 lg:col-span-4 lg:py-16 lg:bg-transparent'>
             <div className='absolute inset-x-0 h-1/2 bg-gray-50 lg:hidden' aria-hidden='true' />
@@ -29,7 +29,7 @@ export default function ShortBio ({ showAnimation }) {
             </div>
           </div>
 
-          <div className='relative bg-indigo-600 lg:col-start-3 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-10 lg:items-center'>
+          <div className='relative bg-indigoDye lg:col-start-3 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-10 lg:items-center font-poppins'>
             <div className='hidden absolute inset-0 overflow-hidden rounded-3xl lg:block' aria-hidden='true'>
               <svg
                 className='absolute bottom-full left-full transform translate-y-1/3 -translate-x-2/3 xl:bottom-auto xl:top-0 xl:translate-y-0'
@@ -48,7 +48,7 @@ export default function ShortBio ({ showAnimation }) {
                     height={20}
                     patternUnits='userSpaceOnUse'
                   >
-                    <rect x={0} y={0} width={4} height={4} className='text-indigo-500' fill='currentColor' />
+                    <rect x={0} y={0} width={4} height={4} className='text-wildBlueYonder' fill='currentColor' />
                   </pattern>
                 </defs>
                 <rect width={404} height={384} fill='url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)' />
@@ -70,7 +70,7 @@ export default function ShortBio ({ showAnimation }) {
                     height={20}
                     patternUnits='userSpaceOnUse'
                   >
-                    <rect x={0} y={0} width={4} height={4} className='text-indigo-500' fill='currentColor' />
+                    <rect x={0} y={0} width={4} height={4} className='text-indigoDye' fill='currentColor' />
                   </pattern>
                 </defs>
                 <rect width={404} height={384} fill='url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)' />
