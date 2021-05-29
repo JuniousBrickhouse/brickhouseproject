@@ -12,7 +12,7 @@ import useBioAnimNavBtnOnScroll from './components/customComponents/useBioAnimNa
 import { changeCurrentStatus } from './components/helperFunctions'
 import useVideoNavBtnOnScroll from './components/customComponents/useVideoNavBtnOnScroll'
 import useOrgAfillNavBtnOnScroll from './components/customComponents/useOrgAfillNavBtnOnScroll'
-import Socials from './components/Socials'
+import Socials from './Socials'
 // import useHeaderAnimNavBtnOnScroll from './components/customComponents/useHeaderAnimNavBtnOnScroll'
 // makes the scroll feature work on safari
 smoothscroll.polyfill()
