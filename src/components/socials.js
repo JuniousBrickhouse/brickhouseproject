@@ -13,28 +13,28 @@ export default function Socials () {
             type='button'
             className='relative inline-flex items-center px-4 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-400 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigoDye focus:border-indigoDye'
           >
-            <span className='sr-only'>Edit</span>
+            <span className='sr-only'>Youtube</span>
             <FaYoutube className='h-5 w-5' aria-hidden='true' />
           </button>
           <button
             type='button'
             className='relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-400 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigoDye focus:border-indigoDye'
           >
-            <span className='sr-only'>Attachment</span>
+            <span className='sr-only'>Facebook</span>
             <FaFacebook className='h-5 w-5' aria-hidden='true' />
           </button>
           <button
             type='button'
             className='relative inline-flex content-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-400 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigoDye focus:border-indigoDye'
           >
-            <span className='sr-only'>Annotate</span>
+            <span className='sr-only'>Twitter</span>
             <FaTwitter className='h-5 w-5' aria-hidden='true' />
           </button>
           <button
             type='button'
             className='relative inline-flex object-center px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-400 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigoDye focus:border-indigoDye'
           >
-            <span className='sr-only'>Delete</span>
+            <span className='sr-only'>Instagram</span>
             <FaInstagram className='h-5 w-5' aria-hidden='true' />
           </button>
         </span>
