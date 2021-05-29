@@ -3,7 +3,7 @@ import { FaYoutube, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa'
 
 export default function Socials () {
   return (
-    <div className=' mx-auto px-4 pt-8 h-1/6 sm:px-6 lg:px-8 content-center items-center bg-sonicSilver w-full'>
+    <div className=' mx-auto px-4 pt-8 h-1/6 sm:px-6 lg:px-8 content-center items-center bg-mediumCarmine w-full'>
       <div className='relative'>
         <div className='absolute inset-0 flex items-center' aria-hidden='true'>
           <div className='w-full border-t border-gray-300' />
