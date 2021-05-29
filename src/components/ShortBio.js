@@ -80,9 +80,20 @@ export default function ShortBio ({ showAnimation }) {
               {/* <h2 className='text-3xl font-extrabold text-white' id='join-heading'>
                 Join our team
               </h2> */}
-              <p className='text-lg text-white'>
+              <Transition
+                show={showAnimation.bioImage}
+                enter='transition-all duration-1000 transform ease-out delay-150'
+                enterFrom='opacity-0 translate-x-full'
+                enterTo='opacity-100 translate-x-0'
+                leave='transition-all duration-1000 transform'
+                leaveFrom='opacity-100 translate-x-0'
+                leaveTo='opacity-0 translate-x-full'
+                className='text-lg text-white'
+              >
                 {SHOTR_BIO}
-              </p>
+              </Transition
+
+              >
             </div>
           </div>
         </div>
