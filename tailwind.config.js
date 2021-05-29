@@ -32,6 +32,20 @@ module.exports = {
         poppins: ['Poppins'],
         nunito: ['Nunito'],
         allura: ['Allura']
+      },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' }
+        },
+        dividerShift: {
+          '0%': { transform: 'translateY(0)' },
+          '100%': { transform: 'translateY(-5%)' }
+        }
+      },
+      animation: {
+        dividerShift: 'dividerShift 2s ease-in-out',
+        wiggle: 'wiggle 1s ease-in-out infinite'
       }
     }
   },

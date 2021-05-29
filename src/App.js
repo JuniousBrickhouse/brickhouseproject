@@ -25,7 +25,12 @@ function App () {
   const [showAnimation, setShowAnimation] = useState({
     bioImage: false
   })
+  const [dividerAnimationShift, setDividerAnimationShift] = useState({
+    dividerOne: false,
+    dividerTwo: false
+  })
 
+  console.log('dividerAnimationShift.dividerOne', dividerAnimationShift.dividerOne)
   // group of custom components to handle the nav btn highlight
   // switch on scroll and to handle any animation on scroll.
   // Admittedly, this is the opposite of DRY, but I couldn't
@@ -51,6 +56,7 @@ function App () {
 
   useVideoNavBtnOnScroll(videosRef, (triggered) => {
     changeCurrentStatus('videosRef')
+    setDividerAnimationShift(state => ({ ...state, dividerOne: triggered }))
   })
 
   useOrgAfillNavBtnOnScroll(hatsRef, (triggered) => {
@@ -79,11 +85,14 @@ function App () {
       <span ref={bioRef}>
         <ShortBio showAnimation={showAnimation} targetAnimationRef={targetAnimationRef} />
       </span>
-      <DividerOne />
-      <span ref={videosRef}>
-        <VideoMobile showAnimation={showAnimation} />
+      <span className='h-2/3'>
+        <DividerOne dividerAnimationShift={dividerAnimationShift} />
       </span>
-      <DividerTwo />
+      <span ref={videosRef}>
+        PlaceHolder Text Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta at voluptates nesciunt repellendus saepe, enim labore laboriosam odio? Est numquam odit cum. Voluptas distinctio, rem consectetur perspiciatis id impedit dolorem. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero accusamus suscipit eveniet tempore voluptatum dolorum at totam unde perspiciatis? Atque porro ad aperiam recusandae impedit molestiae blanditiis eos architecto ut? Lorem ipsum dolor sit amet consectetur, adipisicing elit. At, optio. Placeat quasi dolores, suscipit magnam et, laborum tempora est, doloribus minus exercitationem aperiam necessitatibus. Nisi rerum voluptatibus fugiat atque inventore. PlaceHolder Text Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta at voluptates nesciunt repellendus saepe, enim labore laboriosam odio? Est numquam odit cum. Voluptas distinctio, rem consectetur perspiciatis id impedit dolorem. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero accusamus suscipit eveniet tempore voluptatum dolorum at totam unde perspiciatis? Atque porro ad aperiam recusandae impedit molestiae blanditiis eos architecto ut? Lorem ipsum dolor sit amet consectetur, adipisicing elit. At, optio. Placeat quasi dolores, suscipit magnam et, laborum tempora est, doloribus minus exercitationem aperiam necessitatibus. Nisi rerum voluptatibus fugiat atque inventore. PlaceHolder Text Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta at voluptates nesciunt repellendus saepe, enim labore laboriosam odio? Est numquam odit cum. Voluptas distinctio, rem consectetur perspiciatis id impedit dolorem. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero accusamus suscipit eveniet tempore voluptatum dolorum at totam unde perspiciatis? Atque porro ad aperiam recusandae impedit molestiae blanditiis eos architecto ut? Lorem ipsum dolor sit amet consectetur, adipisicing elit. At, optio. Placeat quasi dolores, suscipit magnam et, laborum tempora est, doloribus minus exercitationem aperiam necessitatibus. Nisi rerum voluptatibus fugiat atque inventore. PlaceHolder Text Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta at voluptates nesciunt repellendus saepe, enim labore laboriosam odio? Est numquam odit cum. Voluptas distinctio, rem consectetur perspiciatis id impedit dolorem. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero accusamus suscipit eveniet tempore voluptatum dolorum at totam unde perspiciatis? Atque porro ad aperiam recusandae impedit molestiae blanditiis eos architecto ut? Lorem ipsum dolor sit amet consectetur, adipisicing elit. At, optio. Placeat quasi dolores, suscipit magnam et, laborum tempora est, doloribus minus exercitationem aperiam necessitatibus. Nisi rerum voluptatibus fugiat atque inventore.
+        {/* <VideoMobile showAnimation={showAnimation} /> */}
+      </span>
+      {/* <DividerTwo /> */}
       <span ref={hatsRef}>
         <OrgAffiliations />
       </span>
