@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from 'react'
 export default function DividerOne () {
   const dividerRef = useRef()
   const [moveImage, setMoveImage] = useState(false)
-  console.log('dividerRef', dividerRef)
 
   useEffect(() => {
     if (dividerRef.current) {
