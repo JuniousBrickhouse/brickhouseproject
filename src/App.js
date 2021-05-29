@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 import './App.css'
 import smoothscroll from 'smoothscroll-polyfill'
 import Header from './components/Header'
@@ -13,6 +13,7 @@ import { changeCurrentStatus } from './components/helperFunctions'
 import useVideoNavBtnOnScroll from './components/customComponents/useVideoNavBtnOnScroll'
 import useOrgAfillNavBtnOnScroll from './components/customComponents/useOrgAfillNavBtnOnScroll'
 import Socials from './Socials'
+import useWindowScrollPosition from './components/customComponents/useWindowScrollPosition'
 // import useHeaderAnimNavBtnOnScroll from './components/customComponents/useHeaderAnimNavBtnOnScroll'
 // makes the scroll feature work on safari
 smoothscroll.polyfill()
@@ -23,9 +24,34 @@ function App () {
   const videosRef = useRef(null)
   const hatsRef = useRef(null)
   const targetAnimationRef = useRef([])
+  // const [data, setData] = useState(undefined)
+  const [isLoading, setIsLoading] = useState(true)
   const [showAnimation, setShowAnimation] = useState({
     bioImage: false
   })
+
+  // console.log('topRef', topRef)
+  // console.log('bioRef', bioRef)
+  // console.log('videosRef', videosRef)
+  // console.log('hatsRef', hatsRef)
+
+  useWindowScrollPosition('App_ScrollY', isLoading)
+
+  // const fetchData = async () => {
+  //   try {
+  //     const data = await fetch('https://your-api-url-here.com')
+  //     setData(data)
+  //     setIsLoading(false)
+  //   } catch (error) {
+  //     console.log(error)
+  //     setIsLoading(false)
+  //   }
+  // }
+  // useEffect(() => {
+  //   if (!data) {
+  //     fetchData()
+  //   }
+  // })
 
   // group of custom components to handle the nav btn highlight
   // switch on scroll and to handle any animation on scroll.

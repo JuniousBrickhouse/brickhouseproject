@@ -7,6 +7,7 @@ function getOffset (el) {
   while (el && !isNaN(el.offsetLeft) && !isNaN(el.offsetTop)) {
     _x += el.offsetLeft - el.scrollLeft
     _y += el.offsetTop - el.scrollTop
+    console.log('_y in bio', _y)
     el = el.offsetParent
   }
   return { top: _y, left: _x }
@@ -19,7 +20,9 @@ function hasScrolledTo (el) {
 }
 export default function useBioAnimNavBtnOnScroll (ref, onTrigger) {
   const [triggered, setTriggered] = useState(false)
+  console.log('ref', ref)
   useEffect(() => {
+    console.log('ref in effect', ref)
     function onScroll () {
       const viewed = hasScrolledTo(ref.current)
       if (viewed && !triggered) {
