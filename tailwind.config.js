@@ -17,7 +17,10 @@ module.exports = {
         'junious-white': "url('./photos/JuniousWhite.jpeg')",
         'junious-woods': "url('./photos/JuniousWoods.jpeg')",
         'junious-barn': "url('./photos/JuniousBarn.jpeg')",
-        'urban-a': "url('./photos/UrbanA.jpeg')"
+        'urban-a': "url('./photos/UrbanA.jpeg')",
+        '23Hampton': "url('./photos/logos/23Hampton.png')",
+        nextLevel: "url('./photos/logos/nextLevel.png')",
+        urbanArtistry: "url('./photos/logos/urbanArtistry.jpg')"
         // 'headshot-junious': "url('./photos/headshot.jpeg')"
         // 'footer-texture': "url('/img/footer-texture.png')"
 
