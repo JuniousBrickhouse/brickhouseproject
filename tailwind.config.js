@@ -23,7 +23,8 @@ module.exports = {
         '23Hampton': "url('./photos/logos/23Hampton.png')",
         nextLevel: "url('./photos/logos/nextLevel.png')",
         urbanArtistry: "url('./photos/logos/urbanArtistry.jpg')",
-        'photo-edit': "url('./photos/PhotoEdit.png')"
+        'photo-edit': "url('./photos/PhotoEdit.png')",
+        'final-photo': "url('./photos/FinalPhoto.png')"
         // 'headshot-junious': "url('./photos/headshot.jpeg')"
         // 'footer-texture': "url('/img/footer-texture.png')"
 
