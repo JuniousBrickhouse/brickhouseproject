@@ -33,6 +33,7 @@ module.exports = {
         current: 'currentColor',
         spanishGrey: '#9C9C9C',
         sonicSilver: '#707070',
+        woodGray: '#E9EDF2',
         platinum: '#E6E6E6',
         indigoDye: '#25426B',
         yNBlue: '#314C7C',
