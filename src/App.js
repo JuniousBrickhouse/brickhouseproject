@@ -5,7 +5,7 @@ import Header from './components/Header'
 import NavBar from './components/NavBar'
 import OrgAffiliations from './components/OrgAffiliations'
 import ShortBio from './components/ShortBio'
-import VideoMobile from './components/VideoMobile'
+import Videos from './components/Videos'
 import DividerOne from './components/DividerOne'
 import DividerTwo from './components/DividerTwo'
 import useBioAnimNavBtnOnScroll from './components/customComponents/useBioAnimNavBtnOnScroll'
@@ -82,7 +82,7 @@ function App () {
       </span>
       <DividerOne />
       <span ref={videosRef}>
-        <VideoMobile showAnimation={showAnimation} />
+        <Videos showAnimation={showAnimation} />
       </span>
       <DividerTwo />
       <span ref={hatsRef}>
