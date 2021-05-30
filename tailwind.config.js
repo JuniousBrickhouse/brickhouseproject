@@ -5,7 +5,19 @@ module.exports = {
     extend: {
       backgroundImage: theme => ({
         'junious-headshot': "url('./photos/GwrwqDWr.jpeg')",
-        'dancer-test': "url('./photos/people.jpg')"
+        'dancer-test': "url('./photos/people.jpg')",
+        crewLil: "url('./photos/CrewLil.jpeg')",
+        crewVsan: "url('./photos/CrewVsan.jpeg')",
+        'junious-blue': "url('./photos/JuniousBlue.jpeg')",
+        'junious-crew': "url('./photos/JuniousCrew.jpeg')",
+        'junious-down': "url('./photos/JuniousDownLook.jpeg')",
+        'junious-grey': "url('./photos/JuniousGrey.jpeg')",
+        'junious-noHat': "url('./photos/JuniousNoHat.jpeg')",
+        'junious-redDance': "url('./photos/JuniousRedDance.jpeg')",
+        'junious-white': "url('./photos/JuniousWhite.jpeg')",
+        'junious-woods': "url('./photos/JuniousWoods.jpeg')",
+        'junious-barn': "url('./photos/JuniousBarn.jpeg')",
+        'urban-a': "url('./photos/UrbanA.jpeg')"
         // 'headshot-junious': "url('./photos/headshot.jpeg')"
         // 'footer-texture': "url('/img/footer-texture.png')"
 
