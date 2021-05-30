@@ -9,8 +9,8 @@ const POSTS = [
     category: { name: 'Article', href: '#' },
     description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
-    imageUrl: hampton
-    // 'https://img1.wsimg.com/isteam/ip/93b63956-2d59-47b1-8349-dfc27f026e57/23rd%20%26%20Hampton%20Logo%201b%20copy.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1320,h:1000,cg:true,m/cr=w:1320,h:1000,a:cc'
+    imageUrl:
+    'https://img1.wsimg.com/isteam/ip/93b63956-2d59-47b1-8349-dfc27f026e57/23rd%20%26%20Hampton%20Logo%201b%20copy.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1320,h:1000,cg:true,m/cr=w:1320,h:1000,a:cc'
   },
   {
     title: 'Next Level',
@@ -22,7 +22,7 @@ const POSTS = [
     // 'https://static1.squarespace.com/static/5b521e334cde7a741d47e768/t/5b5616f20e2e728fc44d8ecb/1620247551740/?format=1500w'
   },
   {
-    title: 'Improve your customer experience',
+    title: 'Urban Artistry',
     href: '#',
     category: { name: 'Case Study', href: '#' },
     description:
@@ -48,7 +48,7 @@ export default function OrgAffiliations () {
           {POSTS.map((post) => (
             <div key={post.title} className='flex flex-col rounded-lg shadow-lg overflow-hidden font-poppins'>
               <div className='flex-shrink-0'>
-                <img className='h-48 w-full object-cover' src={post.imageUrl} alt={post.title} />
+                <img className='h-48 w-full object-cover py-2' src={post.imageUrl} alt={post.title} />
               </div>
               <div className='flex-1 bg-earthYellow p-6 flex flex-col justify-between'>
                 <div className='flex-1'>
