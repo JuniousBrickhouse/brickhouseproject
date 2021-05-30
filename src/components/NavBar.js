@@ -30,7 +30,7 @@ export default function NavBar ({ handleScroll }) {
   })
 
   return (
-    <Disclosure as='nav' className={`${showSolidNav ? 'bg-platinum' : 'bg-none'} fixed top-0 w-full z-30`}>
+    <Disclosure as='nav' className={`${showSolidNav ? 'bg-platinum opacity-90' : 'bg-none'} fixed top-0 w-full z-30`}>
       {({ open }) => (
         <>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>

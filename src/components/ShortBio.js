@@ -1,4 +1,5 @@
 import { Transition } from '@headlessui/react'
+import juniousBlue from '../photos/JuniousBlue.jpeg'
 
 const SHOTR_BIO = 'I am a product of a folk tradition, urban dance. From my mother teaching my sister and me to do the hustle in the living room, to riding on the handlebars of my cousin’s bike in Norfolk, Virginia to the rec center to learn break dancing from the older children, I received an education in urban dance (breaking, popping, house dance, locking, and hip-hop) and the culture that surrounded it. I was brought up and educated within this tradition and have become an educator and tradition bearer.'
 
@@ -6,7 +7,7 @@ export default function ShortBio ({ showAnimation }) {
   return (
     <div className='relative py-16 bg-white'>
       <div className='hidden absolute top-0 inset-x-0 h-1/2 bg-gray-50 lg:block' aria-hidden='true' />
-      <div className='max-w-7xl mx-auto bg-yNBlue lg:bg-transparent lg:px-8'>
+      <div className='max-w-7xl mx-auto bg-burlyWood lg:bg-transparent lg:px-8'>
         <div className='lg:grid lg:grid-cols-12'>
           <div className='relative z-10 lg:col-start-1 lg:row-start-1 lg:col-span-4 lg:py-16 lg:bg-transparent'>
             <div className='absolute inset-x-0 h-1/2 bg-gray-50 lg:hidden' aria-hidden='true' />
@@ -21,15 +22,16 @@ export default function ShortBio ({ showAnimation }) {
                   leave='transition-all duration-1000 transform'
                   leaveFrom='opacity-100 translate-x-0'
                   leaveTo='opacity-0 -translate-x-full'
-                  className='object-cover object-center rounded-3xl shadow-2xl'
-                  src='https://images.unsplash.com/photo-1507207611509-ec012433ff52?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=934&q=80'
+                  className='object-cover object-top rounded-3xl shadow-2xl'
+                  src={juniousBlue}
+                  // src='https://images.unsplash.com/photo-1507207611509-ec012433ff52?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=934&q=80'
                   alt='Junious Brickhouse'
                 />
               </div>
             </div>
           </div>
 
-          <div className='relative bg-indigoDye lg:col-start-3 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-10 lg:items-center font-poppins'>
+          <div className='relative bg-platinum lg:col-start-3 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-10 lg:items-center font-poppins'>
             <div className='hidden absolute inset-0 overflow-hidden rounded-3xl lg:block' aria-hidden='true'>
               <svg
                 className='absolute bottom-full left-full transform translate-y-1/3 -translate-x-2/3 xl:bottom-auto xl:top-0 xl:translate-y-0'
@@ -88,7 +90,7 @@ export default function ShortBio ({ showAnimation }) {
                 leave='transition-all duration-1000 transform'
                 leaveFrom='opacity-100 translate-x-0'
                 leaveTo='opacity-0 translate-x-full'
-                className='text-lg text-white'
+                className='text-2xl text-redBackground font-nunito'
               >
                 {SHOTR_BIO}
               </Transition
