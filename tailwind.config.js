@@ -37,7 +37,8 @@ module.exports = {
         burlyWood: '#E2BC8A',
         earthYellow: '#D1A15D',
         fawn: '#D99F68',
-        mediumCarmine: '#AA563B'
+        mediumCarmine: '#AA563B',
+        redBackground: '#7C321A'
 
       },
       fontFamily: {
