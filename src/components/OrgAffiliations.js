@@ -50,7 +50,7 @@ export default function OrgAffiliations () {
               <div className='flex-shrink-0'>
                 <img className='h-48 w-full object-cover py-2' src={post.imageUrl} alt={post.title} />
               </div>
-              <div className='flex-1 bg-earthYellow p-6 flex flex-col justify-between'>
+              <div className='flex-1 bg-platinum p-6 flex flex-col justify-between'>
                 <div className='flex-1'>
                   <p className='text-sm font-medium text-glaucous'>
                     <a
@@ -68,8 +68,8 @@ export default function OrgAffiliations () {
                     target='_blank'
                     rel='noreferrer noopener'
                   >
-                    <p className='text-xl font-semibold text-royalBlack'>{post.title}</p>
-                    <p className='mt-3 text-base text-sonicSilver font-nunito'>{post.description}</p>
+                    <p className='text-xl font-semibold text-richBlack'>{post.title}</p>
+                    <p className='mt-3 text-base text-mediumCarmine font-nunito'>{post.description}</p>
                   </a>
                 </div>
               </div>
