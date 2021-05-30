@@ -25,7 +25,7 @@ function App () {
   const hatsRef = useRef(null)
   const targetAnimationRef = useRef([])
   // const [data, setData] = useState(undefined)
-  const [isLoading, setIsLoading] = useState(true)
+  // const [isLoading, setIsLoading] = useState(true)
   const [showAnimation, setShowAnimation] = useState({
     bioImage: false
   })
@@ -35,7 +35,7 @@ function App () {
   // console.log('videosRef', videosRef)
   // console.log('hatsRef', hatsRef)
 
-  useWindowScrollPosition('App_ScrollY', isLoading)
+  useWindowScrollPosition('App_ScrollY')
 
   // const fetchData = async () => {
   //   try {
