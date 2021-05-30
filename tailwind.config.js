@@ -20,7 +20,8 @@ module.exports = {
         'urban-a': "url('./photos/UrbanA.jpeg')",
         '23Hampton': "url('./photos/logos/23Hampton.png')",
         nextLevel: "url('./photos/logos/nextLevel.png')",
-        urbanArtistry: "url('./photos/logos/urbanArtistry.jpg')"
+        urbanArtistry: "url('./photos/logos/urbanArtistry.jpg')",
+        'photo-edit': "url('./photos/PhotoEdit.png')"
         // 'headshot-junious': "url('./photos/headshot.jpeg')"
         // 'footer-texture': "url('/img/footer-texture.png')"
 
