@@ -1,3 +1,7 @@
+import hampton from '../photos/logos/23Hampton.png'
+import nextLevel from '../photos/logos/nextLevel.png'
+import urbanArtistry from '../photos/logos/urbanArtistry.jpg'
+
 const POSTS = [
   {
     title: '23rd and Hampton Community Initiatives',
@@ -5,8 +9,8 @@ const POSTS = [
     category: { name: 'Article', href: '#' },
     description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
-    imageUrl:
-        'https://img1.wsimg.com/isteam/ip/93b63956-2d59-47b1-8349-dfc27f026e57/23rd%20%26%20Hampton%20Logo%201b%20copy.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1320,h:1000,cg:true,m/cr=w:1320,h:1000,a:cc'
+    imageUrl: hampton
+    // 'https://img1.wsimg.com/isteam/ip/93b63956-2d59-47b1-8349-dfc27f026e57/23rd%20%26%20Hampton%20Logo%201b%20copy.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1320,h:1000,cg:true,m/cr=w:1320,h:1000,a:cc'
   },
   {
     title: 'Next Level',
@@ -14,8 +18,8 @@ const POSTS = [
     category: { name: 'Video', href: '#' },
     description:
         'Building Global Community through Hip Hop Culture',
-    imageUrl:
-        'https://static1.squarespace.com/static/5b521e334cde7a741d47e768/t/5b5616f20e2e728fc44d8ecb/1620247551740/?format=1500w'
+    imageUrl: nextLevel
+    // 'https://static1.squarespace.com/static/5b521e334cde7a741d47e768/t/5b5616f20e2e728fc44d8ecb/1620247551740/?format=1500w'
   },
   {
     title: 'Improve your customer experience',
@@ -23,8 +27,7 @@ const POSTS = [
     category: { name: 'Case Study', href: '#' },
     description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
-    imageUrl:
-        'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80'
+    imageUrl: urbanArtistry
   }
 ]
 
@@ -45,7 +48,7 @@ export default function OrgAffiliations () {
           {POSTS.map((post) => (
             <div key={post.title} className='flex flex-col rounded-lg shadow-lg overflow-hidden font-poppins'>
               <div className='flex-shrink-0'>
-                <img className='h-48 w-full object-cover' src={post.imageUrl} alt='' />
+                <img className='h-48 w-full object-cover' src={post.imageUrl} alt={post.title} />
               </div>
               <div className='flex-1 bg-earthYellow p-6 flex flex-col justify-between'>
                 <div className='flex-1'>
