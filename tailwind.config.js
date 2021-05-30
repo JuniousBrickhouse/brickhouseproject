@@ -1,3 +1,5 @@
+const { transitionDelay } = require('tailwindcss/defaultTheme')
+
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false, // or 'media' or 'class'
@@ -50,6 +52,18 @@ module.exports = {
         poppins: ['Poppins'],
         nunito: ['Nunito'],
         allura: ['Allura']
+      },
+      transitionDuration: {
+        2000: '2000ms',
+        3000: '3000ms',
+        4000: '4000ms',
+        5000: '5000ms'
+      },
+      transitionDelay: {
+        2000: '2000ms',
+        3000: '3000ms',
+        4000: '4000ms',
+        5000: '5000ms'
       }
     }
   },
