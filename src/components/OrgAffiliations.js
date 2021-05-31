@@ -35,11 +35,11 @@ export default function OrgAffiliations () {
   return (
     <div className='relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8'>
       <div className='absolute inset-0'>
-        <div className='bg-white h-1/3 sm:h-2/3' />
+        <div className='bg-wildBlueYonder h-1/3 sm:h-2/3' />
       </div>
       <div className='relative max-w-7xl mx-auto'>
         <div className='text-center'>
-          <h2 className='text-3xl tracking-tight text-richBlack sm:text-4xl font-semiBold font-poppins'>The Hats I Wear</h2>
+          <h2 className='text-3xl tracking-tight text-richBlack sm:text-4xl font-bold font-poppins'>The Hats I Wear</h2>
           <p className='mt-3 max-w-2xl font-nunito mx-auto text-xl text-sonicSilver sm:mt-4'>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque, ducimus sed.
           </p>
@@ -47,12 +47,12 @@ export default function OrgAffiliations () {
         <div className='mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none'>
           {POSTS.map((post) => (
             <div key={post.title} className='flex flex-col rounded-lg shadow-lg overflow-hidden font-poppins'>
-              <div className='flex-shrink-0'>
-                <img className='h-48 w-full object-cover py-2' src={post.imageUrl} alt={post.title} />
+              <div className='flex-shrink-0 bg-white'>
+                <img className={`${post.title === 'Next Level' ? 'object-contain' : 'object-cover'} h-48 w-full py-2`} src={post.imageUrl} alt={post.title} />
               </div>
               <div className='flex-1 bg-platinum p-6 flex flex-col justify-between'>
                 <div className='flex-1'>
-                  <p className='text-sm font-medium text-glaucous'>
+                  {/* <p className='text-sm font-medium text-glaucous'>
                     <a
                       href={post.category.href}
                       className='hover:underline'
@@ -61,15 +61,15 @@ export default function OrgAffiliations () {
                     >
                       {post.category.name}
                     </a>
-                  </p>
+                  </p> */}
                   <a
                     href={post.href}
                     className='block mt-2'
                     target='_blank'
                     rel='noreferrer noopener'
                   >
-                    <p className='text-xl font-semibold text-richBlack'>{post.title}</p>
-                    <p className='mt-3 text-base text-mediumCarmine font-nunito'>{post.description}</p>
+                    <p className='text-xl font-semibold text-mediumCarmine font-poppins'>{post.title}</p>
+                    <p className='mt-3 text-base text-richBlack font-nunito'>{post.description}</p>
                   </a>
                 </div>
               </div>
