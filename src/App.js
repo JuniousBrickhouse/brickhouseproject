@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css'
 import smoothscroll from 'smoothscroll-polyfill'
 import Header from './components/Header'
@@ -13,6 +14,9 @@ import { changeCurrentStatus } from './components/helperFunctions'
 import useVideoNavBtnOnScroll from './components/customComponents/useVideoNavBtnOnScroll'
 import useOrgAfillNavBtnOnScroll from './components/customComponents/useOrgAfillNavBtnOnScroll'
 import Socials from './Socials'
+import { NAVIGATION } from './components/Lists'
+import Journey from './components/Journey'
+import { Transition } from '@headlessui/react'
 // import useHeaderAnimNavBtnOnScroll from './components/customComponents/useHeaderAnimNavBtnOnScroll'
 // makes the scroll feature work on safari
 smoothscroll.polyfill()
@@ -23,8 +27,12 @@ function App () {
   const videosRef = useRef(null)
   const hatsRef = useRef(null)
   const targetAnimationRef = useRef([])
+  const [renderJourney, setRenderJourney] = useState(false)
   const [showAnimation, setShowAnimation] = useState({
-    bioImage: false
+    headerAnimation: true,
+    bioImage: false,
+    landingPage: true,
+    journeyPage: false
   })
 
   // group of custom components to handle the nav btn highlight
@@ -59,6 +67,7 @@ function App () {
   })
 
   const handleScroll = ref => {
+    console.log('ref', ref)
     if (ref === 'topRef') {
       // changeCurrentStatus('topRef')
       return topRef.current.scrollIntoView({ behavior: 'smooth' })
@@ -71,25 +80,71 @@ function App () {
     }
   }
 
+  const handleAnimation = (name, value) => {
+    setShowAnimation(state => ({ ...state, [name]: !value }))
+  }
+
+  const handleRenderJourney = (destination) => {
+    console.log('destination', destination)
+    if (destination === 'journeyPage') {
+      setShowAnimation(state => ({ ...state, landingPage: false }))
+      setTimeout(() => {
+        setShowAnimation(state => ({ ...state, journeyPage: true }))
+        setRenderJourney(!renderJourney)
+      }, 2000)
+    } else if (destination === 'landingPage') {
+      setShowAnimation(state => ({ ...state, journeyPage: false }))
+      setTimeout(() => {
+        setShowAnimation(state => ({ ...state, landingPage: true }))
+        setRenderJourney(!renderJourney)
+      }, 2000)
+    }
+  }
+
+  if (renderJourney) {
+    return (
+      <Transition
+        show={showAnimation.journeyPage}
+        enter='transform-opacity duration-3000'
+        enterFrom='opacity-0'
+        enterTo='opacity-100'
+        leave='transform-opacity duration-2000'
+        leaveFrom='opacity-100'
+        leaveTo='opacity-0'
+      >
+        <Journey handleRenderJourney={handleRenderJourney} />
+      </Transition>
+    )
+  }
+
   return (
-    <div className='h-screen'>
+    <Transition
+      show={showAnimation.landingPage}
+      enter='transform-opacity duration-1000'
+      enterFrom='opacity-0'
+      enterTo='opacity-100'
+      leave='transform-opacity duration-2000'
+      leaveFrom='opacity-100'
+      leaveTo='opacity-0'
+      className='h-screen'
+    >
       <NavBar handleScroll={handleScroll} />
       <span ref={topRef}>
-        <Header topRef={topRef} />
+        <Header topRef={topRef} handleAnimation={handleAnimation} showAnimation={showAnimation} />
       </span>
       <span ref={bioRef}>
-        <ShortBio showAnimation={showAnimation} targetAnimationRef={targetAnimationRef} />
+        <ShortBio showAnimation={showAnimation} handleRenderJourney={handleRenderJourney} />
       </span>
       <DividerOne />
       <span ref={videosRef}>
-        <Videos showAnimation={showAnimation} />
+        <Videos />
       </span>
       <DividerTwo />
       <span ref={hatsRef}>
         <OrgAffiliations />
       </span>
       <Socials />
-    </div>
+    </Transition>
   )
 }
 
