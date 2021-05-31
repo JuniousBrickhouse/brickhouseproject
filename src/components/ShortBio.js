@@ -1,9 +1,15 @@
 import { Transition } from '@headlessui/react'
+import { Link } from 'react-router-dom'
 import juniousBlue from '../photos/JuniousBlue.jpeg'
+import { changeCurrentStatus } from './helperFunctions'
 
-const SHOTR_BIO = 'I am a product of a folk tradition, urban dance. From my mother teaching my sister and me to do the hustle in the living room, to riding on the handlebars of my cousin’s bike in Norfolk, Virginia to the rec center to learn break dancing from the older children, I received an education in urban dance (breaking, popping, house dance, locking, and hip-hop) and the culture that surrounded it. I was brought up and educated within this tradition and have become an educator and tradition bearer.'
+const SHOTR_BIO =
+  {
+    paragraph1: 'I am a product of a folk tradition, urban dance. From my mother teaching my sister and me to do the hustle in the living room, to riding on the handlebars of my cousin’s bike in Norfolk, Virginia to the rec center to learn break dancing from the older children, I received an education in urban dance (breaking, popping, house dance, locking, and hip-hop) and the culture that surrounded it. I was brought up and educated within this tradition and have become an educator and tradition bearer.',
+    journey: 'Read more about my journey'
+  }
 
-export default function ShortBio ({ showAnimation }) {
+export default function ShortBio ({ showAnimation, handleRenderJourney }) {
   return (
     <div className='relative py-16 bg-white'>
       <div className='hidden absolute top-0 inset-x-0 h-1/2 bg-gray-50 lg:block' aria-hidden='true' />
@@ -16,10 +22,10 @@ export default function ShortBio ({ showAnimation }) {
                 <Transition
                   show={showAnimation.bioImage}
                   as='img'
-                  enter='transition-all duration-1000 transform ease-out'
+                  enter='transition-all duration-3000 transform ease-out'
                   enterFrom='opacity-0 -translate-x-full'
                   enterTo='opacity-100 translate-x-0'
-                  leave='transition-all duration-1000 transform'
+                  leave='transition-all duration-3000 transform'
                   leaveFrom='opacity-100 translate-x-0'
                   leaveTo='opacity-0 -translate-x-full'
                   className='object-cover object-top rounded-3xl shadow-2xl'
@@ -78,24 +84,36 @@ export default function ShortBio ({ showAnimation }) {
                 <rect width={404} height={384} fill='url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)' />
               </svg>
             </div>
-            <div className='relative max-w-md mx-auto py-12 px-4 space-y-6 sm:max-w-3xl sm:py-16 sm:px-6 lg:max-w-none lg:p-0 lg:col-start-4 lg:col-span-6'>
+            <div className='relative max-w-md mx-auto py-12 px-4 space-y-6 sm:max-w-3xl sm:py-16 sm:px-6 lg:max-w-none lg:p-0 lg:col-start-4 lg:col-span-6 flex flex-col'>
               {/* <h2 className='text-3xl font-extrabold text-white' id='join-heading'>
                 Join our team
               </h2> */}
               <Transition
                 show={showAnimation.bioImage}
-                enter='transition-all duration-1000 transform ease-out delay-150'
+                enter='transition-all duration-3000 transform ease-out delay-150'
                 enterFrom='opacity-0 translate-x-full'
                 enterTo='opacity-100 translate-x-0'
-                leave='transition-all duration-1000 transform'
+                leave='transition-all duration-3000 transform'
                 leaveFrom='opacity-100 translate-x-0'
                 leaveTo='opacity-0 translate-x-full'
                 className='text-2xl text-redBackground font-nunito'
               >
-                {SHOTR_BIO}
-              </Transition
-
+                {SHOTR_BIO.paragraph1}
+              </Transition>
+              <Transition
+                show={showAnimation.bioImage}
+                as='button'
+                enter='transition-all duration-3000 transform ease-out delay-150'
+                enterFrom='opacity-0 translate-x-full'
+                enterTo='opacity-100 translate-x-0'
+                leave='transition-all duration-3000 transform'
+                leaveFrom='opacity-100 translate-x-0'
+                leaveTo='opacity-0 translate-x-full'
+                className='inline-flex items-center px-3.5 py-2 border border-transparent text-sm leading-4 font-medium rounded-full shadow-sm text-white bg-mediumCarmine hover:bg-redBackground focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 self-end'
+                onClick={() => handleRenderJourney('journeyPage')}
               >
+                {SHOTR_BIO.journey}
+              </Transition>
             </div>
           </div>
         </div>

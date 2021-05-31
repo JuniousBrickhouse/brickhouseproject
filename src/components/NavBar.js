@@ -61,6 +61,8 @@ export default function NavBar ({ handleScroll }) {
                     alt='Workflow'
                   />
                 </div> */}
+
+                {/* nav btns for computer */}
                 <div className='hidden md:ml-6 md:flex md:items-center md:space-x-4'>
                   {NAVIGATION.map((item) => (
                     <button
@@ -113,6 +115,7 @@ export default function NavBar ({ handleScroll }) {
             </div>
           </div>
 
+          {/* nav btns for mobile */}
           <Disclosure.Panel className='md:hidden'>
             <div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
               {NAVIGATION.map((item) => (
