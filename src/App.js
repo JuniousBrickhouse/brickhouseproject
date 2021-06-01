@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css'
 import smoothscroll from 'smoothscroll-polyfill'
 import Header from './components/Header'
@@ -14,7 +14,6 @@ import { changeCurrentStatus } from './components/helperFunctions'
 import useVideoNavBtnOnScroll from './components/customComponents/useVideoNavBtnOnScroll'
 import useOrgAfillNavBtnOnScroll from './components/customComponents/useOrgAfillNavBtnOnScroll'
 import Socials from './Socials'
-import { NAVIGATION } from './components/Lists'
 import Journey from './components/Journey'
 import { Transition } from '@headlessui/react'
 // import useHeaderAnimNavBtnOnScroll from './components/customComponents/useHeaderAnimNavBtnOnScroll'
@@ -26,7 +25,7 @@ function App () {
   const bioRef = useRef(null)
   const videosRef = useRef(null)
   const hatsRef = useRef(null)
-  const targetAnimationRef = useRef([])
+  // const targetAnimationRef = useRef([])
   const [renderJourney, setRenderJourney] = useState(false)
   const [showAnimation, setShowAnimation] = useState({
     headerAnimation: true,
