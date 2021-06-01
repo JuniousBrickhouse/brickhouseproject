@@ -1,4 +1,4 @@
-import crewImg from './photos/CrewVsan.jpeg'
+import juniousGray from './photos/JuniousGrey.jpeg'
 
 export default function Journey ({ handleRenderJourney }) {
   return (
@@ -7,9 +7,9 @@ export default function Journey ({ handleRenderJourney }) {
         <div className='hidden lg:block bg-gray-50 absolute top-0 bottom-0 left-3/4 w-screen' />
         <div className='mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none'>
           <div>
-            <h2 className='text-base text-indigo-600 font-semibold tracking-wide uppercase'>Case Study</h2>
-            <h3 className='mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl'>
-              Meet Whitney
+            {/* <h2 className='text-base text-indigo-600 font-semibold tracking-wide uppercase'>Case Study</h2> */}
+            <h3 className='mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl font-poppins'>
+              Junious Brickhouse
             </h3>
             <button
               onClick={() => handleRenderJourney('landingPage')}
@@ -49,7 +49,7 @@ export default function Journey ({ handleRenderJourney }) {
                 <div className='aspect-w-12 aspect-h-7 lg:aspect-none'>
                   <img
                     className='rounded-lg shadow-lg object-cover object-center'
-                    src={crewImg}
+                    src={juniousGray}
                     // 'https://images.unsplash.com/photo-1546913199-55e06682967e?ixlib=rb-1.2.1&auto=format&fit=crop&crop=focalpoint&fp-x=.735&fp-y=.55&w=1184&h=1376&q=80'
                     alt='Whitney leaning against a railing on a downtown street'
                     width={1184}

@@ -30,10 +30,10 @@ module.exports = {
 
       }),
       colors: {
+        current: 'currentColor',
+        transparent: 'transparent',
         richBlack: '#0F0F0F',
         daviesGrey: '#4E4E4E',
-        transparent: 'transparent',
-        current: 'currentColor',
         spanishGrey: '#9C9C9C',
         sonicSilver: '#707070',
         woodGray: '#E9EDF2',

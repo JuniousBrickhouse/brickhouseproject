@@ -68,8 +68,8 @@ export default function NavBar ({ handleScroll }) {
                     <button
                       key={item.name}
                       className={classNames(
-                        item.current ? 'bg-glaucous text-platinum' : 'text-daviesGrey hover:bg-glaucous hover:text-platinum',
-                        'px-5 py-2 rounded-md text-md font-medium font-focus font-poppins ring-0'
+                        item.current ? 'border-b-2 border-glaucous text-richBlack outline-none focus:outline-none' : 'text-daviesGrey hover:text-spanishGrey',
+                        'px-5 py-2 rounded-md text-md font-medium font-poppins outline-none focus:outline-none'
                       )}
                       aria-current={item.current ? 'page' : undefined}
                       onClick={() => {
@@ -84,7 +84,7 @@ export default function NavBar ({ handleScroll }) {
                 </div>
 
                 {/* debugger for larger window size breakpoints */}
-                <span className='flex justify-center items-center ml-20'>
+                {/* <span className='flex justify-center items-center ml-20'>
                   <div className='hidden sm:block md:hidden text-red-700'>
                     small
                   </div>
@@ -97,7 +97,7 @@ export default function NavBar ({ handleScroll }) {
                   <div className='hidden xl:block text-red-700'>
                     extra large
                   </div>
-                </span>
+                </span> */}
 
               </div>
               <div className='flex items-center'>
@@ -137,7 +137,7 @@ export default function NavBar ({ handleScroll }) {
             </div>
             <div className='pt-4 pb-3 border-t border-gray-700'>
               {/* debugger for smaller window size breakpoints */}
-              <span className='flex justify-center items-center ml-20'>
+              {/* <span className='flex justify-center items-center ml-20'>
                 <div className='hidden sm:block md:hidden text-red-700'>
                   small
                 </div>
@@ -150,7 +150,7 @@ export default function NavBar ({ handleScroll }) {
                 <div className='hidden xl:block text-red-700'>
                   extra large
                 </div>
-              </span>
+              </span> */}
             </div>
           </Disclosure.Panel>
         </>
