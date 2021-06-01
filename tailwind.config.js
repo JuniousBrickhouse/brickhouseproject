@@ -6,26 +6,26 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: theme => ({
-        'junious-headshot': "url('./photos/GwrwqDWr.jpeg')",
-        'dancer-test': "url('./photos/people.jpg')",
-        crewLil: "url('./photos/CrewLil.jpeg')",
-        crewVsan: "url('./photos/CrewVsan.jpeg')",
-        'junious-blue': "url('./photos/JuniousBlue.jpeg')",
-        'junious-crew': "url('./photos/JuniousCrew.jpeg')",
-        'junious-down': "url('./photos/JuniousDownLook.jpeg')",
-        'junious-grey': "url('./photos/JuniousGrey.jpeg')",
-        'junious-noHat': "url('./photos/JuniousNoHat.jpeg')",
-        'junious-redDance': "url('./photos/JuniousRedDance.jpeg')",
-        'junious-white': "url('./photos/JuniousWhite.jpeg')",
-        'junious-woods': "url('./photos/JuniousWoods.jpeg')",
-        'junious-barn': "url('./photos/JuniousBarn.jpeg')",
-        'urban-a': "url('./photos/UrbanA.jpeg')",
-        '23Hampton': "url('./photos/logos/23Hampton.png')",
-        nextLevel: "url('./photos/logos/nextLevel.png')",
-        urbanArtistry: "url('./photos/logos/urbanArtistry.jpg')",
-        'photo-edit': "url('./photos/PhotoEdit.png')",
-        'final-photo': "url('./photos/FinalPhoto.png')"
-        // 'headshot-junious': "url('./photos/headshot.jpeg')"
+        'junious-headshot': "url('./components/photos/GwrwqDWr.jpeg')",
+        'dancer-test': "url('./components/photos/people.jpg')",
+        crewLil: "url('./components/photos/CrewLil.jpeg')",
+        crewVsan: "url('./components/photos/CrewVsan.jpeg')",
+        'junious-blue': "url('./components/photos/JuniousBlue.jpeg')",
+        'junious-crew': "url('./components/photos/JuniousCrew.jpeg')",
+        'junious-down': "url('./components/photos/JuniousDownLook.jpeg')",
+        'junious-grey': "url('./components/photos/JuniousGrey.jpeg')",
+        'junious-noHat': "url('./components/photos/JuniousNoHat.jpeg')",
+        'junious-redDance': "url('./components/photos/JuniousRedDance.jpeg')",
+        'junious-white': "url('./components/photos/JuniousWhite.jpeg')",
+        'junious-woods': "url('./components/photos/JuniousWoods.jpeg')",
+        'junious-barn': "url('./components/photos/JuniousBarn.jpeg')",
+        'urban-a': "url('./components/photos/UrbanA.jpeg')",
+        '23Hampton': "url('./components/photos/logos/23Hampton.png')",
+        nextLevel: "url('./components/photos/logos/nextLevel.png')",
+        urbanArtistry: "url('./components/photos/logos/urbanArtistry.jpg')",
+        'photo-edit': "url('./components/photos/PhotoEdit.png')",
+        'final-photo': "url('./components/photos/FinalPhoto.png')"
+        // 'headshot-junious': "url('./components/photos/headshot.jpeg')"
         // 'footer-texture': "url('/img/footer-texture.png')"
 
       }),
