@@ -1,5 +1,4 @@
 import { Transition } from '@headlessui/react'
-import { useState } from 'react'
 
 export default function Header ({ topRef, handleAnimation, showAnimation }) {
   return (

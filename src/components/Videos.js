@@ -1,5 +1,4 @@
 import VideoCard from './VideoCard'
-// import VideoCarousel from './videoCarousel/VideoCarousel'
 
 export default function Videos () {
   return (
@@ -22,9 +21,6 @@ export default function Videos () {
           <VideoCard />
         </span>
       </div>
-      {/* <div className='max-w-7xl mx-auto px-4 lg:px-8 w-full h-screen'>
-        <VideoCarousel />
-      </div> */}
     </>
   )
 }

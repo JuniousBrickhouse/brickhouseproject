@@ -1,7 +1,5 @@
 import { Transition } from '@headlessui/react'
-import { Link } from 'react-router-dom'
-import juniousBlue from '../photos/JuniousBlue.jpeg'
-import { changeCurrentStatus } from './helperFunctions'
+import juniousBlue from './photos/JuniousBlue.jpeg'
 
 const SHOTR_BIO =
   {
