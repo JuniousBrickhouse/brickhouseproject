@@ -68,8 +68,8 @@ export default function NavBar ({ handleScroll }) {
                     <button
                       key={item.name}
                       className={classNames(
-                        item.current ? 'border-b-2 border-glaucous text-richBlack outline-none focus:outline-none' : 'text-daviesGrey hover:text-spanishGrey',
-                        'px-5 py-2 rounded-md text-md font-medium font-poppins outline-none focus:outline-none'
+                        item.current ? 'border-b-2 border-glaucous text-richBlack focus:outline-none' : 'text-daviesGrey hover:text-spanishGrey',
+                        'px-5 py-2 rounded-md text-md font-medium font-poppins focus:outline-none'
                       )}
                       aria-current={item.current ? 'page' : undefined}
                       onClick={() => {
