@@ -1,4 +1,3 @@
-import hampton from '../photos/logos/23Hampton.png'
 import nextLevel from '../photos/logos/nextLevel.png'
 import urbanArtistry from '../photos/logos/urbanArtistry.jpg'
 
