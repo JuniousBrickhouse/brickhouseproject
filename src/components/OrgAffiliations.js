@@ -1,4 +1,5 @@
-import nextLevel from '../photos/logos/nextLevel.png'
+// import nextLevel from '../photos/logos/nextLevel.png'
+import nextLevel from 'src/photos/logos/nextLevel.png'
 import urbanArtistry from '../photos/logos/urbanArtistry.jpg'
 
 const POSTS = [
