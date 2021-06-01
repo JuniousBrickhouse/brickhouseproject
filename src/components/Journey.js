@@ -1,5 +1,4 @@
-import { CameraIcon } from '@heroicons/react/solid'
-import crewImg from '../photos/CrewVsan.jpeg'
+import crewImg from './photos/CrewVsan.jpeg'
 
 export default function Journey ({ handleRenderJourney }) {
   return (
