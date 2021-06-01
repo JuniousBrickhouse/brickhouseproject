@@ -30,7 +30,7 @@ export default function NavBar ({ handleScroll }) {
   })
 
   return (
-    <Disclosure as='nav' className={`${showSolidNav ? 'bg-platinum opacity-90' : 'bg-none'} fixed top-0 w-full z-30`}>
+    <Disclosure as='nav' className={`${showSolidNav ? 'bg-platinum opacity-90' : 'bg-platinum opacity-90'} fixed top-0 w-full z-30`}>
       {({ open }) => (
         <>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
@@ -135,7 +135,7 @@ export default function NavBar ({ handleScroll }) {
                 </button>
               ))}
             </div>
-            <div className='pt-4 pb-3 border-t border-gray-700'>
+            <div className=''>
               {/* debugger for smaller window size breakpoints */}
               {/* <span className='flex justify-center items-center ml-20'>
                 <div className='hidden sm:block md:hidden text-red-700'>
