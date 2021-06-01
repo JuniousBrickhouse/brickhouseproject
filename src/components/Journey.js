@@ -12,8 +12,12 @@ export default function Journey ({ handleRenderJourney }) {
             <h3 className='mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl'>
               Meet Whitney
             </h3>
-            <button onClick={() => handleRenderJourney('landingPage')}>
-              Go back
+            <button
+              onClick={() => handleRenderJourney('landingPage')}
+              type='button'
+              className='inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-mediumCarmine hover:bg-sonicSilver focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
+            >
+              Go Back
             </button>
           </div>
         </div>
