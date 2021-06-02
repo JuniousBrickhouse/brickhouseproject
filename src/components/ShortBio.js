@@ -110,7 +110,6 @@ export default function ShortBio ({ showAnimation, handleRenderJourney }) {
                 className='inline-flex items-center px-3.5 py-2 border border-transparent text-sm leading-4 font-medium rounded-full shadow-sm text-white bg-mediumCarmine hover:bg-redBackground focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 self-end'
                 onClick={() => {
                   handleRenderJourney('journeyPage')
-                  window.location.assign('/journey')
                 }}
               >
                 {SHOTR_BIO.journey}

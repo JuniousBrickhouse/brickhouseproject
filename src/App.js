@@ -34,7 +34,7 @@ function App () {
     journeyPage: false
   })
 
-  console.log('window.location.href', window.location.href)
+  console.log('window.location.href', window.location)
 
   // group of custom components to handle the nav btn highlight
   // switch on scroll and to handle any animation on scroll.
@@ -90,23 +90,27 @@ function App () {
     if (destination === 'journeyPage') {
       setShowAnimation(state => ({ ...state, landingPage: false }))
       setTimeout(() => {
+        window.location.assign('/journey')
         setShowAnimation(state => ({ ...state, journeyPage: true }))
-        setRenderJourney(!renderJourney)
+        // setRenderJourney(!renderJourney)
       }, 2000)
     } else if (destination === 'landingPage') {
+      window.location.assign('/')
       setShowAnimation(state => ({ ...state, journeyPage: false }))
       setTimeout(() => {
         setShowAnimation(state => ({ ...state, landingPage: true }))
-        setRenderJourney(!renderJourney)
+        // setRenderJourney(!renderJourney)
       }, 2000)
     }
   }
-
-  if (renderJourney) {
-  // if (window.location.href === 'http://localhost:3000/journey') {
+  // console.log('renderJourney', renderJourney)
+  console.log('showAnimation', showAnimation)
+  // if (showAnimation.journeyPage) {
+  if (window.location.pathname === '/journey') {
     return (
       <Transition
-        show={showAnimation.journeyPage}
+        show={window.location.pathname === '/journey'}
+        // show={showAnimation.journeyPage}
         enter='transform-opacity duration-3000'
         enterFrom='opacity-0'
         enterTo='opacity-100'
@@ -122,6 +126,7 @@ function App () {
   return (
     <Transition
       show={showAnimation.landingPage}
+      // show={window.location.pathname === '/'}
       enter='transform-opacity duration-1000'
       enterFrom='opacity-0'
       enterTo='opacity-100'
