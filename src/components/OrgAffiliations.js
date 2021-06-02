@@ -21,7 +21,7 @@ const POSTS = [
     // 'https://static1.squarespace.com/static/5b521e334cde7a741d47e768/t/5b5616f20e2e728fc44d8ecb/1620247551740/?format=1500w'
   },
   {
-    title: 'Urban Artistry',
+    title: 'Urban Artistry, Inc.',
     href: '#',
     category: { name: 'Case Study', href: '#' },
     description:
@@ -34,12 +34,12 @@ export default function OrgAffiliations () {
   return (
     <div className='relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8'>
       <div className='absolute inset-0'>
-        <div className='bg-wildBlueYonder h-1/3 sm:h-2/3' />
+        <div className='bg-mediumCarmine h-1/3 sm:h-2/3' />
       </div>
       <div className='relative max-w-7xl mx-auto'>
         <div className='text-center'>
           <h2 className='text-3xl tracking-tight text-richBlack sm:text-4xl font-bold font-poppins'>The Hats I Wear</h2>
-          <p className='mt-3 max-w-2xl font-nunito mx-auto text-xl text-sonicSilver sm:mt-4'>
+          <p className='mt-3 max-w-2xl font-nunito mx-auto text-xl text-platinum sm:mt-4'>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque, ducimus sed.
           </p>
         </div>

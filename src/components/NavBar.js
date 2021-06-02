@@ -65,7 +65,7 @@ export default function NavBar ({ handleScroll }) {
                 {/* nav btns for computer */}
                 <div className='hidden md:ml-6 md:flex md:items-center md:space-x-4'>
                   {NAVIGATION.map((item) => (
-                    <button
+                    <Disclosure.Button
                       key={item.name}
                       className={classNames(
                         item.current ? 'border-b-2 border-glaucous text-richBlack focus:outline-none' : 'text-daviesGrey hover:text-spanishGrey',
@@ -79,7 +79,7 @@ export default function NavBar ({ handleScroll }) {
                       }}
                     >
                       {item.name}
-                    </button>
+                    </Disclosure.Button>
                   ))}
                 </div>
 
