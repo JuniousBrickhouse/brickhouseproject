@@ -20,12 +20,12 @@ export default function ShortBio ({ showAnimation, handleRenderJourney }) {
                 <Transition
                   show={showAnimation.bioImage}
                   as='img'
-                  enter='sm:transition-all sm:duration-3000 sm:transform sm:ease-out'
-                  enterFrom='opacity-0 -translate-x-full'
-                  enterTo='opacity-100 translate-x-0'
-                  leave='sm:transition-all sm:duration-3000 sm:transform'
-                  leaveFrom='opacity-100 translate-x-0'
-                  leaveTo='opacity-0 -translate-x-full'
+                  enter='transition-all duration-3000 sm:transform ease-out'
+                  enterFrom='opacity-0 sm:-translate-x-full'
+                  enterTo='opacity-100 sm:translate-x-0'
+                  leave='transition-all duration-3000 sm:transform'
+                  leaveFrom='opacity-100 sm:translate-x-0'
+                  leaveTo='opacity-0 sm:-translate-x-full'
                   className='object-cover object-top rounded-3xl shadow-2xl'
                   src={juniousBlue}
                   // src='https://images.unsplash.com/photo-1507207611509-ec012433ff52?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=934&q=80'
@@ -88,12 +88,12 @@ export default function ShortBio ({ showAnimation, handleRenderJourney }) {
               </h2> */}
               <Transition
                 show={showAnimation.bioImage}
-                enter='sm:transition-all sm:duration-3000 sm:transform sm:ease-out sm:delay-150'
-                enterFrom='opacity-0 translate-x-full'
-                enterTo='opacity-100 translate-x-0'
-                leave='sm:transition-all sm:duration-3000 sm:transform'
-                leaveFrom='opacity-100 translate-x-0'
-                leaveTo='opacity-0 translate-x-full'
+                enter='transition-all duration-3000 sm:transform ease-out delay-150'
+                enterFrom='opacity-0 sm:translate-x-full'
+                enterTo='opacity-100 sm:translate-x-0'
+                leave='transition-all duration-3000 sm:transform'
+                leaveFrom='opacity-100 sm:translate-x-0'
+                leaveTo='opacity-0 sm:translate-x-full'
                 className='text-2xl text-redBackground font-nunito'
               >
                 {SHOTR_BIO.paragraph1}
@@ -101,12 +101,12 @@ export default function ShortBio ({ showAnimation, handleRenderJourney }) {
               <Transition
                 show={showAnimation.bioImage}
                 as='button'
-                enter='sm:transition-all sm:duration-3000 sm:transform sm:ease-out sm:delay-150'
-                enterFrom='opacity-0 translate-x-full'
-                enterTo='opacity-100 translate-x-0'
-                leave='sm:transition-all sm:duration-3000 sm:transform'
-                leaveFrom='opacity-100 translate-x-0'
-                leaveTo='opacity-0 translate-x-full'
+                enter='transition-all duration-3000 sm:transform ease-out delay-150'
+                enterFrom='opacity-0 sm:translate-x-full'
+                enterTo='opacity-100 sm:translate-x-0'
+                leave='transition-all duration-3000 sm:transform'
+                leaveFrom='opacity-100 sm:translate-x-0'
+                leaveTo='opacity-0 sm:translate-x-full'
                 className='inline-flex items-center px-3.5 py-2 border border-transparent text-sm leading-4 font-medium rounded-full shadow-sm text-white bg-mediumCarmine hover:bg-redBackground focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 self-end'
                 onClick={() => handleRenderJourney('journeyPage')}
               >
