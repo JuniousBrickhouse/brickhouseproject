@@ -66,31 +66,31 @@ export default function Journey ({ handleRenderJourney }) {
           <div className='mt-8 lg:mt-0'>
             <div className='text-base max-w-prose mx-auto lg:max-w-none'>
               <p className='text-lg text-gray-500'>
-                Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque tristique
-                pellentesque. Blandit amet, sed aenean erat arcu morbi.
+                Junious “House” Brickhouse is an internationally established educator, choreographer and cultural preservationist with over 30 years of experience in urban dance culture.  At age 18, Junious Brickhouse embarked on an over 20-year career as a logistics professional in the U.S. Army and later as a Department of Defense contractor.  Throughout this time in various international assignments, Junious developed both a military and dance career, eventually rising to positions of leadership and responsibility in both areas. The logistics skills and leadership acumen Junious honed in his military work provide a solid and unique foundation as a leader and facilitator in the dance world. As Founder and Executive Director of Urban Artistry Inc. (www.urbanartistry.org).  Junious has inspired and created a movement of artists dedicated to the authentic preservation of urban dance culture, specifically within communities of practice. While constantly engaged in research about urban dance culture and the communities from which it evolved, Junious created projects such as The Preservatory and the UA Digital Archives to encourage other artists to research and document these tradition bearers and their stories.
               </p>
             </div>
             <div className='mt-5 prose prose-indigo text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1'>
               <p>
-                Sollicitudin tristique eros erat odio sed vitae, consequat turpis elementum. Lorem nibh vel, eget
-                pretium arcu vitae. Eros eu viverra donec ut volutpat donec laoreet quam urna.
+                Brickhouse brought his expertise to Next Level in 2014, its inaugural season, as an Artist Educator for the Senegal program. The potential to serve global communities and shape the global future of Hip Hop inspired Brickhouse to continue to work with Next Level. Since then, Brickhouse has contributed his knowledge and skill to building the program as a Consultant, Site Manager, Associate Director, Co-Director, and now Director.
+
               </p>
               <p>
-                Bibendum eu nulla feugiat justo, elit adipiscing. Ut tristique sit nisi lorem pulvinar. Urna, laoreet
-                fusce nibh leo. Dictum et et et sit. Faucibus sed non gravida lectus dignissim imperdiet a.
+                Brickhouse continues to serve as Executive Director of Urban Artistry, which was recently featured at the Library of Congress and the National Museum of African American History. He also sits on advisory panels for the National Endowment for the Arts and The American Folklore Society. As a member of Phil Wiggins Blues House Party, Brickhouse takes part in performances and educational programs, sharing the connection between blues music and dance.
               </p>
               <p>
-                Dictum magnis risus phasellus vitae quam morbi. Quis lorem lorem arcu, metus, egestas netus cursus. In.
+                Junious Brickhous is a:
               </p>
               <ul>
-                <li>Quis elit egestas venenatis mattis dignissim.</li>
-                <li>Cras cras lobortis vitae vivamus ultricies facilisis tempus.</li>
-                <li>Orci in sit morbi dignissim metus diam arcu pretium.</li>
+                <li>Next Level Director.</li>
+                <li>Dancer.</li>
+                <li>Citizen folklorist.</li>
+                <li>Educator.</li>
+                <li>Logistician.</li>
+                <li>Diplomat.</li>
+                <li>Veteran.</li>
               </ul>
               <p>
-                Rhoncus nisl, libero egestas diam fermentum dui. At quis tincidunt vel ultricies. Vulputate aliquet
-                velit faucibus semper. Pellentesque in venenatis vestibulum consectetur nibh id. In id ut tempus
-                egestas. Enim sit aliquam nec, a. Morbi enim fermentum lacus in. Viverra.
+                With 20 years of professional experience in arts education, entrepreneurship, and conflict resolution. Junious founded Urban Artistry in 2005, as it’s Executive Director. In that role, he has created programming used around the world to teach the next generation of Urban Dancers. Through Urban Artistry’s Preservatory Project, Junious has also created an archive for preserving the legacy of Urban Dance culture.
               </p>
               <h3>How we helped</h3>
               <p>
