@@ -30,7 +30,7 @@ export default function NavBar ({ handleScroll }) {
   })
 
   return (
-    <Disclosure as='nav' className={`${showSolidNav ? 'bg-platinum opacity-90' : 'bg-platinum opacity-90'} fixed top-0 w-full z-30`}>
+    <Disclosure as='nav' className={`${showSolidNav ? 'bg-platinum opacity-90' : 'bg-none'} fixed top-0 w-full z-30`}>
       {({ open }) => (
         <>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
@@ -65,7 +65,7 @@ export default function NavBar ({ handleScroll }) {
                 {/* nav btns for computer */}
                 <div className='hidden md:ml-6 md:flex md:items-center md:space-x-4'>
                   {NAVIGATION.map((item) => (
-                    <button
+                    <Disclosure.Button
                       key={item.name}
                       className={classNames(
                         item.current ? 'border-b-2 border-glaucous text-richBlack focus:outline-none' : 'text-daviesGrey hover:text-spanishGrey',
@@ -79,7 +79,7 @@ export default function NavBar ({ handleScroll }) {
                       }}
                     >
                       {item.name}
-                    </button>
+                    </Disclosure.Button>
                   ))}
                 </div>
 
