@@ -34,6 +34,8 @@ function App () {
     journeyPage: false
   })
 
+  console.log('window.location.href', window.location.href)
+
   // group of custom components to handle the nav btn highlight
   // switch on scroll and to handle any animation on scroll.
   // Admittedly, this is the opposite of DRY, but I couldn't
