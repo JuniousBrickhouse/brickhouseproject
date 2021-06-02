@@ -20,10 +20,10 @@ export default function ShortBio ({ showAnimation, handleRenderJourney }) {
                 <Transition
                   show={showAnimation.bioImage}
                   as='img'
-                  enter='transition-all duration-3000 transform ease-out'
+                  enter='sm:transition-all sm:duration-3000 sm:transform sm:ease-out'
                   enterFrom='opacity-0 -translate-x-full'
                   enterTo='opacity-100 translate-x-0'
-                  leave='transition-all duration-3000 transform'
+                  leave='sm:transition-all sm:duration-3000 sm:transform'
                   leaveFrom='opacity-100 translate-x-0'
                   leaveTo='opacity-0 -translate-x-full'
                   className='object-cover object-top rounded-3xl shadow-2xl'
@@ -88,10 +88,10 @@ export default function ShortBio ({ showAnimation, handleRenderJourney }) {
               </h2> */}
               <Transition
                 show={showAnimation.bioImage}
-                enter='transition-all duration-3000 transform ease-out delay-150'
+                enter='sm:transition-all sm:duration-3000 sm:transform sm:ease-out sm:delay-150'
                 enterFrom='opacity-0 translate-x-full'
                 enterTo='opacity-100 translate-x-0'
-                leave='transition-all duration-3000 transform'
+                leave='sm:transition-all sm:duration-3000 sm:transform'
                 leaveFrom='opacity-100 translate-x-0'
                 leaveTo='opacity-0 translate-x-full'
                 className='text-2xl text-redBackground font-nunito'
@@ -101,10 +101,10 @@ export default function ShortBio ({ showAnimation, handleRenderJourney }) {
               <Transition
                 show={showAnimation.bioImage}
                 as='button'
-                enter='transition-all duration-3000 transform ease-out delay-150'
+                enter='sm:transition-all sm:duration-3000 sm:transform sm:ease-out sm:delay-150'
                 enterFrom='opacity-0 translate-x-full'
                 enterTo='opacity-100 translate-x-0'
-                leave='transition-all duration-3000 transform'
+                leave='sm:transition-all sm:duration-3000 sm:transform'
                 leaveFrom='opacity-100 translate-x-0'
                 leaveTo='opacity-0 translate-x-full'
                 className='inline-flex items-center px-3.5 py-2 border border-transparent text-sm leading-4 font-medium rounded-full shadow-sm text-white bg-mediumCarmine hover:bg-redBackground focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 self-end'
