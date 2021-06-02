@@ -6,8 +6,8 @@ export default function Header ({ topRef, handleAnimation, showAnimation }) {
       appear
       show={showAnimation.headerAnimation}
       enter='transition-all duration-4000 transform ease-out'
-      enterFrom='opacity-0 translate-x-1/4'
-      enterTo='opacity-100 translate-x-0'
+      enterFrom='opacity-0 sm:translate-x-1/4'
+      enterTo='opacity-100 sm:translate-x-0'
       className=' mx-auto px-4 sm:px-6 lg:px-8 h-screen w-screen items-center justify-center bg-final-photo bg-no-repeat sm:bg-left bg-fixed bg-contain grid grid-cols-1 gap-6 sm:grid-cols-2 sm:grid-rows-2 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-2 lg:grid-rows-2'
     >
       <Transition.Child
