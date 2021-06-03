@@ -113,3 +113,11 @@
   .bio {
       height: 100%;
   }
+
+.navbar {
+    position: fixed;
+right: 0;
+left: 0;
+z-index: initial;
+height:200px;
+}
