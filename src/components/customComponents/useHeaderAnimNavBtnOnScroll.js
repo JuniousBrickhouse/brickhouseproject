@@ -7,6 +7,7 @@ function getOffset (el) {
   while (el && !isNaN(el.offsetLeft) && !isNaN(el.offsetTop)) {
     _x += el.offsetLeft - el.scrollLeft
     _y += el.offsetTop - el.scrollTop
+    console.log(_y, 'header')
     el = el.offsetParent
   }
   return { top: _y, left: _x }

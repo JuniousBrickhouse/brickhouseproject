@@ -3,6 +3,9 @@ import { useRef, useState } from 'react'
 import './App.css'
 import smoothscroll from 'smoothscroll-polyfill'
 import Header from './components/Header'
+import ParallaxDividerOne from './components/ParallaxDividerOne'
+import ParallaxDividerTwo from './components/ParallaxDividerTwo'
+import ParallaxHeader from './components/ParallaxHeader'
 import NavBar from './components/NavBar'
 import OrgAffiliations from './components/OrgAffiliations'
 import ShortBio from './components/ShortBio'
@@ -33,7 +36,9 @@ function App () {
     landingPage: true,
     journeyPage: false
   })
-
+  console.log('bioref', bioRef)
+  console.log('vids', videosRef)
+  console.log('hello')
   // group of custom components to handle the nav btn highlight
   // switch on scroll and to handle any animation on scroll.
   // Admittedly, this is the opposite of DRY, but I couldn't
@@ -117,6 +122,7 @@ function App () {
   }
 
   return (
+
     <Transition
       show={showAnimation.landingPage}
       enter='transform-opacity duration-1000'
@@ -125,25 +131,26 @@ function App () {
       leave='transform-opacity duration-2000'
       leaveFrom='opacity-100'
       leaveTo='opacity-0'
-      className='h-screen'
+      className='App h-screen'
     >
       <NavBar handleScroll={handleScroll} />
       <span ref={topRef}>
-        <Header topRef={topRef} handleAnimation={handleAnimation} showAnimation={showAnimation} />
+        <ParallaxHeader topRef={topRef} handleAnimation={handleAnimation} showAnimation={showAnimation} />
       </span>
       <span ref={bioRef}>
         <ShortBio showAnimation={showAnimation} handleRenderJourney={handleRenderJourney} />
       </span>
-      <DividerOne />
+      <ParallaxDividerOne />
       <span ref={videosRef}>
         <Videos />
       </span>
-      <DividerTwo />
+      <ParallaxDividerTwo />
       <span ref={hatsRef}>
         <OrgAffiliations />
       </span>
       <Socials />
     </Transition>
+
   )
 }
 
