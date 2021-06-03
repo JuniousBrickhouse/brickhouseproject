@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 // import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css'
 import smoothscroll from 'smoothscroll-polyfill'
@@ -12,14 +12,13 @@ import ShortBio from './components/ShortBio'
 import Videos from './components/Videos'
 import DividerOne from './components/DividerOne'
 import DividerTwo from './components/DividerTwo'
-import useBioAnimNavBtnOnScroll from './components/customComponents/useBioAnimNavBtnOnScroll'
 import { changeCurrentStatus } from './components/helperFunctions'
-import useVideoNavBtnOnScroll from './components/customComponents/useVideoNavBtnOnScroll'
-import useOrgAfillNavBtnOnScroll from './components/customComponents/useOrgAfillNavBtnOnScroll'
 import Socials from './Socials'
 import Journey from './components/Journey'
 import { Transition } from '@headlessui/react'
-// import useHeaderAnimNavBtnOnScroll from './components/customComponents/useHeaderAnimNavBtnOnScroll'
+import useDocumentScrollThrottle from './components/customComponents/useDocumentScrollThrottle'
+import Contact from './components/Contact'
+
 // makes the scroll feature work on safari
 smoothscroll.polyfill()
 
@@ -28,52 +27,75 @@ function App () {
   const bioRef = useRef(null)
   const videosRef = useRef(null)
   const hatsRef = useRef(null)
-  // const targetAnimationRef = useRef([])
-  const [renderJourney, setRenderJourney] = useState(false)
+  const [showSolidNav, setShowSolidNav] = useState(false)
+  const [renderDestination, setRenderDestination] = useState('')
+  // const [renderJourney, setRenderJourney] = useState(false)
+  // const [renderContact, setRenderContact] = useState(false)
   const [showAnimation, setShowAnimation] = useState({
     headerAnimation: true,
     bioImage: false,
     landingPage: true,
-    journeyPage: false
+    journeyPage: false,
+    contactPage: false
   })
-  console.log('bioref', bioRef)
-  console.log('vids', videosRef)
-  console.log('hello')
-  // group of custom components to handle the nav btn highlight
-  // switch on scroll and to handle any animation on scroll.
-  // Admittedly, this is the opposite of DRY, but I couldn't
-  // figure out how to pass an array of useRef items to the
-  // single custom component.
-  // changeCurrentStatus is in helperFunction.js
+  const [refOffsets, setRefOffsets] = useState({
+    homeRefOffset: null,
+    bioRefOffset: null,
+    videosRefOffset: null,
+    hatsRefOffset: null
+  })
 
-  // useHeaderAnimNavBtnOnScroll(topRef, (triggered) => {
-  //   changeCurrentStatus('topRef')
-  // })
+  // useLayoutEffect waits for the page to fully load before running. This allows the refs to
+  // be current and not null. Because comparing the current scroll position to these
+  // ref positions, I need to set them in the setRefOffsets state.
+  useLayoutEffect(() => {
+    setRefOffsets(state => ({
+      ...state,
+      homeRefOffset: topRef.current.offsetTop,
+      bioRefOffset: bioRef.current.offsetTop,
+      videosRefOffset: videosRef.current.offsetTop,
+      hatsRefOffset: hatsRef.current.offsetTop
+    }))
+  }, [])
 
-  // Have to use the bio custom componenet to trigger the nav btn
-  // highlight change to topRef
-  useBioAnimNavBtnOnScroll(bioRef, (triggered) => {
-    if (triggered) {
-      setShowAnimation(state => ({ ...state, bioImage: triggered }))
+  // This scroll code is handling the scroll on click feature (triggered
+  // in NavBar.js), the changing of the nav btns being highlighted, and
+  // the animation on scroll.
+
+  const MINIMUM_SCROLL = 0
+  const TIMEOUT_DELAY = 0
+
+  useDocumentScrollThrottle(callbackData => {
+    const { previousScrollTop, currentScrollTop } = callbackData
+    const isScrolledDown = previousScrollTop < currentScrollTop
+    const isMinimumScrolled = currentScrollTop > MINIMUM_SCROLL
+    const newScrollPosition = currentScrollTop + 550
+
+    if (newScrollPosition >= refOffsets.bioRefOffset) {
+      setShowAnimation(state => ({ ...state, bioImage: true }))
       changeCurrentStatus('bioRef')
     } else {
-      setShowAnimation(state => ({ ...state, bioImage: triggered }))
+      setShowAnimation(state => ({ ...state, bioImage: false }))
       changeCurrentStatus('topRef')
     }
-  })
 
-  useVideoNavBtnOnScroll(videosRef, (triggered) => {
-    changeCurrentStatus('videosRef')
-  })
+    if (newScrollPosition >= refOffsets.videosRefOffset) {
+      changeCurrentStatus('videosRef')
+    }
 
-  useOrgAfillNavBtnOnScroll(hatsRef, (triggered) => {
-    changeCurrentStatus('hatsRef')
-  })
+    if (newScrollPosition >= refOffsets.hatsRefOffset) {
+      changeCurrentStatus('hatsRef')
+    }
 
+    setShowSolidNav(currentScrollTop > 2)
+
+    setTimeout(() => {
+      setShowSolidNav(isScrolledDown && isMinimumScrolled)
+    }, TIMEOUT_DELAY)
+  })
+  // handles the scroll on click
   const handleScroll = ref => {
-    console.log('ref', ref)
     if (ref === 'topRef') {
-      // changeCurrentStatus('topRef')
       return topRef.current.scrollIntoView({ behavior: 'smooth' })
     } else if (ref === 'bioRef') {
       return bioRef.current.scrollIntoView({ behavior: 'smooth' })
@@ -84,28 +106,34 @@ function App () {
     }
   }
 
-  const handleAnimation = (name, value) => {
-    setShowAnimation(state => ({ ...state, [name]: !value }))
-  }
-
-  const handleRenderJourney = (destination) => {
-    console.log('destination', destination)
+  const triggerPageChangeAnimation = (destination) => {
+    // console.log('destination', destination)
     if (destination === 'journeyPage') {
       setShowAnimation(state => ({ ...state, landingPage: false }))
       setTimeout(() => {
         setShowAnimation(state => ({ ...state, journeyPage: true }))
-        setRenderJourney(!renderJourney)
+        setRenderDestination(destination)
+        // setRenderJourney(!renderJourney)
       }, 2000)
-    } else if (destination === 'landingPage') {
+    } else if (destination === '') {
       setShowAnimation(state => ({ ...state, journeyPage: false }))
       setTimeout(() => {
         setShowAnimation(state => ({ ...state, landingPage: true }))
-        setRenderJourney(!renderJourney)
+        setRenderDestination(destination)
+        // setRenderJourney(!renderJourney)
+        // setRenderContact(!renderContact)
+      }, 2000)
+    } else if (destination === 'contactPage') {
+      setShowAnimation(state => ({ ...state, landingPage: false }))
+      setTimeout(() => {
+        setShowAnimation(state => ({ ...state, contactPage: true }))
+        setRenderDestination(destination)
+        // setRenderContact(!renderContact)
       }, 2000)
     }
   }
 
-  if (renderJourney) {
+  if (renderDestination === 'journeyPage') {
     return (
       <Transition
         show={showAnimation.journeyPage}
@@ -116,7 +144,23 @@ function App () {
         leaveFrom='opacity-100'
         leaveTo='opacity-0'
       >
-        <Journey handleRenderJourney={handleRenderJourney} />
+        <Journey triggerPageChangeAnimation={triggerPageChangeAnimation} />
+      </Transition>
+    )
+  }
+
+  if (renderDestination === 'contactPage') {
+    return (
+      <Transition
+        show={showAnimation.contactPage}
+        enter='transform-opacity duration-3000'
+        enterFrom='opacity-0'
+        enterTo='opacity-100'
+        leave='transform-opacity duration-2000'
+        leaveFrom='opacity-100'
+        leaveTo='opacity-0'
+      >
+        <Contact triggerPageChangeAnimation={triggerPageChangeAnimation} />
       </Transition>
     )
   }
@@ -133,12 +177,13 @@ function App () {
       leaveTo='opacity-0'
       className='App h-screen'
     >
-      <NavBar handleScroll={handleScroll} />
+      <NavBar handleScroll={handleScroll} showSolidNav={showSolidNav} triggerPageChangeAnimation={triggerPageChangeAnimation} />
       <span ref={topRef}>
         <ParallaxHeader topRef={topRef} handleAnimation={handleAnimation} showAnimation={showAnimation} />
+        <Header topRef={topRef} showAnimation={showAnimation} />
       </span>
       <span ref={bioRef}>
-        <ShortBio showAnimation={showAnimation} handleRenderJourney={handleRenderJourney} />
+        <ShortBio showAnimation={showAnimation} triggerPageChangeAnimation={triggerPageChangeAnimation} />
       </span>
       <ParallaxDividerOne />
       <span ref={videosRef}>

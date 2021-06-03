@@ -7,7 +7,7 @@ const SHOTR_BIO =
     journey: 'Read more about my journey'
   }
 
-export default function ShortBio ({ showAnimation, handleRenderJourney }) {
+export default function ShortBio ({ showAnimation, triggerPageChangeAnimation }) {
   return (
     <div className='bio'>
       <div className='relative py-32 bg-white'>
@@ -88,7 +88,7 @@ export default function ShortBio ({ showAnimation, handleRenderJourney }) {
                 Join our team
               </h2> */}
                 <Transition
-                // show={showAnimation.bioImage}
+                  show={showAnimation.bioImage}
                   enter='transition-all duration-3000 sm:transform ease-out delay-150'
                   enterFrom='opacity-0 sm:translate-x-full'
                   enterTo='opacity-100 sm:translate-x-0'
@@ -100,7 +100,7 @@ export default function ShortBio ({ showAnimation, handleRenderJourney }) {
                   {SHOTR_BIO.paragraph1}
                 </Transition>
                 <Transition
-                // show={showAnimation.bioImage}
+                  show={showAnimation.bioImage}
                   as='button'
                   enter='transition-all duration-3000 sm:transform ease-out delay-150'
                   enterFrom='opacity-0 sm:translate-x-full'
@@ -109,11 +109,10 @@ export default function ShortBio ({ showAnimation, handleRenderJourney }) {
                   leaveFrom='opacity-100 sm:translate-x-0'
                   leaveTo='opacity-0 sm:translate-x-full'
                   className='inline-flex items-center px-3.5 py-2 border border-transparent text-sm leading-4 font-medium rounded-full shadow-sm text-white bg-mediumCarmine hover:bg-redBackground focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 self-end'
-                  onClick={() => handleRenderJourney('journeyPage')}
+                  onClick={() => triggerPageChangeAnimation('journeyPage')}
                 >
                   {SHOTR_BIO.journey}
                 </Transition>
-                <button onClick={() => handleRenderJourney('journeyPage')}>Click here</button>
               </div>
             </div>
           </div>

@@ -1,34 +1,14 @@
-/* This example requires Tailwind CSS v2.0+ */
-import { Fragment, useState } from 'react'
+import { Fragment } from 'react'
 import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { PlusIcon } from '@heroicons/react/solid'
 import { NAVIGATION } from './Lists'
-import useDocumentScrollThrottle from './customComponents/useDocumentScrollThrottle'
 
 function classNames (...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function NavBar ({ handleScroll }) {
-  const [showSolidNav, setShowSolidNav] = useState(false)
-
-  // handles nav bar transition from bg-none to bg-color and back based on scroll position
-  const MINIMUM_SCROLL = 0
-  const TIMEOUT_DELAY = 0
-
-  useDocumentScrollThrottle(callbackData => {
-    const { previousScrollTop, currentScrollTop } = callbackData
-    const isScrolledDown = previousScrollTop < currentScrollTop
-    const isMinimumScrolled = currentScrollTop > MINIMUM_SCROLL
-
-    setShowSolidNav(currentScrollTop > 2)
-
-    setTimeout(() => {
-      setShowSolidNav(isScrolledDown && isMinimumScrolled)
-    }, TIMEOUT_DELAY)
-  })
-
+export default function NavBar ({ handleScroll, showSolidNav, triggerPageChangeAnimation }) {
   return (
     <Disclosure as='nav' className={`${showSolidNav ? 'bg-platinum opacity-90' : 'bg-none'} fixed top-0 w-full z-30`}>
       {({ open }) => (
@@ -65,7 +45,7 @@ export default function NavBar ({ handleScroll }) {
                 {/* nav btns for computer */}
                 <div className='hidden md:ml-6 md:flex md:items-center md:space-x-4'>
                   {NAVIGATION.map((item) => (
-                    <Disclosure.Button
+                    <button
                       key={item.name}
                       className={classNames(
                         item.current ? 'border-b-2 border-glaucous text-richBlack focus:outline-none' : 'text-daviesGrey hover:text-spanishGrey',
@@ -73,13 +53,11 @@ export default function NavBar ({ handleScroll }) {
                       )}
                       aria-current={item.current ? 'page' : undefined}
                       onClick={() => {
-                        // changeCurrentStatus(item.ref)
                         handleScroll(item.ref)
-                        // handleAnimationOnClick(item.ref)
                       }}
                     >
                       {item.name}
-                    </Disclosure.Button>
+                    </button>
                   ))}
                 </div>
 
@@ -105,6 +83,7 @@ export default function NavBar ({ handleScroll }) {
                   <button
                     type='button'
                     className='relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-md font-medium font-poppins rounded-md text-platinum bg-yNBlue hover:bg-glaucous focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500'
+                    onClick={() => triggerPageChangeAnimation('contactPage')}
                   >
                     <PlusIcon className='-ml-1 mr-2 h-5 w-5' aria-hidden='true' />
                     <span>Consultation</span>
@@ -128,7 +107,6 @@ export default function NavBar ({ handleScroll }) {
                   aria-current={item.current ? 'page' : undefined}
                   onClick={() => {
                     handleScroll(item.ref)
-                    // handleAnimationOnClick(item.ref)
                   }}
                 >
                   {item.name}
