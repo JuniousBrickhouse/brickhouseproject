@@ -14,6 +14,7 @@ import Socials from './Socials'
 import Journey from './components/Journey'
 import { Transition } from '@headlessui/react'
 import useDocumentScrollThrottle from './components/customComponents/useDocumentScrollThrottle'
+import Contact from './components/Contact'
 
 // makes the scroll feature work on safari
 smoothscroll.polyfill()
@@ -24,12 +25,15 @@ function App () {
   const videosRef = useRef(null)
   const hatsRef = useRef(null)
   const [showSolidNav, setShowSolidNav] = useState(false)
-  const [renderJourney, setRenderJourney] = useState(false)
+  const [renderDestination, setRenderDestination] = useState('')
+  // const [renderJourney, setRenderJourney] = useState(false)
+  // const [renderContact, setRenderContact] = useState(false)
   const [showAnimation, setShowAnimation] = useState({
     headerAnimation: true,
     bioImage: false,
     landingPage: true,
-    journeyPage: false
+    journeyPage: false,
+    contactPage: false
   })
   const [refOffsets, setRefOffsets] = useState({
     homeRefOffset: null,
@@ -100,23 +104,33 @@ function App () {
   }
 
   const triggerPageChangeAnimation = (destination) => {
-    console.log('destination', destination)
+    // console.log('destination', destination)
     if (destination === 'journeyPage') {
       setShowAnimation(state => ({ ...state, landingPage: false }))
       setTimeout(() => {
         setShowAnimation(state => ({ ...state, journeyPage: true }))
-        setRenderJourney(!renderJourney)
+        setRenderDestination(destination)
+        // setRenderJourney(!renderJourney)
       }, 2000)
-    } else if (destination === 'landingPage') {
+    } else if (destination === '') {
       setShowAnimation(state => ({ ...state, journeyPage: false }))
       setTimeout(() => {
         setShowAnimation(state => ({ ...state, landingPage: true }))
-        setRenderJourney(!renderJourney)
+        setRenderDestination(destination)
+        // setRenderJourney(!renderJourney)
+        // setRenderContact(!renderContact)
+      }, 2000)
+    } else if (destination === 'contactPage') {
+      setShowAnimation(state => ({ ...state, landingPage: false }))
+      setTimeout(() => {
+        setShowAnimation(state => ({ ...state, contactPage: true }))
+        setRenderDestination(destination)
+        // setRenderContact(!renderContact)
       }, 2000)
     }
   }
 
-  if (renderJourney) {
+  if (renderDestination === 'journeyPage') {
     return (
       <Transition
         show={showAnimation.journeyPage}
@@ -132,6 +146,22 @@ function App () {
     )
   }
 
+  if (renderDestination === 'contactPage') {
+    return (
+      <Transition
+        show={showAnimation.contactPage}
+        enter='transform-opacity duration-3000'
+        enterFrom='opacity-0'
+        enterTo='opacity-100'
+        leave='transform-opacity duration-2000'
+        leaveFrom='opacity-100'
+        leaveTo='opacity-0'
+      >
+        <Contact triggerPageChangeAnimation={triggerPageChangeAnimation} />
+      </Transition>
+    )
+  }
+
   return (
     <Transition
       show={showAnimation.landingPage}
@@ -143,7 +173,7 @@ function App () {
       leaveTo='opacity-0'
       className='h-screen'
     >
-      <NavBar handleScroll={handleScroll} showSolidNav={showSolidNav} />
+      <NavBar handleScroll={handleScroll} showSolidNav={showSolidNav} triggerPageChangeAnimation={triggerPageChangeAnimation} />
       <span ref={topRef}>
         <Header topRef={topRef} showAnimation={showAnimation} />
       </span>
