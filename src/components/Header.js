@@ -1,6 +1,6 @@
 import { Transition } from '@headlessui/react'
 
-export default function Header ({ topRef, handleAnimation, showAnimation }) {
+export default function Header ({ topRef, showAnimation }) {
   return (
     <Transition
       appear

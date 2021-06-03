@@ -1,6 +1,11 @@
+import { useEffect } from 'react'
 import juniousGray from './photos/JuniousGrey.jpeg'
 
-export default function Journey ({ handleRenderJourney }) {
+export default function Journey ({ triggerPageChangeAnimation }) {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div className='bg-white overflow-hidden'>
       <div className='relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8'>
@@ -12,7 +17,7 @@ export default function Journey ({ handleRenderJourney }) {
               Junious Brickhouse
             </h3>
             <button
-              onClick={() => handleRenderJourney('landingPage')}
+              onClick={() => triggerPageChangeAnimation('landingPage')}
               type='button'
               className='inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-mediumCarmine hover:bg-sonicSilver focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
             >
