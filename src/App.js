@@ -10,8 +10,8 @@ import NavBar from './components/NavBar'
 import OrgAffiliations from './components/OrgAffiliations'
 import ShortBio from './components/ShortBio'
 import Videos from './components/Videos'
-import DividerOne from './components/DividerOne'
-import DividerTwo from './components/DividerTwo'
+// import DividerOne from './components/DividerOne'
+// import DividerTwo from './components/DividerTwo'
 import { changeCurrentStatus } from './components/helperFunctions'
 import Socials from './Socials'
 import Journey from './components/Journey'
@@ -29,6 +29,7 @@ function App () {
   const hatsRef = useRef(null)
   const [showSolidNav, setShowSolidNav] = useState(false)
   const [renderDestination, setRenderDestination] = useState('')
+
   // const [renderJourney, setRenderJourney] = useState(false)
   // const [renderContact, setRenderContact] = useState(false)
   const [showAnimation, setShowAnimation] = useState({
@@ -45,6 +46,10 @@ function App () {
     hatsRefOffset: null
   })
 
+  // console.log('topRef', topRef)
+  // console.log('bioRef', bioRef.current.offsetTop)
+  // console.log('videosRef', videosRef.current.offsetTop)
+  // console.log('hatsRef', hatsRef.current.offsetTop)
   // useLayoutEffect waits for the page to fully load before running. This allows the refs to
   // be current and not null. Because comparing the current scroll position to these
   // ref positions, I need to set them in the setRefOffsets state.
@@ -61,6 +66,8 @@ function App () {
   // This scroll code is handling the scroll on click feature (triggered
   // in NavBar.js), the changing of the nav btns being highlighted, and
   // the animation on scroll.
+  const currentScrollPosition = window.scrollY
+  console.log(currentScrollPosition)
 
   const MINIMUM_SCROLL = 0
   const TIMEOUT_DELAY = 0
@@ -70,7 +77,7 @@ function App () {
     const isScrolledDown = previousScrollTop < currentScrollTop
     const isMinimumScrolled = currentScrollTop > MINIMUM_SCROLL
     const newScrollPosition = currentScrollTop + 550
-
+    console.log('current scroll', currentScrollTop)
     if (newScrollPosition >= refOffsets.bioRefOffset) {
       setShowAnimation(state => ({ ...state, bioImage: true }))
       changeCurrentStatus('bioRef')
@@ -179,8 +186,7 @@ function App () {
     >
       <NavBar handleScroll={handleScroll} showSolidNav={showSolidNav} triggerPageChangeAnimation={triggerPageChangeAnimation} />
       <span ref={topRef}>
-        <ParallaxHeader topRef={topRef} handleAnimation={handleAnimation} showAnimation={showAnimation} />
-        <Header topRef={topRef} showAnimation={showAnimation} />
+        <ParallaxHeader topRef={topRef} showAnimation={showAnimation} />
       </span>
       <span ref={bioRef}>
         <ShortBio showAnimation={showAnimation} triggerPageChangeAnimation={triggerPageChangeAnimation} />

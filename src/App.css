@@ -4,18 +4,20 @@
   }
   
   html {
-    height: 100%;
-    overflow: hidden;
+    /* height: 100%; */
+    /* overflow: hidden; */
   }
   
   body>div { 
     margin: 0;
     height: 100%;
     overflow-y: scroll;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     perspective: 1px;
     transform-style: preserve-3d;
   }
+
+
 
   /* html>div {overflow:hidden;} */
   
