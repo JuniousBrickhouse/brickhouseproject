@@ -7,7 +7,7 @@ const SHOTR_BIO =
     journey: 'Read more about my journey'
   }
 
-export default function ShortBio ({ showAnimation, handleRenderJourney }) {
+export default function ShortBio ({ showAnimation, triggerPageChangeAnimation }) {
   return (
     <div className='relative py-32 bg-white'>
       <div className='hidden absolute top-0 inset-x-0 h-screen bg-gray-50 lg:block' aria-hidden='true' />
@@ -28,7 +28,6 @@ export default function ShortBio ({ showAnimation, handleRenderJourney }) {
                   leaveTo='opacity-0 sm:-translate-x-full'
                   className='object-cover object-top rounded-3xl shadow-2xl'
                   src={juniousBlue}
-                  // src='https://images.unsplash.com/photo-1507207611509-ec012433ff52?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=934&q=80'
                   alt='Junious Brickhouse'
                 />
               </div>
@@ -108,7 +107,7 @@ export default function ShortBio ({ showAnimation, handleRenderJourney }) {
                 leaveFrom='opacity-100 sm:translate-x-0'
                 leaveTo='opacity-0 sm:translate-x-full'
                 className='inline-flex items-center px-3.5 py-2 border border-transparent text-sm leading-4 font-medium rounded-full shadow-sm text-white bg-mediumCarmine hover:bg-redBackground focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 self-end'
-                onClick={() => handleRenderJourney('journeyPage')}
+                onClick={() => triggerPageChangeAnimation('journeyPage')}
               >
                 {SHOTR_BIO.journey}
               </Transition>
