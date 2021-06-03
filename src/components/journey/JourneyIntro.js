@@ -1,7 +1,11 @@
+
 import juniousGray from '.././photos/JuniousGrey.jpeg'
 import { CONTENT } from './journeyContent'
 
-const JourneyIntro = () => {
+const JourneyIntro = ({ showJourneyAnimation, firstLineRef }) => {
+//   console.log('lineRef', lineRef)
+  console.log('showAnimation', showJourneyAnimation.firstLineAnimation)
+
   return (
     <>
       <div className='bg-white overflow-hidden'>
@@ -56,9 +60,14 @@ const JourneyIntro = () => {
                   <span className='ml-2'>Photograph by Marcus O’Leary</span>
                 </figcaption> */}
                 </figure>
-                <svg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'>
-                  <line x1='20' y1='80' x2='20' y2='0' stroke='black' className='animate-pulse' />
-                </svg>
+                {showJourneyAnimation.firstLineAnimation &&
+                  <span ref={firstLineRef}>
+                    <svg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'>
+                      <line
+                        x1='20' y1='0' x2='20' y2='80' stroke='black' className='path'
+                      />
+                    </svg>
+                  </span>}
               </div>
             </div>
             <div className='mt-8 lg:mt-0'>

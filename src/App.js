@@ -45,6 +45,7 @@ function App () {
   // console.log('bioRef', bioRef)
   // console.log('videosRef', topRef)
   // console.log('hatsRef', topRef)
+  // console.log('refOffsets', refOffsets)
 
   // useLayoutEffect waits for the page to fully load before running. This allows the refs to
   // be current and not null. Because comparing the current scroll position to these
@@ -146,7 +147,7 @@ function App () {
         leaveFrom='opacity-100'
         leaveTo='opacity-0'
       >
-        <Journey triggerPageChangeAnimation={triggerPageChangeAnimation} showSolidNav={showSolidNav} />
+        <Journey triggerPageChangeAnimation={triggerPageChangeAnimation} />
       </Transition>
     )
   }

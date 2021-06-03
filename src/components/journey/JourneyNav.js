@@ -3,9 +3,9 @@ import { Fragment } from 'react'
 import { Disclosure } from '@headlessui/react'
 import { ChevronDoubleLeftIcon } from '@heroicons/react/outline'
 
-export default function JourneyNav ({ triggerPageChangeAnimation, showSolidNav }) {
+export default function JourneyNav ({ triggerPageChangeAnimation, navBtnFade }) {
   return (
-    <Disclosure as='nav' className={`${showSolidNav ? 'opacity-30' : 'opacity-100'} fixed top-0 w-full z-30 bg-none`}>
+    <Disclosure as='nav' className={`${navBtnFade ? 'opacity-30' : 'opacity-100'} fixed top-0 w-full z-30 bg-none`}>
       {({ open }) => (
         <>
           <div className='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8'>
