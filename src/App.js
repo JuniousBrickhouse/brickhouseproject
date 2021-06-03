@@ -11,7 +11,7 @@ import DividerOne from './components/DividerOne'
 import DividerTwo from './components/DividerTwo'
 import { changeCurrentStatus } from './components/helperFunctions'
 import Socials from './Socials'
-import Journey from './components/Journey'
+import Journey from './components/journey/Journey'
 import { Transition } from '@headlessui/react'
 import useDocumentScrollThrottle from './components/customComponents/useDocumentScrollThrottle'
 import Contact from './components/Contact'
@@ -49,6 +49,7 @@ function App () {
   // useLayoutEffect waits for the page to fully load before running. This allows the refs to
   // be current and not null. Because comparing the current scroll position to these
   // ref positions, I need to set them in the setRefOffsets state.
+
   useLayoutEffect(() => {
     setRefOffsets(state => ({
       ...state,
@@ -71,7 +72,7 @@ function App () {
     const isScrolledDown = previousScrollTop < currentScrollTop
     const isMinimumScrolled = currentScrollTop > MINIMUM_SCROLL
     const newScrollPosition = currentScrollTop + 550
-
+    // console.log('currentScrollTop', currentScrollTop)
     if (newScrollPosition >= refOffsets.bioRefOffset) {
       setShowAnimation(state => ({ ...state, bioImage: true }))
       changeCurrentStatus('bioRef')
@@ -145,7 +146,7 @@ function App () {
         leaveFrom='opacity-100'
         leaveTo='opacity-0'
       >
-        <Journey triggerPageChangeAnimation={triggerPageChangeAnimation} />
+        <Journey triggerPageChangeAnimation={triggerPageChangeAnimation} showSolidNav={showSolidNav} />
       </Transition>
     )
   }

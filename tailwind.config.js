@@ -66,6 +66,15 @@ module.exports = {
         3000: '3000ms',
         4000: '4000ms',
         5000: '5000ms'
+      },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' }
+        }
+      },
+      animation: {
+        wiggle: 'wiggle 1s ease-in-out infinite'
       }
     }
   },
