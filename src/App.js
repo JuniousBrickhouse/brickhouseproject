@@ -4,11 +4,14 @@ import './App.css'
 import smoothscroll from 'smoothscroll-polyfill'
 import Header from './components/Header'
 import NavBar from './components/NavBar'
+import ParallaxHeader from './components/ParallaxHeader'
 import OrgAffiliations from './components/OrgAffiliations'
 import ShortBio from './components/ShortBio'
 import Videos from './components/Videos'
 import DividerOne from './components/DividerOne'
 import DividerTwo from './components/DividerTwo'
+import ParallaxDividerOne from './components/ParallaxDividerOne'
+import ParallaxDividerTwo from './components/ParallaxDividerTwo'
 import { changeCurrentStatus } from './components/helperFunctions'
 import Socials from './Socials'
 import Journey from './components/journey/Journey'
@@ -179,22 +182,27 @@ function App () {
       leaveTo='opacity-0'
       className='h-screen'
     >
-      <NavBar handleScroll={handleScroll} showSolidNav={showSolidNav} triggerPageChangeAnimation={triggerPageChangeAnimation} />
-      <span ref={topRef}>
-        <Header topRef={topRef} showAnimation={showAnimation} />
-      </span>
-      <span ref={bioRef}>
-        <ShortBio showAnimation={showAnimation} triggerPageChangeAnimation={triggerPageChangeAnimation} />
-      </span>
-      <DividerOne />
-      <span ref={videosRef}>
-        <Videos />
-      </span>
-      <DividerTwo />
-      <span ref={hatsRef}>
-        <OrgAffiliations />
-      </span>
-      <Socials />
+      <NavBar handleScroll={handleScroll} showSolidNav={showSolidNav} triggerPageChangeAnimation={triggerPageChangeAnimation} className='navbar' />
+      <div className='parallax-section'>
+        <span ref={topRef}>
+
+          <ParallaxHeader topRef={topRef} showAnimation={showAnimation} />
+        </span>
+        <span ref={bioRef}>
+          <ShortBio showAnimation={showAnimation} triggerPageChangeAnimation={triggerPageChangeAnimation} />
+        </span>
+
+        <ParallaxDividerOne />
+
+        <span ref={videosRef} className='z-30'>
+          <Videos />
+        </span>
+        <ParallaxDividerTwo />
+        <span ref={hatsRef}>
+          <OrgAffiliations />
+        </span>
+        <Socials />
+      </div>
     </Transition>
   )
 }
