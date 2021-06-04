@@ -1,37 +1,6 @@
 import { MailIcon, PhoneIcon } from '@heroicons/react/outline'
-import { useState } from 'react'
-import * as emailjs from 'emailjs-com'
-
-const SERVICE_ID = 'safe'
-const TEMPLATE_ID = 'safe'
-const USER_ID = 'safe'
 
 export default function Contact ({ triggerPageChangeAnimation }) {
-  const [formParams, setFormParams] = useState({
-    first_name: '',
-    last_name: '',
-    email: '',
-    phone: null,
-    subject: '',
-    message: '',
-    to_name: 'Junious'
-  })
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-
-    emailjs.send(SERVICE_ID, TEMPLATE_ID, formParams, USER_ID)
-      .then(response => {
-        console.log('SUCCESS!')
-      }, function (error) {
-        console.log('FAILED...', error)
-      })
-  }
-
-  const handleChange = (name, value) => {
-    setFormParams(state => ({ ...state, [name]: value }))
-  }
-
   return (
     <div className='bg-gray-100'>
       <div className='max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8'>
@@ -222,7 +191,7 @@ export default function Contact ({ triggerPageChangeAnimation }) {
             {/* Contact form */}
             <div className='py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12'>
               <h3 className='text-lg font-medium text-gray-900'>Send us a message</h3>
-              <form onSubmit={handleSubmit} className='mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'>
+              <form action='#' method='POST' className='mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'>
                 <div>
                   <label htmlFor='first_name' className='block text-sm font-medium text-gray-900'>
                     First name
@@ -234,7 +203,6 @@ export default function Contact ({ triggerPageChangeAnimation }) {
                       id='first_name'
                       autoComplete='given-name'
                       className='py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md'
-                      onChange={(e) => handleChange(e.target.name, e.target.value)}
                     />
                   </div>
                 </div>
@@ -249,7 +217,6 @@ export default function Contact ({ triggerPageChangeAnimation }) {
                       id='last_name'
                       autoComplete='family-name'
                       className='py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md'
-                      onChange={(e) => handleChange(e.target.name, e.target.value)}
                     />
                   </div>
                 </div>
@@ -264,7 +231,6 @@ export default function Contact ({ triggerPageChangeAnimation }) {
                       type='email'
                       autoComplete='email'
                       className='py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md'
-                      onChange={(e) => handleChange(e.target.name, e.target.value)}
                     />
                   </div>
                 </div>
@@ -285,7 +251,6 @@ export default function Contact ({ triggerPageChangeAnimation }) {
                       autoComplete='tel'
                       className='py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md'
                       aria-describedby='phone-optional'
-                      onChange={(e) => handleChange(e.target.name, e.target.value)}
                     />
                   </div>
                 </div>
@@ -299,7 +264,6 @@ export default function Contact ({ triggerPageChangeAnimation }) {
                       name='subject'
                       id='subject'
                       className='py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md'
-                      onChange={(e) => handleChange(e.target.name, e.target.value)}
                     />
                   </div>
                 </div>
@@ -320,7 +284,6 @@ export default function Contact ({ triggerPageChangeAnimation }) {
                       className='py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md'
                       aria-describedby='message-max'
                       defaultValue=''
-                      onChange={(e) => handleChange(e.target.name, e.target.value)}
                     />
                   </div>
                 </div>

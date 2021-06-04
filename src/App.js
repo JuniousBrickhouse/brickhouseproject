@@ -18,7 +18,6 @@ import Journey from './components/journey/Journey'
 import { Transition } from '@headlessui/react'
 import useDocumentScrollThrottle from './components/customComponents/useDocumentScrollThrottle'
 import Contact from './components/Contact'
-import Email from './components/Email'
 
 // makes the scroll feature work on safari
 smoothscroll.polyfill()
@@ -168,7 +167,6 @@ function App () {
         leaveTo='opacity-0'
       >
         <Contact triggerPageChangeAnimation={triggerPageChangeAnimation} />
-        {/* <Email /> */}
       </Transition>
     )
   }
