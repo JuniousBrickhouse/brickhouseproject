@@ -14,7 +14,7 @@ import ParallaxDividerOne from './components/ParallaxDividerOne'
 import ParallaxDividerTwo from './components/ParallaxDividerTwo'
 import { changeCurrentStatus } from './components/helperFunctions'
 import Socials from './Socials'
-import Journey from './components/Journey'
+import Journey from './components/journey/Journey'
 import { Transition } from '@headlessui/react'
 import useDocumentScrollThrottle from './components/customComponents/useDocumentScrollThrottle'
 import Contact from './components/Contact'
@@ -48,10 +48,12 @@ function App () {
   // console.log('bioRef', bioRef)
   // console.log('videosRef', topRef)
   // console.log('hatsRef', topRef)
+  // console.log('refOffsets', refOffsets)
 
   // useLayoutEffect waits for the page to fully load before running. This allows the refs to
   // be current and not null. Because comparing the current scroll position to these
   // ref positions, I need to set them in the setRefOffsets state.
+
   useLayoutEffect(() => {
     setRefOffsets(state => ({
       ...state,
@@ -74,7 +76,7 @@ function App () {
     const isScrolledDown = previousScrollTop < currentScrollTop
     const isMinimumScrolled = currentScrollTop > MINIMUM_SCROLL
     const newScrollPosition = currentScrollTop + 550
-
+    // console.log('currentScrollTop', currentScrollTop)
     if (newScrollPosition >= refOffsets.bioRefOffset) {
       setShowAnimation(state => ({ ...state, bioImage: true }))
       changeCurrentStatus('bioRef')
