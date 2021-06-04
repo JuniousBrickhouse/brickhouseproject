@@ -2,14 +2,14 @@ import { useLayoutEffect, useRef, useState } from 'react'
 // import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css'
 import smoothscroll from 'smoothscroll-polyfill'
-import Header from './components/Header'
+// import Header from './components/Header'
 import NavBar from './components/NavBar'
 import ParallaxHeader from './components/ParallaxHeader'
 import OrgAffiliations from './components/OrgAffiliations'
 import ShortBio from './components/ShortBio'
 import Videos from './components/Videos'
-import DividerOne from './components/DividerOne'
-import DividerTwo from './components/DividerTwo'
+// import DividerOne from './components/DividerOne'
+// import DividerTwo from './components/DividerTwo'
 import ParallaxDividerOne from './components/ParallaxDividerOne'
 import ParallaxDividerTwo from './components/ParallaxDividerTwo'
 import { changeCurrentStatus } from './components/helperFunctions'
@@ -18,7 +18,6 @@ import Journey from './components/journey/Journey'
 import { Transition } from '@headlessui/react'
 import useDocumentScrollThrottle from './components/customComponents/useDocumentScrollThrottle'
 import Contact from './components/Contact'
-import Email from './components/Email'
 
 // makes the scroll feature work on safari
 smoothscroll.polyfill()
@@ -168,7 +167,6 @@ function App () {
         leaveTo='opacity-0'
       >
         <Contact triggerPageChangeAnimation={triggerPageChangeAnimation} />
-        {/* <Email /> */}
       </Transition>
     )
   }
