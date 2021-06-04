@@ -45,6 +45,10 @@ function App () {
     videosRefOffset: null,
     hatsRefOffset: null
   })
+  // console.log('topRef', topRef)
+  // console.log('bioRef', bioRef)
+  // console.log('videosRef', topRef)
+  // console.log('hatsRef', topRef)
 
   // console.log('topRef', topRef)
   // console.log('bioRef', bioRef.current.offsetTop)

@@ -9,7 +9,7 @@ export default function Contact ({ triggerPageChangeAnimation }) {
 
           <div className='grid grid-cols-1 lg:grid-cols-3'>
             {/* Contact information */}
-            <div className='relative overflow-hidden py-10 px-6 bg-indigo-700 sm:px-10 xl:p-12'>
+            <div className='relative overflow-hidden py-10 px-6 bg-23Vertical bg-cover bg-no-repeat bg-center sm:px-10 xl:p-1'>
               <div className='absolute inset-0 pointer-events-none sm:hidden' aria-hidden='true'>
                 <svg
                   className='absolute inset-0 w-full h-full'
@@ -44,7 +44,7 @@ export default function Contact ({ triggerPageChangeAnimation }) {
                 className='hidden absolute top-0 right-0 bottom-0 w-1/2 pointer-events-none sm:block lg:hidden'
                 aria-hidden='true'
               >
-                <svg
+                {/* <svg
                   className='absolute inset-0 w-full h-full'
                   width={359}
                   height={339}
@@ -71,13 +71,13 @@ export default function Contact ({ triggerPageChangeAnimation }) {
                       <stop offset={1} stopColor='#fff' stopOpacity={0} />
                     </linearGradient>
                   </defs>
-                </svg>
+                </svg> */}
               </div>
               <div
                 className='hidden absolute top-0 right-0 bottom-0 w-1/2 pointer-events-none lg:block'
                 aria-hidden='true'
               >
-                <svg
+                {/* <svg
                   className='absolute inset-0 w-full h-full'
                   width={160}
                   height={678}
@@ -104,9 +104,9 @@ export default function Contact ({ triggerPageChangeAnimation }) {
                       <stop offset={1} stopColor='#fff' stopOpacity={0} />
                     </linearGradient>
                   </defs>
-                </svg>
+                </svg> */}
               </div>
-              <h3 className='text-lg font-medium text-white'>Contact information</h3>
+              <h3 className='text-lg font-medium text-richBlack'>Contact information</h3>
               <p className='mt-6 text-base text-indigo-50 max-w-3xl'>
                 Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor
                 lacus arcu.
@@ -127,7 +127,7 @@ export default function Contact ({ triggerPageChangeAnimation }) {
                   <span className='ml-3'>support@workcation.com</span>
                 </dd>
               </dl>
-              <ul className='mt-8 flex space-x-12' role='list'>
+              {/* <ul className='mt-8 flex space-x-12' role='list'>
                 <li>
                   <a className='text-indigo-200 hover:text-indigo-100' href='#'>
                     <span className='sr-only'>Facebook</span>
@@ -185,7 +185,7 @@ export default function Contact ({ triggerPageChangeAnimation }) {
                     </svg>
                   </a>
                 </li>
-              </ul>
+              </ul> */}
             </div>
 
             {/* Contact form */}
