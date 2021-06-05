@@ -1,8 +1,7 @@
-import { MailIcon, PhoneIcon } from '@heroicons/react/outline'
-import { useEffect, useState } from 'react'
+import { MailIcon } from '@heroicons/react/outline'
+import { useState } from 'react'
 import * as emailjs from 'emailjs-com'
 import HamptonRaw from './photos/logos/23Raw.png'
-import ContactMobile from './ContactMobile'
 
 const SERVICE_ID = 'safe'
 const TEMPLATE_ID = 'safe'
