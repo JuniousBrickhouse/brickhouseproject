@@ -25,7 +25,8 @@ module.exports = {
         urbanArtistry: "url('./components/photos/logos/urbanArtistry.jpg')",
         'photo-edit': "url('./components/photos/PhotoEdit.png')",
         'final-photo': "url('./components/photos/FinalPhoto.png')",
-        '23Vertical': "url('./components/photos/logos/23Vertical.png')"
+        '23Vertical': "url('./components/photos/logos/23Vertical.png')",
+        '23Raw': "url('./components/photos/logos/23Raw.png')"
         // 'headshot-junious': "url('./components/photos/headshot.jpeg')"
         // 'footer-texture': "url('/img/footer-texture.png')"
 
