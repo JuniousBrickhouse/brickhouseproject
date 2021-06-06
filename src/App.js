@@ -71,6 +71,13 @@ function App () {
   const MINIMUM_SCROLL = 0
   const TIMEOUT_DELAY = 0
 
+  // console.log('window.srollY', window.srollY)
+  // console.log('window.innerHeight', window.innerHeight)
+  // console.log('document.documentElement.clientHeight', document.documentElement.clientHeight)
+  // const shortBioId = document.getElementById('short-bio')
+  // const bounding = shortBioId.getBoundingClientRect()
+  // console.log('bounding', bounding)
+
   useDocumentScrollThrottle(callbackData => {
     const { previousScrollTop, currentScrollTop } = callbackData
     const isScrolledDown = previousScrollTop < currentScrollTop
@@ -185,11 +192,11 @@ function App () {
       <NavBar handleScroll={handleScroll} showSolidNav={showSolidNav} triggerPageChangeAnimation={triggerPageChangeAnimation} />
       <main className='h-screen overflow-x-hidden overflow-y-auto perspective'>
 
-        <section ref={topRef} className='relative h-screen'>
+        <section ref={topRef} className='relative h-screen '>
           <ParallaxHeader topRef={topRef} showAnimation={showAnimation} />
         </section>
 
-        <span className='h-full' ref={bioRef}>
+        <span className='h-full' ref={bioRef} id='short-bio'>
           <ShortBio showAnimation={showAnimation} triggerPageChangeAnimation={triggerPageChangeAnimation} />
         </span>
 

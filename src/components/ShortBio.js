@@ -12,7 +12,7 @@ export default function ShortBio ({ showAnimation, triggerPageChangeAnimation })
   // <div className='bio'>
     <div className='relative py-32 bg-white'>
       <div className='hidden absolute top-0 inset-x-0 h-screen bg-gray-50 lg:block' aria-hidden='true' />
-      <div className='max-w-7xl mx-auto bg-burlyWood lg:bg-transparent lg:px-8'>
+      <div className='max-w-7xl mx-auto bg-platinum lg:bg-transparent lg:px-8'>
         <div className='lg:grid lg:grid-cols-12'>
           <div className='relative z-10 lg:col-start-1 lg:row-start-1 lg:col-span-4 lg:py-16 lg:bg-transparent'>
             <div className='absolute inset-x-0 h-1/2 bg-gray-50 lg:hidden' aria-hidden='true' />
