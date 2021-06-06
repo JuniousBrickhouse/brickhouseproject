@@ -31,6 +31,12 @@ module.exports = {
         // 'footer-texture': "url('/img/footer-texture.png')"
 
       }),
+      backgroundSize: {
+        '50%': '50%',
+        '60%': '60%',
+        '70%': '70%',
+        '80%': '80%'
+      },
       colors: {
         current: 'currentColor',
         transparent: 'transparent',

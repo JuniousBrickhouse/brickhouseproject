@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef, useState } from 'react'
 // import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import './App.css'
+// import './App.css'
 import smoothscroll from 'smoothscroll-polyfill'
 // import Header from './components/Header'
 import NavBar from './components/NavBar'
@@ -182,27 +182,35 @@ function App () {
       leaveTo='opacity-0'
       className='h-screen'
     >
-      <NavBar handleScroll={handleScroll} showSolidNav={showSolidNav} triggerPageChangeAnimation={triggerPageChangeAnimation} className='navbar' />
-      <div className='parallax-section'>
-        <span ref={topRef}>
+      <NavBar handleScroll={handleScroll} showSolidNav={showSolidNav} triggerPageChangeAnimation={triggerPageChangeAnimation} />
+      <main className='h-screen overflow-x-hidden overflow-y-auto perspective'>
 
+        <section ref={topRef} className='relative h-screen'>
           <ParallaxHeader topRef={topRef} showAnimation={showAnimation} />
-        </span>
-        <span ref={bioRef}>
+        </section>
+
+        <span className='h-full' ref={bioRef}>
           <ShortBio showAnimation={showAnimation} triggerPageChangeAnimation={triggerPageChangeAnimation} />
         </span>
 
-        <ParallaxDividerOne />
+        <section className='relative h-screen'>
+          <ParallaxDividerOne />
+        </section>
 
         <span ref={videosRef} className='z-30'>
           <Videos />
         </span>
-        <ParallaxDividerTwo />
+
+        <section className='relative h-screen'>
+          <ParallaxDividerTwo />
+        </section>
+
         <span ref={hatsRef}>
           <OrgAffiliations />
         </span>
+
         <Socials />
-      </div>
+      </main>
     </Transition>
   )
 }
