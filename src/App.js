@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 // import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 // import './App.css'
 import smoothscroll from 'smoothscroll-polyfill'
@@ -18,6 +18,9 @@ import Journey from './components/journey/Journey'
 import { Transition } from '@headlessui/react'
 import useDocumentScrollThrottle from './components/customComponents/useDocumentScrollThrottle'
 import Contact from './components/Contact'
+import useBioOnScreen from './components/customComponents/useBioOnScreen'
+import useVideosOnScreen from './components/customComponents/useVideosOnScreen'
+import useDividerOneOnScreen from './components/customComponents/useDividerOneOnScreen'
 
 // makes the scroll feature work on safari
 smoothscroll.polyfill()
@@ -27,6 +30,7 @@ function App () {
   const bioRef = useRef(null)
   const videosRef = useRef(null)
   const hatsRef = useRef(null)
+  const dividerOneRef = useRef(null)
   const [showSolidNav, setShowSolidNav] = useState(false)
   const [renderDestination, setRenderDestination] = useState('')
   // const [renderJourney, setRenderJourney] = useState(false)
@@ -44,11 +48,6 @@ function App () {
     videosRefOffset: null,
     hatsRefOffset: null
   })
-  // console.log('topRef', topRef)
-  // console.log('bioRef', bioRef)
-  // console.log('videosRef', topRef)
-  // console.log('hatsRef', topRef)
-  // console.log('refOffsets', refOffsets)
 
   // useLayoutEffect waits for the page to fully load before running. This allows the refs to
   // be current and not null. Because comparing the current scroll position to these
@@ -57,12 +56,46 @@ function App () {
   useLayoutEffect(() => {
     setRefOffsets(state => ({
       ...state,
-      homeRefOffset: topRef.current.offsetTop,
-      bioRefOffset: bioRef.current.offsetTop,
-      videosRefOffset: videosRef.current.offsetTop,
-      hatsRefOffset: hatsRef.current.offsetTop
+      homeRefOffset: topRef,
+      bioRefOffset: bioRef,
+      videosRefOffset: videosRef,
+      hatsRefOffset: hatsRef
     }))
   }, [])
+
+  const homeOnScreen = useBioOnScreen(topRef, '0px', 0.5)
+  useEffect(() => {
+    if (homeOnScreen) {
+      changeCurrentStatus('topRef')
+    }
+  }, [homeOnScreen])
+
+  // trigger bio animation on intersection
+  const bioOnScreen = useBioOnScreen(bioRef, '0px', 0.5)
+  useEffect(() => {
+    if (bioOnScreen) {
+      setShowAnimation(state => ({ ...state, bioImage: true }))
+      changeCurrentStatus('bioRef')
+    } else {
+      setShowAnimation(state => ({ ...state, bioImage: false }))
+      // changeCurrentStatus('topRef')
+    }
+  }, [bioOnScreen])
+
+  // const dividerOneScreen = useDividerOneOnScreen(dividerOneRef, '0px', 0.6)
+  // useEffect(() => {
+  //   if (dividerOneScreen) {
+  //     changeCurrentStatus('bioRef')
+  //   }
+  // }, [dividerOneScreen])
+
+  // trigger video navbar change on intersection
+  const videosOnScreen = useVideosOnScreen(videosRef, '0px', 0.5)
+  useEffect(() => {
+    if (videosOnScreen) {
+      changeCurrentStatus('videosRef')
+    }
+  }, [videosOnScreen])
 
   // This scroll code is handling the scroll on click feature (triggered
   // in NavBar.js), the changing of the nav btns being highlighted, and
@@ -74,9 +107,13 @@ function App () {
   // console.log('window.srollY', window.srollY)
   // console.log('window.innerHeight', window.innerHeight)
   // console.log('document.documentElement.clientHeight', document.documentElement.clientHeight)
-  // const shortBioId = document.getElementById('short-bio')
-  // const bounding = shortBioId.getBoundingClientRect()
-  // console.log('bounding', bounding)
+  // setTimeout(() => {
+  //   // const shortBioId = document.getElementById('parallax')
+  //   // const bounding = shortBioId.getBoundingClientRect()
+  //   // console.log('bounding', bounding)
+  //   const parallaxPosition = document.getElementById('parallax')
+  //   parallaxPosition.addEventListener('scroll', window.scroll)
+  // })
 
   useDocumentScrollThrottle(callbackData => {
     const { previousScrollTop, currentScrollTop } = callbackData
@@ -200,11 +237,11 @@ function App () {
           <ShortBio showAnimation={showAnimation} triggerPageChangeAnimation={triggerPageChangeAnimation} />
         </span>
 
-        <section className='relative h-screen'>
+        <section className='relative h-screen' ref={dividerOneRef} id='parallax'>
           <ParallaxDividerOne />
         </section>
 
-        <span ref={videosRef} className='z-30'>
+        <span ref={videosRef} className='z-30' id='videos'>
           <Videos />
         </span>
 
@@ -212,7 +249,7 @@ function App () {
           <ParallaxDividerTwo />
         </section>
 
-        <span ref={hatsRef}>
+        <span ref={hatsRef} id='org-affiliation'>
           <OrgAffiliations />
         </span>
 

@@ -1,31 +1,33 @@
 import { useState, useEffect } from 'react'
 
-const useOnScreen = (ref = (<span />), rootMargin = '40px', threshold = 1) => {
+const useHomeOnScreen = (ref, rootMargin, threshold) => {
   // State and setter for storing whether element is visible
   const [isIntersecting, setIntersecting] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
+        console.log('entry', entry)
         // Update our state when observer callback fires
-        setTimeout(() => setIntersecting(entry.isIntersecting), 0)
-        // setIntersecting(entry.isIntersecting);
+        setTimeout(() => { setIntersecting(entry.isIntersecting) }, 0)
       },
       {
         rootMargin,
         threshold
       }
     )
-    if (ref.current) {
-      observer.observe(ref.current)
+
+    const current = ref.current
+    if (current) {
+      observer.observe(current)
     }
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current)
+      if (current) {
+        observer.unobserve(current)
       }
     }
-  }, []) // Empty array ensures that effect is only run on mount and unmount
+  }, [ref, rootMargin, threshold]) // Empty array ensures that effect is only run on mount and unmount
   return isIntersecting
 }
 
-export default useOnScreen
+export default useHomeOnScreen

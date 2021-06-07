@@ -19,7 +19,7 @@ export default function ShortBio ({ showAnimation, triggerPageChangeAnimation })
             <div className='max-w-md mx-auto px-4 sm:max-w-3xl sm:px-6 lg:max-w-none lg:p-0'>
               <div className='aspect-w-10 aspect-h-6 sm:aspect-w-2 sm:aspect-h-1 lg:aspect-w-1'>
                 <Transition
-                    // show={showAnimation.bioImage}
+                  show={showAnimation.bioImage}
                   as='img'
                   enter='transition-all duration-3000 sm:transform ease-out'
                   enterFrom='opacity-0 sm:-translate-x-full'
@@ -87,7 +87,7 @@ export default function ShortBio ({ showAnimation, triggerPageChangeAnimation })
                 Join our team
               </h2> */}
               <Transition
-                  // show={showAnimation.bioImage}
+                show={showAnimation.bioImage}
                 enter='transition-all duration-3000 sm:transform ease-out delay-150'
                 enterFrom='opacity-0 sm:translate-x-full'
                 enterTo='opacity-100 sm:translate-x-0'
@@ -99,7 +99,7 @@ export default function ShortBio ({ showAnimation, triggerPageChangeAnimation })
                 {SHOTR_BIO.paragraph1}
               </Transition>
               <Transition
-                  // show={showAnimation.bioImage}
+                show={showAnimation.bioImage}
                 as='button'
                 enter='transition-all duration-3000 sm:transform ease-out delay-150'
                 enterFrom='opacity-0 sm:translate-x-full'
