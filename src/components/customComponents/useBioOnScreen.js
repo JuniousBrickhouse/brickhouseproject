@@ -1,33 +1,28 @@
-import { useState, useEffect } from 'react'
+// code from https://dev.to/producthackers/intersection-observer-using-react-49ko and https://github.com/zygisS22/intersectionObserverApi/blob/master/src/IO-Api-hook.js
 
-const useBioOnScreen = (ref, rootMargin, threshold) => {
-  // State and setter for storing whether element is visible
-  const [isIntersecting, setIntersecting] = useState(false)
+import { useEffect, useRef, useState } from 'react'
+
+const useElementOnScreen = (options) => {
+  const bioRef = useRef(null)
+  const [bioIsVisible, setBioIsVisible] = useState(false)
+
+  const callbackFunction = (entries) => {
+    const [entry] = entries
+    setBioIsVisible(entry.isIntersecting)
+  }
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        console.log('entry', entry)
-        // Update our state when observer callback fires
-        setTimeout(() => { setIntersecting(entry.isIntersecting) }, 0)
-      },
-      {
-        rootMargin,
-        threshold
-      }
-    )
+    const observer = new window.IntersectionObserver(callbackFunction, options)
+    if (bioRef.current) observer.observe(bioRef.current)
 
-    const current = ref.current
-    if (current) {
-      observer.observe(current)
-    }
+    const currentContainer = bioRef.current
+
     return () => {
-      if (current) {
-        observer.unobserve(current)
-      }
+      if (currentContainer) observer.unobserve(currentContainer)
     }
-  }, [ref, rootMargin, threshold]) // Empty array ensures that effect is only run on mount and unmount
-  return isIntersecting
+  }, [bioRef, options])
+
+  return [bioRef, bioIsVisible]
 }
 
-export default useBioOnScreen
+export default useElementOnScreen

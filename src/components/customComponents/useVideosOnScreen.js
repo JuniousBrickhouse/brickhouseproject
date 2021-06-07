@@ -1,33 +1,28 @@
-import { useState, useEffect } from 'react'
+// code from https://dev.to/producthackers/intersection-observer-using-react-49ko and https://github.com/zygisS22/intersectionObserverApi/blob/master/src/IO-Api-hook.js
 
-const useVideosOnScreen = (ref, rootMargin, threshold) => {
-  // State and setter for storing whether element is visible
-  const [isIntersecting, setIntersecting] = useState(false)
+import { useEffect, useRef, useState } from 'react'
+
+const useElementOnScreen = (options) => {
+  const videosRef = useRef(null)
+  const [videosAreVisible, setVideosAreVisible] = useState(false)
+
+  const callbackFunction = (entries) => {
+    const [entry] = entries
+    setVideosAreVisible(entry.isIntersecting)
+  }
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        console.log('entry', entry)
-        // Update our state when observer callback fires
-        setTimeout(() => { setIntersecting(entry.isIntersecting) }, 0)
-      },
-      {
-        rootMargin,
-        threshold
-      }
-    )
+    const observer = new window.IntersectionObserver(callbackFunction, options)
+    if (videosRef.current) observer.observe(videosRef.current)
 
-    const current = ref.current
-    if (current) {
-      observer.observe(current)
-    }
+    const currentContainer = videosRef.current
+
     return () => {
-      if (current) {
-        observer.unobserve(current)
-      }
+      if (currentContainer) observer.unobserve(currentContainer)
     }
-  }, [ref, rootMargin, threshold]) // Empty array ensures that effect is only run on mount and unmount
-  return isIntersecting
+  }, [videosRef, options])
+
+  return [videosRef, videosAreVisible]
 }
 
-export default useVideosOnScreen
+export default useElementOnScreen

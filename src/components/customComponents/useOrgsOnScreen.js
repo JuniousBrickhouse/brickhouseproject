@@ -2,27 +2,27 @@
 
 import { useEffect, useRef, useState } from 'react'
 
-const useElementOnScreen = (options) => {
-  const homeRef = useRef(null)
-  const [homeIsVisible, setHomeIsVisible] = useState(false)
+const useOrgsOnScreen = (options) => {
+  const orgsRef = useRef(null)
+  const [orgsAreVisible, setOrgsAreVisible] = useState(false)
 
   const callbackFunction = (entries) => {
     const [entry] = entries
-    setHomeIsVisible(entry.isIntersecting)
+    setOrgsAreVisible(entry.isIntersecting)
   }
 
   useEffect(() => {
     const observer = new window.IntersectionObserver(callbackFunction, options)
-    if (homeRef.current) observer.observe(homeRef.current)
+    if (orgsRef.current) observer.observe(orgsRef.current)
 
-    const currentContainer = homeRef.current
+    const currentContainer = orgsRef.current
 
     return () => {
       if (currentContainer) observer.unobserve(currentContainer)
     }
-  }, [homeRef, options])
+  }, [orgsRef, options])
 
-  return [homeRef, homeIsVisible]
+  return [orgsRef, orgsAreVisible]
 }
 
-export default useElementOnScreen
+export default useOrgsOnScreen
