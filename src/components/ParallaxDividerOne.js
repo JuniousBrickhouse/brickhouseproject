@@ -1,8 +1,6 @@
 
 export default function ParallaxDividerOne () {
   return (
-    <section id='hero-1'>
-      <div className='container' />
-    </section>
+    <div className='z-50 mx-auto px-4 sm:px-6 lg:px-8 h-full w-full bg-junious-barn bg-no-repeat bg-center bg-200% sm:bg-cover parallax' aria-hidden='true' />
   )
 }
