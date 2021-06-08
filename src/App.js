@@ -1,36 +1,28 @@
-import { useLayoutEffect, useRef, useState } from 'react'
-// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import './App.css'
+import { useEffect, useRef, useState } from 'react'
 import smoothscroll from 'smoothscroll-polyfill'
-import Header from './components/Header'
 import NavBar from './components/NavBar'
 import ParallaxHeader from './components/ParallaxHeader'
 import OrgAffiliations from './components/OrgAffiliations'
 import ShortBio from './components/ShortBio'
 import Videos from './components/Videos'
-import DividerOne from './components/DividerOne'
-import DividerTwo from './components/DividerTwo'
 import ParallaxDividerOne from './components/ParallaxDividerOne'
 import ParallaxDividerTwo from './components/ParallaxDividerTwo'
 import { changeCurrentStatus } from './components/helperFunctions'
 import Socials from './Socials'
 import Journey from './components/journey/Journey'
 import { Transition } from '@headlessui/react'
-import useDocumentScrollThrottle from './components/customComponents/useDocumentScrollThrottle'
 import Contact from './components/Contact'
+import useBioOnScreen from './components/customComponents/useBioOnScreen'
+import useVideosOnScreen from './components/customComponents/useVideosOnScreen'
+import useHomeOnScreen from './components/customComponents/useHomeOnScreen'
 
 // makes the scroll feature work on safari
 smoothscroll.polyfill()
 
 function App () {
-  const topRef = useRef(null)
-  const bioRef = useRef(null)
-  const videosRef = useRef(null)
-  const hatsRef = useRef(null)
+  const dividerOneRef = useRef(null)
   const [showSolidNav, setShowSolidNav] = useState(false)
   const [renderDestination, setRenderDestination] = useState('')
-  // const [renderJourney, setRenderJourney] = useState(false)
-  // const [renderContact, setRenderContact] = useState(false)
   const [showAnimation, setShowAnimation] = useState({
     headerAnimation: true,
     bioImage: false,
@@ -38,77 +30,62 @@ function App () {
     journeyPage: false,
     contactPage: false
   })
-  const [refOffsets, setRefOffsets] = useState({
-    homeRefOffset: null,
-    bioRefOffset: null,
-    videosRefOffset: null,
-    hatsRefOffset: null
+
+  const [homeRef, homeIsVisible] = useHomeOnScreen({
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5
   })
-  // console.log('topRef', topRef)
-  // console.log('bioRef', bioRef)
-  // console.log('videosRef', topRef)
-  // console.log('hatsRef', topRef)
-  // console.log('refOffsets', refOffsets)
 
-  // useLayoutEffect waits for the page to fully load before running. This allows the refs to
-  // be current and not null. Because comparing the current scroll position to these
-  // ref positions, I need to set them in the setRefOffsets state.
+  const [bioRef, bioIsVisible] = useBioOnScreen({
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  })
 
-  useLayoutEffect(() => {
-    setRefOffsets(state => ({
-      ...state,
-      homeRefOffset: topRef.current.offsetTop,
-      bioRefOffset: bioRef.current.offsetTop,
-      videosRefOffset: videosRef.current.offsetTop,
-      hatsRefOffset: hatsRef.current.offsetTop
-    }))
-  }, [])
+  const [videosRef, videosAreVisible] = useVideosOnScreen({
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.2
+  })
 
-  // This scroll code is handling the scroll on click feature (triggered
-  // in NavBar.js), the changing of the nav btns being highlighted, and
-  // the animation on scroll.
+  const [orgsRef, orgsAreVisible] = useVideosOnScreen({
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.2
+  })
 
-  const MINIMUM_SCROLL = 0
-  const TIMEOUT_DELAY = 0
-
-  useDocumentScrollThrottle(callbackData => {
-    const { previousScrollTop, currentScrollTop } = callbackData
-    const isScrolledDown = previousScrollTop < currentScrollTop
-    const isMinimumScrolled = currentScrollTop > MINIMUM_SCROLL
-    const newScrollPosition = currentScrollTop + 550
-    // console.log('currentScrollTop', currentScrollTop)
-    if (newScrollPosition >= refOffsets.bioRefOffset) {
+  useEffect(() => {
+    if (homeIsVisible) {
+      changeCurrentStatus('homeRef')
+      setShowSolidNav(false)
+    }
+    if (bioIsVisible) {
       setShowAnimation(state => ({ ...state, bioImage: true }))
       changeCurrentStatus('bioRef')
+      setShowSolidNav(true)
     } else {
       setShowAnimation(state => ({ ...state, bioImage: false }))
-      changeCurrentStatus('topRef')
+      // changeCurrentStatus('homeRef')
     }
-
-    if (newScrollPosition >= refOffsets.videosRefOffset) {
+    if (videosAreVisible) {
       changeCurrentStatus('videosRef')
     }
-
-    if (newScrollPosition >= refOffsets.hatsRefOffset) {
-      changeCurrentStatus('hatsRef')
+    if (orgsAreVisible) {
+      changeCurrentStatus('orgsRef')
     }
+  }, [homeIsVisible, bioIsVisible, videosAreVisible, orgsAreVisible, showSolidNav])
 
-    setShowSolidNav(currentScrollTop > 2)
-
-    setTimeout(() => {
-      setShowSolidNav(isScrolledDown && isMinimumScrolled)
-    }, TIMEOUT_DELAY)
-  })
   // handles the scroll on click
   const handleScroll = ref => {
-    if (ref === 'topRef') {
-      return topRef.current.scrollIntoView({ behavior: 'smooth' })
+    if (ref === 'homeRef') {
+      return homeRef.current.scrollIntoView({ behavior: 'smooth' })
     } else if (ref === 'bioRef') {
       return bioRef.current.scrollIntoView({ behavior: 'smooth' })
     } else if (ref === 'videosRef') {
       return videosRef.current.scrollIntoView({ behavior: 'smooth' })
-    } else if (ref === 'hatsRef') {
-      return hatsRef.current.scrollIntoView({ behavior: 'smooth' })
+    } else if (ref === 'orgsRef') {
+      return orgsRef.current.scrollIntoView({ behavior: 'smooth' })
     }
   }
 
@@ -182,27 +159,36 @@ function App () {
       leaveTo='opacity-0'
       className='h-screen'
     >
-      <NavBar handleScroll={handleScroll} showSolidNav={showSolidNav} triggerPageChangeAnimation={triggerPageChangeAnimation} className='navbar' />
-      <div className='parallax-section'>
-        <span ref={topRef}>
+      <NavBar handleScroll={handleScroll} showSolidNav={showSolidNav} triggerPageChangeAnimation={triggerPageChangeAnimation} />
 
-          <ParallaxHeader topRef={topRef} showAnimation={showAnimation} />
-        </span>
-        <span ref={bioRef}>
+      <main className='h-screen overflow-x-hidden overflow-y-auto perspective'>
+
+        <section ref={homeRef} className='relative h-screen '>
+          <ParallaxHeader homeRef={homeRef} showAnimation={showAnimation} />
+        </section>
+
+        <span className='h-full' ref={bioRef} id='short-bio'>
           <ShortBio showAnimation={showAnimation} triggerPageChangeAnimation={triggerPageChangeAnimation} />
         </span>
 
-        <ParallaxDividerOne />
+        <section className='relative h-screen' ref={dividerOneRef} id='parallax'>
+          <ParallaxDividerOne />
+        </section>
 
-        <span ref={videosRef} className='z-30'>
+        <span ref={videosRef} className='z-30' id='videos'>
           <Videos />
         </span>
-        <ParallaxDividerTwo />
-        <span ref={hatsRef}>
+
+        <section className='relative h-screen'>
+          <ParallaxDividerTwo />
+        </section>
+
+        <span ref={orgsRef} id='org-affiliation'>
           <OrgAffiliations />
         </span>
+
         <Socials />
-      </div>
+      </main>
     </Transition>
   )
 }

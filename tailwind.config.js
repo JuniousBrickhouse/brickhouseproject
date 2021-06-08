@@ -25,11 +25,37 @@ module.exports = {
         urbanArtistry: "url('./components/photos/logos/urbanArtistry.jpg')",
         'photo-edit': "url('./components/photos/PhotoEdit.png')",
         'final-photo': "url('./components/photos/FinalPhoto.png')",
-        '23Vertical': "url('./components/photos/logos/23Vertical.png')"
+        '23Vertical': "url('./components/photos/logos/23Vertical.png')",
+        '23Raw': "url('./components/photos/logos/23Raw.png')"
         // 'headshot-junious': "url('./components/photos/headshot.jpeg')"
         // 'footer-texture': "url('/img/footer-texture.png')"
 
       }),
+      backgroundSize: {
+        '50%': '50%',
+        '60%': '60%',
+        '70%': '70%',
+        '80%': '80%',
+        '90%': '90%',
+        '95%': '95%',
+        '100%': '100%',
+        '125%': '125%',
+        '150%': '150%',
+        '200%': '200%',
+        '250%': '250%',
+        '300%': '300%'
+
+      },
+      fontSize: {
+        '50%': '50%',
+        '60%': '60%',
+        '70%': '70%',
+        '80%': '80%',
+        '150%': '150%',
+        '200%': '200%',
+        '250%': '250%',
+        '300%': '300%'
+      },
       colors: {
         current: 'currentColor',
         transparent: 'transparent',
