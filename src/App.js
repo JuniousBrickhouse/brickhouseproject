@@ -31,6 +31,9 @@ function App () {
     contactPage: false
   })
 
+  // This section is not DRY. Each ref is called inside its
+  // own custom component. When it fires, the useEffect below
+  // this section handles the necessary actions.
   const [homeRef, homeIsVisible] = useHomeOnScreen({
     root: null,
     rootMargin: '0px',
@@ -100,6 +103,7 @@ function App () {
       }, 2000)
     } else if (destination === '') {
       setShowAnimation(state => ({ ...state, journeyPage: false }))
+      setShowAnimation(state => ({ ...state, contactPage: false }))
       setTimeout(() => {
         setShowAnimation(state => ({ ...state, landingPage: true }))
         setRenderDestination(destination)

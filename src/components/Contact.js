@@ -252,7 +252,7 @@ export default function Contact ({ triggerPageChangeAnimation }) {
                   </button>
                   <button
                     type='button'
-                    className='mt-2 w-full inline-flex items-center justify-center px-3 py-1.5 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-mediumCarmine hover:bg-fawn focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mediumCarmine sm:w-auto'
+                    className='mt-2 w-full inline-flex items-center justify-center px-3 py-1.5 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-mediumCarmine hover:bg-fawn focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-wildBlueYonder focus:ring-offset-wilring-wildBlueYonder sm:w-auto'
                     onClick={() => triggerPageChangeAnimation('')}
                   >
                     Cancel
