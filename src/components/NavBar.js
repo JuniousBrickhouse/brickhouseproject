@@ -1,7 +1,6 @@
 import { Fragment } from 'react'
 import { Disclosure } from '@headlessui/react'
-import { MenuIcon, XIcon } from '@heroicons/react/outline'
-import { PlusIcon } from '@heroicons/react/solid'
+import { ChatIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import { NAVIGATION } from './Lists'
 
 function classNames (...classes) {
@@ -9,9 +8,16 @@ function classNames (...classes) {
 }
 
 export default function NavBar ({ handleScroll, showSolidNav, triggerPageChangeAnimation }) {
+  const changeNavBar = (current) => {
+    if (showSolidNav) {
+      return current ? 'border-b-2 border-mediumCarmine text-white focus:outline-none' : 'text-white hover:text-white'
+    } else {
+      return current ? 'border-b-2 border-mediumCarmine text-richBlack focus:outline-none' : 'text-daviesGrey hover:text-spanishGrey'
+    }
+  }
+
   return (
-  // <div className='navbar'>
-    <Disclosure as='nav' className={`${showSolidNav ? 'bg-platinum opacity-90' : 'bg-none'} fixed top-0 w-full z-50`}>
+    <Disclosure as='nav' className={`${showSolidNav ? 'bg-yNBlue opacity-40' : 'bg-none'} fixed top-0 w-full z-50`}>
       {({ open }) => (
         <>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
@@ -30,27 +36,14 @@ export default function NavBar ({ handleScroll, showSolidNav, triggerPageChangeA
                         )}
                   </Disclosure.Button>
                 </div>
-                {/* <div className='flex-shrink-0 flex items-center'>
-                  <img
-                    className='block lg:hidden h-8 w-auto'
-                    src='https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg'
-                    alt='Workflow'
-                  />
-                  <img
-                    className='hidden lg:block h-8 w-auto'
-                    src='https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg'
-                    alt='Workflow'
-                  />
-                </div> */}
-
                 {/* nav btns for computer */}
                 <div className='hidden md:ml-6 md:flex md:items-center md:space-x-4'>
                   {NAVIGATION.map((item) => (
                     <button
                       key={item.name}
                       className={classNames(
-                        item.current ? 'border-b-2 border-glaucous text-richBlack focus:outline-none' : 'text-daviesGrey hover:text-spanishGrey',
-                        'px-5 py-2 rounded-md text-md font-medium font-poppins focus:outline-none'
+                        changeNavBar(item.current),
+                        'px-5 py-2 text-md font-medium font-poppins focus:outline-none'
                       )}
                       aria-current={item.current ? 'page' : undefined}
                       onClick={() => {
@@ -83,10 +76,10 @@ export default function NavBar ({ handleScroll, showSolidNav, triggerPageChangeA
                 <div className='flex-shrink-0'>
                   <button
                     type='button'
-                    className='relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-md font-medium font-poppins rounded-md text-platinum bg-yNBlue hover:bg-glaucous focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500'
+                    className={`${showSolidNav ? 'bg-none' : 'bg-mediumCarmine opacity-90'} relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-md font-medium font-poppins rounded-md text-platinum  hover:bg-glaucous focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500`}
                     onClick={() => triggerPageChangeAnimation('contactPage')}
                   >
-                    <PlusIcon className='-ml-1 mr-2 h-5 w-5' aria-hidden='true' />
+                    <ChatIcon className='-ml-1 mr-2 h-5 w-5' aria-hidden='true' />
                     <span>Consultation</span>
                   </button>
                 </div>
@@ -135,6 +128,5 @@ export default function NavBar ({ handleScroll, showSolidNav, triggerPageChangeA
         </>
       )}
     </Disclosure>
-  // </div>
   )
 }
