@@ -1,7 +1,7 @@
 import { CONTENT } from './journeyContent'
 import juniousGray from '.././photos/JuniousGrey.jpeg'
 
-export default function JourneyArmy () {
+export default function JourneyNextLevel () {
   return (
     <div className='relative bg-white py-16 sm:py-24'>
       <div className='lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-24 lg:items-start'>
@@ -50,12 +50,12 @@ export default function JourneyArmy () {
             {/* <h2 className='text-3xl text-gray-900 font-extrabold tracking-tight sm:text-4xl'>
               On a mission to empower teams
             </h2> */}
+            <h3 className='mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl font-poppins'>
+              Next Level
+            </h3>
             <div className='mt-6 text-gray-500 space-y-6'>
-              <h3 className='mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl font-poppins'>
-                Army
-              </h3>
               <p className='text-lg'>
-                {CONTENT.army}
+                {CONTENT.nextLevel}
               </p>
             </div>
           </div>
