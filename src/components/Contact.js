@@ -2,12 +2,15 @@ import { MailIcon } from '@heroicons/react/outline'
 import { useState } from 'react'
 import * as emailjs from 'emailjs-com'
 import HamptonRaw from './photos/logos/23Raw.png'
+import MessageSentModal from './MessageSentModal'
+import { Transition } from '@headlessui/react'
 
-const SERVICE_ID = 'safe'
-const TEMPLATE_ID = 'safe'
-const USER_ID = 'safe'
+const SERVICE_ID = 'service_rr6w06b'
+const TEMPLATE_ID = 'brickhouse_consulting'
+const USER_ID = 'user_x7yYaw560caoImG7WOD7y'
 
 export default function Contact ({ triggerPageChangeAnimation }) {
+  const [renderModal, setRenderModal] = useState(false)
   const [formParams, setFormParams] = useState({
     first_name: '',
     last_name: '',
@@ -23,6 +26,7 @@ export default function Contact ({ triggerPageChangeAnimation }) {
 
     emailjs.send(SERVICE_ID, TEMPLATE_ID, formParams, USER_ID)
       .then(response => {
+        setRenderModal(true)
         console.log('SUCCESS!')
       }, function (error) {
         console.log('FAILED...', error)
@@ -34,7 +38,7 @@ export default function Contact ({ triggerPageChangeAnimation }) {
   }
 
   // For some reason tailwind responsive breakpoints aren't
-  // working for background images. So I'm having to set
+  // working for background images. It's duplication them. So I'm having to set
   // up this getWindowSize function and set the breakpoints
   // this way. Currently it is slow to respond. It works only
   // after the user scrolls.
@@ -52,6 +56,22 @@ export default function Contact ({ triggerPageChangeAnimation }) {
     } else {
       return 'relative overflow-hidden sm:h-auto py-10 px-6 bg-cover bg-center sm:bg-yNBlue lg:bg-23Vertical lg:bg-no-repeat sm:px-10 xl:p-1 flex lg:ml-4 lg:-mr-4 lg:my-6 xl:my-0'
     }
+  }
+
+  if (renderModal) {
+    return (
+    // <Transition
+    //   show={renderModal}
+    //   enter='transform-opacity duration-1000'
+    //   enterFrom='opacity-0'
+    //   enterTo='opacity-100'
+    //   leave='transform-opacity duration-1000'
+    //   leaveFrom='opacity-100'
+    //   leaveTo='opacity-0'
+    // >
+      <MessageSentModal triggerPageChangeAnimation={triggerPageChangeAnimation} />
+    // </Transition>
+    )
   }
 
   return (
