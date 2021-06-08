@@ -1,3 +1,5 @@
+// https://www.digitalocean.com/community/tutorials/css-pure-css-parallax
+
 import { Transition } from '@headlessui/react'
 
 export default function ParallaxHeader (topRef, showAnimation) {
