@@ -2,7 +2,10 @@ import { useEffect, useState } from 'react'
 import JourneyIntro from './JourneyIntro'
 import JourneyNav from './JourneyNav'
 import JourneyArmy from './JourneyArmy'
+import JourneyUrbanArtistry from './JourneyUrbanArtistry'
 import useDocumentScrollThrottle from '../customComponents/useDocumentScrollThrottle'
+import JourneyNextLevel from './JourneyNextLevel'
+import JourneyAccomplishments from './JourneyAccomplishments'
 
 export default function Journey ({ triggerPageChangeAnimation }) {
   const [navBtnFade, setNavBtnFade] = useState(false)
@@ -31,6 +34,9 @@ export default function Journey ({ triggerPageChangeAnimation }) {
       <JourneyNav triggerPageChangeAnimation={triggerPageChangeAnimation} navBtnFade={navBtnFade} />
       <JourneyIntro />
       <JourneyArmy />
+      <JourneyUrbanArtistry />
+      <JourneyNextLevel />
+      <JourneyAccomplishments />
     </>
   )
 }
