@@ -1,5 +1,4 @@
 import { CONTENT } from './journeyContent'
-import JuniousWoods from '.././photos/JuniousWoods.jpeg'
 import juniousGray from '.././photos/JuniousGrey.jpeg'
 
 export default function JourneyNextLevel () {

@@ -1,6 +1,4 @@
-import juniousGray from '.././photos/JuniousGrey.jpeg'
 import { CONTENT } from './journeyContent'
-
 import juniousWoods from '.././photos/JuniousWoods.jpeg'
 
 const JourneyAccomplishments = () => {
