@@ -1,9 +1,10 @@
-import { MailIcon } from '@heroicons/react/outline'
+import { MailIcon, RefreshIcon } from '@heroicons/react/outline'
 import { useState } from 'react'
 import * as emailjs from 'emailjs-com'
 import HamptonRaw from './photos/logos/23Raw.png'
 import MessageSentModal from './MessageSentModal'
 import { Transition } from '@headlessui/react'
+import MessageErrorModal from './MessageErrorModal'
 
 const SERVICE_ID = 'service_rr6w06b'
 const TEMPLATE_ID = 'brickhouse_consulting'
@@ -11,6 +12,9 @@ const USER_ID = 'user_x7yYaw560caoImG7WOD7y'
 
 export default function Contact ({ triggerPageChangeAnimation }) {
   const [renderModal, setRenderModal] = useState(false)
+  const [renderErrorModal, setRenderErrorModal] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState([])
   const [formParams, setFormParams] = useState({
     first_name: '',
     last_name: '',
@@ -21,16 +25,35 @@ export default function Contact ({ triggerPageChangeAnimation }) {
     to_name: 'Junious'
   })
 
+  console.log('renderModal', renderModal)
+  console.log('renderErrorModal', renderErrorModal)
+  console.log('error', error)
+
   const handleSubmit = (e) => {
     e.preventDefault()
+    setIsLoading(true)
 
     emailjs.send(SERVICE_ID, TEMPLATE_ID, formParams, USER_ID)
       .then(response => {
         setRenderModal(true)
+        setIsLoading(false)
         console.log('SUCCESS!')
       }, function (error) {
-        console.log('FAILED...', error)
+        setError(error)
+        setRenderErrorModal(true)
+        console.log(error)
       })
+  }
+
+  const handleModalClose = () => {
+    setRenderModal(false)
+    setIsLoading(false)
+    triggerPageChangeAnimation('')
+  }
+
+  const handleErrorModalClose = () => {
+    setRenderErrorModal(false)
+    setIsLoading(false)
   }
 
   const handleChange = (name, value) => {
@@ -60,17 +83,23 @@ export default function Contact ({ triggerPageChangeAnimation }) {
 
   if (renderModal) {
     return (
-    // <Transition
-    //   show={renderModal}
-    //   enter='transform-opacity duration-1000'
-    //   enterFrom='opacity-0'
-    //   enterTo='opacity-100'
-    //   leave='transform-opacity duration-1000'
-    //   leaveFrom='opacity-100'
-    //   leaveTo='opacity-0'
-    // >
-      <MessageSentModal triggerPageChangeAnimation={triggerPageChangeAnimation} />
-    // </Transition>
+      <Transition
+        show={renderModal}
+        enter='transform-opacity duration-1000'
+        enterFrom='opacity-0'
+        enterTo='opacity-100'
+        leave='transform-opacity duration-1000'
+        leaveFrom='opacity-100'
+        leaveTo='opacity-0'
+      >
+        <MessageSentModal handleModalClose={handleModalClose} />
+      </Transition>
+    )
+  }
+
+  if (renderErrorModal) {
+    return (
+      <MessageErrorModal error={error} handleErrorModalClose={handleErrorModalClose} />
     )
   }
 
@@ -174,7 +203,7 @@ export default function Contact ({ triggerPageChangeAnimation }) {
                       name='first_name'
                       id='first_name'
                       autoComplete='given-name'
-                      className='py-3 px-4 block w-full shadow-sm text-earthYellow focus:ring-earthYellow focus:border-earthYellow border-gray-300 rounded-md'
+                      className='py-3 px-4 block w-full shadow-sm text-mediumCarmine focus:ring-earthYellow focus:border-earthYellow border-gray-300 rounded-md'
                       onChange={(e) => handleChange(e.target.name, e.target.value)}
                     />
                   </div>
@@ -189,7 +218,7 @@ export default function Contact ({ triggerPageChangeAnimation }) {
                       name='last_name'
                       id='last_name'
                       autoComplete='family-name'
-                      className='py-3 px-4 block w-full shadow-sm text-earthYellow focus:ring-earthYellow focus:border-earthYellow border-gray-300 rounded-md'
+                      className='py-3 px-4 block w-full shadow-sm text-mediumCarmine focus:ring-earthYellow focus:border-earthYellow border-gray-300 rounded-md'
                       onChange={(e) => handleChange(e.target.name, e.target.value)}
                     />
                   </div>
@@ -204,7 +233,7 @@ export default function Contact ({ triggerPageChangeAnimation }) {
                       name='email'
                       type='email'
                       autoComplete='email'
-                      className='py-3 px-4 block w-full shadow-sm text-earthYellow focus:ring-earthYellow focus:border-earthYellow border-gray-300 rounded-md'
+                      className='py-3 px-4 block w-full shadow-sm text-mediumCarmine focus:ring-earthYellow focus:border-earthYellow border-gray-300 rounded-md'
                       onChange={(e) => handleChange(e.target.name, e.target.value)}
                     />
                   </div>
@@ -224,7 +253,7 @@ export default function Contact ({ triggerPageChangeAnimation }) {
                       name='phone'
                       id='phone'
                       autoComplete='tel'
-                      className='py-3 px-4 block w-full shadow-sm text-earthYellow focus:ring-earthYellow focus:border-earthYellow border-gray-300 rounded-md'
+                      className='py-3 px-4 block w-full shadow-sm text-mediumCarmine focus:ring-earthYellow focus:border-earthYellow border-gray-300 rounded-md'
                       aria-describedby='phone-optional'
                       onChange={(e) => handleChange(e.target.name, e.target.value)}
                     />
@@ -239,7 +268,7 @@ export default function Contact ({ triggerPageChangeAnimation }) {
                       type='text'
                       name='subject'
                       id='subject'
-                      className='py-3 px-4 block w-full shadow-sm text-earthYellow focus:ring-earthYellow focus:border-earthYellow border-gray-300 rounded-md'
+                      className='py-3 px-4 block w-full shadow-sm text-mediumCarmine focus:ring-earthYellow focus:border-earthYellow border-gray-300 rounded-md'
                       onChange={(e) => handleChange(e.target.name, e.target.value)}
                     />
                   </div>
@@ -255,7 +284,7 @@ export default function Contact ({ triggerPageChangeAnimation }) {
                       id='message'
                       name='message'
                       rows={4}
-                      className='py-3 px-4 block w-full shadow-sm text-earthYellow focus:ring-earthYellow focus:border-earthYellow border-gray-300 rounded-md'
+                      className='py-3 px-4 block w-full shadow-sm text-mediumCarmine focus:ring-earthYellow focus:border-earthYellow border-gray-300 rounded-md'
                       aria-describedby='message-max'
                       defaultValue=''
                       onChange={(e) => handleChange(e.target.name, e.target.value)}
@@ -263,13 +292,22 @@ export default function Contact ({ triggerPageChangeAnimation }) {
                   </div>
                 </div>
                 <div className='sm:col-span-2 sm:flex sm:justify-end space-y-4 sm:space-y-2 sm:space-x-4'>
-                  <button
-                    type='submit'
-                    className='mt-2 w-full inline-flex items-center justify-center px-3 py-1.5 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-mediumCarmine hover:bg-fawn focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mediumCarmine sm:w-auto'
-                  >
-                    <MailIcon className='h-6 w-6 mr-2' />
-                    Send
-                  </button>
+                  {isLoading
+                    ? <button
+                        type='submit'
+                        className='mt-2 w-full inline-flex items-center justify-center px-3 py-1.5 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-mediumCarmine hover:bg-fawn focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mediumCarmine sm:w-auto'
+                      >
+                      <RefreshIcon className='h-4 w-4 mr-4 self-center animate-spin' />
+                      Send
+                      </button>
+                    : <button
+                        type='submit'
+                        className='mt-2 w-full inline-flex items-center justify-center px-3 py-1.5 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-mediumCarmine hover:bg-fawn focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mediumCarmine sm:w-auto'
+                      >
+                      <MailIcon className='h-6 w-6 mr-2' />
+                      Send
+                      </button>}
+
                   <button
                     type='button'
                     className='mt-2 w-full inline-flex items-center justify-center px-3 py-1.5 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-mediumCarmine hover:bg-fawn focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-wildBlueYonder focus:ring-offset-wilring-wildBlueYonder sm:w-auto'
