@@ -6,9 +6,9 @@ import MessageSentModal from './MessageSentModal'
 import { Transition } from '@headlessui/react'
 import MessageErrorModal from './MessageErrorModal'
 
-const SERVICE_ID = 'safe'
-const TEMPLATE_ID = 'safe'
-const USER_ID = 'safe'
+// const SERVICE_ID = 'safe'
+// const TEMPLATE_ID = 'safe'
+// const USER_ID = 'safe'
 
 export default function Contact ({ triggerPageChangeAnimation }) {
   const [renderModal, setRenderModal] = useState(false)
@@ -33,7 +33,7 @@ export default function Contact ({ triggerPageChangeAnimation }) {
     e.preventDefault()
     setIsLoading(true)
 
-    emailjs.send(SERVICE_ID, TEMPLATE_ID, formParams, USER_ID)
+    emailjs.send(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, formParams, process.env.REACT_APP_USER_ID)
       .then(response => {
         setRenderModal(true)
         setIsLoading(false)
