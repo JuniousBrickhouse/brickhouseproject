@@ -176,9 +176,9 @@ export default function Contact ({ triggerPageChangeAnimation }) {
                 </svg>
               </div>
               <span>
-                <h3 className='hidden sm:block lg:hidden text-4xl text-center font-poppins text-platinum font-extrabold'>Contact for Consultation</h3>
+                <h3 className='hidden sm:block lg:hidden text-4xl text-center font-poppins text-platinum font-extrabold'>Contact</h3>
                 <p className='hidden sm:block lg:hidden mt-6 text-xl text-platinum max-w-3xl font-nunito'>
-                  Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.
+                  Junious is available for booking in all of his professional capacities: performer, educator, and consultant. Please use this form to start a conversation.
                 </p>
               </span>
               <img src={HamptonRaw} alt='23 and Hampton Logo' className='hidden sm:block sm:w-48 sm:h-48 md:w-64 md:h-64 lg:hidden' />
@@ -186,9 +186,9 @@ export default function Contact ({ triggerPageChangeAnimation }) {
 
             {/* Contact form */}
             <div className=' py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12'>
-              <h3 className='block sm:hidden lg:block text-2xl font-medium font-poppins text-platinum'>Contact for Consultation</h3>
+              <h3 className='block sm:hidden lg:block text-2xl font-medium font-poppins text-platinum'>Contact</h3>
               <p className='block sm:hidden lg:block mt-6 text-lg text-platinum max-w-3xl font-nunito'>
-                Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.
+                Junious is available for booking in all of his professional capacities: performer, educator, and consultant. Please use this form to start a conversation.
               </p>
               <form onSubmit={handleSubmit} className='mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'>
                 <div>
@@ -297,14 +297,14 @@ export default function Contact ({ triggerPageChangeAnimation }) {
                       >
                       <RefreshIcon className='h-4 w-4 mr-4 self-center animate-spin' />
                       Send
-                      </button>
+                    </button>
                     : <button
                         type='submit'
                         className='mt-2 w-full inline-flex items-center justify-center px-3 py-1.5 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-mediumCarmine hover:bg-fawn focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mediumCarmine sm:w-auto'
                       >
                       <MailIcon className='h-6 w-6 mr-2' />
                       Send
-                      </button>}
+                    </button>}
 
                   <button
                     type='button'

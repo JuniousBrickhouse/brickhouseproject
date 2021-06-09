@@ -76,11 +76,11 @@ export default function NavBar ({ handleScroll, showSolidNav, triggerPageChangeA
                 <div className='flex-shrink-0'>
                   <button
                     type='button'
-                    className={`${showSolidNav ? 'bg-none hover:bg-mediumCarmine focus:ring-offset-yNBlue focus:ring-ynBring-offset-yNBlue' : 'bg-mediumCarmine hover:bg-yNBlue opacity-90 focus:ring-offset-mediumCarmine focus:ring-mediumCarmine'} relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-md font-medium font-poppins rounded-md text-platinum focus:outline-none focus:ring-2 focus:ring-offset-2 `}
+                    className={`${showSolidNav ? 'bg-none hover:bg-mediumCarmine focus:ring-offset-yNBlue focus:ring-ynBring-offset-yNBlue' : 'bg-mediumCarmine hover:bg-yNBlue opacity-90 focus:ring-offset-wildBlueYonder focus:ring-wildring-offset-wildBlueYonder'} relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-md font-medium font-poppins rounded-md text-platinum focus:outline-none focus:ring-2 focus:ring-offset-2 `}
                     onClick={() => triggerPageChangeAnimation('contactPage')}
                   >
                     <ChatIcon className='-ml-1 mr-2 h-5 w-5' aria-hidden='true' />
-                    <span>Consultation</span>
+                    <span>Contact</span>
                   </button>
                 </div>
 

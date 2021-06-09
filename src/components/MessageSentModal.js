@@ -46,7 +46,7 @@ export default function MessageSentModal ({ handleModalClose }) {
                   </Dialog.Title>
                   <div className='mt-2'>
                     <p className='text-sm text-gray-500'>
-                      Your message was received and Junious will respond to you in exactly 22hrs.
+                      Your message was sent and Junious will respond to you at his earliest convenience.
                     </p>
                   </div>
                 </div>
