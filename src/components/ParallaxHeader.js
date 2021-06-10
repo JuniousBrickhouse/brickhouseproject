@@ -14,7 +14,6 @@ export default function ParallaxHeader (topRef, showAnimation) {
         className='mx-auto px-4 sm:px-6 lg:px-8 h-full w-full items-center justify-center grid grid-rows-2 gap-2 sm:gap-6 sm:grid-cols-2 sm:grid-rows-2 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-2 lg:grid-rows-2 parallax bg-final-photo bg-no-repeat bg-left bg-125% sm:bg-left sm:bg-80% xl:bg-70%'
         aria-hidden='true'
       >
-        {/* <div className='parallax bg-final-photo bg-no-repeat bg-top sm:bg-center bg-contain' aria-hidden='true' /> */}
         <Transition.Child
           show={showAnimation.headerAnimation}
           enter='transition-all sm:delay-3000 duration-4000 sm:transform ease-in-out'
