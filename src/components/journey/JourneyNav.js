@@ -27,7 +27,7 @@ export default function JourneyNav ({ triggerPageChangeAnimation, navBtnFade }) 
                     type='button'
                     className='inline-flex items-center px-4 py-2 border border-transparent text-xs font-medium rounded-md shadow-sm text-white bg-mediumCarmine hover:bg-sonicSilver focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
                   >
-                    <ChevronDoubleLeftIcon className='pr-4' />
+                    <ChevronDoubleLeftIcon className='pr-4 h-8 w-8' />
                     Go Back
                   </button>
                 </div>
