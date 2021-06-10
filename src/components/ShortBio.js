@@ -10,8 +10,8 @@ const SHOTR_BIO =
 export default function ShortBio ({ showAnimation, triggerPageChangeAnimation }) {
   return (
   // <div className='bio'>
-    <div className='relative py-32 bg-white'>
-      <div className='hidden absolute top-0 inset-x-0 h-screen bg-gray-50 lg:block' aria-hidden='true' />
+    <div className='relative py-32 bg-burlyWood'>
+      <div className='hidden absolute top-0 inset-x-0 h-screen bg-burlyWood lg:block' aria-hidden='true' />
       <div className='max-w-7xl mx-auto bg-platinum lg:bg-transparent lg:px-8'>
         <div className='lg:grid lg:grid-cols-12'>
           <div className='relative z-10 lg:col-start-1 lg:row-start-1 lg:col-span-4 lg:py-16 lg:bg-transparent'>
@@ -94,7 +94,7 @@ export default function ShortBio ({ showAnimation, triggerPageChangeAnimation })
                 leave='transition-all duration-3000 sm:transform'
                 leaveFrom='opacity-100 sm:translate-x-0'
                 leaveTo='opacity-0 sm:translate-x-full'
-                className='text-2xl text-redBackground font-nunito'
+                className='text-2xl text-redBackground font-nunito font-semibold'
               >
                 {SHOTR_BIO.paragraph1}
               </Transition>
