@@ -188,7 +188,7 @@ function App () {
         </section>
 
         <span ref={orgsRef} id='org-affiliation'>
-          <OrgAffiliations />
+          <OrgAffiliations triggerPageChangeAnimation={triggerPageChangeAnimation} />
         </span>
 
         <Socials />
