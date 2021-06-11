@@ -56,7 +56,7 @@ export default function NavBar ({ handleScroll, showSolidNav, triggerPageChangeA
                 </div>
 
                 {/* debugger for larger window size breakpoints */}
-                <span className='flex justify-center items-center ml-20'>
+                {/* <span className='flex justify-center items-center ml-20'>
                   <div className='hidden sm:block md:hidden text-red-700'>
                     small
                   </div>
@@ -69,7 +69,7 @@ export default function NavBar ({ handleScroll, showSolidNav, triggerPageChangeA
                   <div className='hidden xl:block text-red-700'>
                     extra large
                   </div>
-                </span>
+                </span> */}
 
               </div>
               <div className='flex items-center'>
@@ -109,7 +109,7 @@ export default function NavBar ({ handleScroll, showSolidNav, triggerPageChangeA
             </div>
             <div className=''>
               {/* debugger for smaller window size breakpoints */}
-              <span className='flex justify-center items-center ml-20'>
+              {/* <span className='flex justify-center items-center ml-20'>
                 <div className='hidden sm:block md:hidden text-red-700'>
                   small
                 </div>
@@ -122,7 +122,7 @@ export default function NavBar ({ handleScroll, showSolidNav, triggerPageChangeA
                 <div className='hidden xl:block text-red-700'>
                   extra large
                 </div>
-              </span>
+              </span> */}
             </div>
           </Disclosure.Panel>
         </>

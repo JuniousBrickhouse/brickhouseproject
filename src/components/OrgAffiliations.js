@@ -15,7 +15,7 @@ const POSTS = [
   {
     title: 'Next Level',
     position: 'Director',
-    href: '#',
+    href: 'https://www.nextlevel-usa.org/junious-brickhouse',
     id: 2,
     description:
         'Having been with Next Level since its inception, serving as an Artist-Educator on the first trip to Senegal, Junious now serves as the Director of the program, following in the footsteps of Duke Ellington and the State Department’s Jazz Ambassadors . Junio us shapes the vision of this program and guides team members in delivering culturally sensitive and highly practical education in the areas of Artistic Excellence, Entrepreneurship, and Conflict Transformation.',
@@ -25,7 +25,7 @@ const POSTS = [
   {
     title: 'Urban Artistry, Inc.',
     position: 'Founder and Artistic Director',
-    href: '#',
+    href: 'https://urbanartistry.org/',
     id: 3,
     description:
         'Upon returning to the US in 2005 following 20 years of international service in the Army and as a civilian, Junious recognized the need for an institution to preserve and promote Urban Dance through structured mentorship, professional development, and community-building. He foundedthe non-profit Urban Artistry, Inc., which has been serving the DMV area and beyond throughclasses, mentorship, performances, and annual events such as the International Soul Societyfestiva',
