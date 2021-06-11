@@ -1,5 +1,5 @@
 import { CONTENT } from './journeyContent'
-import juniousGray from '.././photos/JuniousGrey.jpeg'
+import juniousWoods from '.././photos/juniousWoods.jpeg'
 
 export default function JourneyNextLevel () {
   return (
@@ -35,8 +35,8 @@ export default function JourneyNextLevel () {
             <div className='relative pt-64 pb-10 rounded-2xl shadow-xl overflow-hidden'>
               <img
                 className='absolute inset-0 h-full w-full object-cover'
-                src={juniousGray}
-                alt=''
+                src={juniousWoods}
+                alt='junious in the woods'
               />
 
               <div className='relative px-8' />
