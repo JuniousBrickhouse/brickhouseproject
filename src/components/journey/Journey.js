@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import JourneyIntro from './JourneyIntro'
+// import JourneyIntro from './JourneyIntro'
+import NewIntro from './NewIntro'
 import JourneyNav from './JourneyNav'
 import JourneyArmy from './JourneyArmy'
 import JourneyUrbanArtistry from './JourneyUrbanArtistry'
@@ -32,7 +33,8 @@ export default function Journey ({ triggerPageChangeAnimation }) {
   return (
     <>
       <JourneyNav triggerPageChangeAnimation={triggerPageChangeAnimation} navBtnFade={navBtnFade} />
-      <JourneyIntro />
+      {/* <JourneyIntro /> */}
+      <NewIntro />
       <JourneyArmy />
       <JourneyUrbanArtistry />
       <JourneyNextLevel />
