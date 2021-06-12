@@ -112,23 +112,17 @@ export default function NewIntro () {
             <img
               className='w-full rounded-lg'
               src={juniousGray}
-              alt=''
+              alt='Junious wearing a gray hat'
               width={1310}
               height={873}
             />
             {/* <figcaption>Sagittis scelerisque nulla cursus in enim consectetur quam.</figcaption> */}
           </figure>
-          <h2>Everything you need to get up and running</h2>
-          <p>
-            Purus morbi dignissim senectus mattis <a href='#'>adipiscing</a>. Amet, massa quam varius orci dapibus
-            volutpat cras. In amet eu ridiculus leo sodales cursus tristique. Tincidunt sed tempus ut viverra ridiculus
-            non molestie. Gravida quis fringilla amet eget dui tempor dignissim. Facilisis auctor venenatis varius nunc,
-            congue erat ac. Cras fermentum convallis quam.
-          </p>
+          {/* <h2>Everything you need to get up and running</h2>
           <p>
             Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae
             sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit.
-          </p>
+          </p> */}
         </div>
       </div>
     </div>

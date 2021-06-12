@@ -10,8 +10,8 @@ const SHOTR_BIO =
 export default function ShortBio ({ showAnimation, triggerPageChangeAnimation }) {
   return (
   // <div className='bio'>
-    <div className='relative py-32 bg-burlyWood'>
-      <div className='hidden absolute top-0 inset-x-0 h-screen bg-burlyWood lg:block' aria-hidden='true' />
+    <div className='relative py-32 bg-yNBlue'>
+      <div className='hidden absolute top-0 inset-x-0 h-screen bg-yNBlue lg:block' aria-hidden='true' />
       <div className='max-w-7xl mx-auto bg-platinum lg:bg-transparent lg:px-8'>
         <div className='lg:grid lg:grid-cols-12'>
           <div className='relative z-10 lg:col-start-1 lg:row-start-1 lg:col-span-4 lg:py-16 lg:bg-transparent'>
