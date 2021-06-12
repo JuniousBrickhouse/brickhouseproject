@@ -30,13 +30,13 @@ export default function Journey ({ triggerPageChangeAnimation }) {
   })
 
   return (
-    <>
+    <div className='h-screen overflow-x-hidden overflow-y-auto perspective'>
       <JourneyNav triggerPageChangeAnimation={triggerPageChangeAnimation} navBtnFade={navBtnFade} />
       <JourneyIntro />
       <JourneyArmy />
       <JourneyUrbanArtistry />
       <JourneyNextLevel />
       <JourneyAccomplishments />
-    </>
+    </div>
   )
 }
