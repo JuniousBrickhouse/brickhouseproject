@@ -6,6 +6,7 @@ import JourneyNextLevel from './JourneyNextLevel'
 import JourneyAccomplishments from './JourneyAccomplishments'
 import useJourneyIntroOnScreen from '../customComponents/useJourneyIntroOnScreen'
 import JourneyIntro from './JourneyIntro'
+import NewNextLevel from './NewNextLevel'
 
 export default function Journey ({ triggerPageChangeAnimation }) {
   const [navBtnFade, setNavBtnFade] = useState(false)
@@ -41,7 +42,8 @@ export default function Journey ({ triggerPageChangeAnimation }) {
         <span className=''>
           <JourneyUrbanArtistry />
         </span>
-        <JourneyNextLevel />
+        {/* <JourneyNextLevel /> */}
+        <NewNextLevel />
         <JourneyAccomplishments />
       </main>
     </div>
