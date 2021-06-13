@@ -167,7 +167,7 @@ function App () {
 
       <main className='h-screen overflow-x-hidden overflow-y-auto perspective'>
 
-        <section ref={homeRef} className='relative h-screen '>
+        <section className='relative h-screen preserve3d' ref={homeRef}>
           <ParallaxHeader homeRef={homeRef} showAnimation={showAnimation} />
         </section>
 
@@ -175,15 +175,15 @@ function App () {
           <ShortBio showAnimation={showAnimation} triggerPageChangeAnimation={triggerPageChangeAnimation} />
         </span>
 
-        <section className='relative h-screen' ref={dividerOneRef} id='parallax'>
+        <section className='relative h-screen preserve3d z-0' ref={dividerOneRef} id='parallax'>
           <ParallaxDividerOne />
         </section>
 
-        <span ref={videosRef} className='z-30' id='videos'>
+        <span className='h-full' ref={videosRef} id='videos'>
           <Videos />
         </span>
 
-        <section className='relative h-screen'>
+        <section className='relative h-screen preserve3d'>
           <ParallaxDividerTwo />
         </section>
 

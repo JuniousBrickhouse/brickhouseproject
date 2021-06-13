@@ -3,9 +3,9 @@ import VideoCard from './VideoCard'
 export default function Videos () {
   return (
     <>
-      <div className='mx-auto w-full h-auto pb-20 bg-gray-50'>
+      <div className='mx-auto w-full pb-20 bg-gray-50 z-50'>
 
-        <div className='bg-woodGray w-full z-30'>
+        <div className='bg-woodGray w-full'>
           <div className='w-full mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:flex lg:justify-between'>
             <div className='max-w-xl'>
               <h2 className='text-4xl font-extrabold text-mediumCarmine font-poppins sm:text-5xl sm:tracking-tight lg:text-6xl'>
