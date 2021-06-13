@@ -35,8 +35,12 @@ export default function Journey ({ triggerPageChangeAnimation }) {
         <span ref={introRef}>
           <JourneyIntro />
         </span>
-        <JourneyArmy />
-        <JourneyUrbanArtistry />
+        <span>
+          <JourneyArmy />
+        </span>
+        <span className=''>
+          <JourneyUrbanArtistry />
+        </span>
         <JourneyNextLevel />
         <JourneyAccomplishments />
       </main>

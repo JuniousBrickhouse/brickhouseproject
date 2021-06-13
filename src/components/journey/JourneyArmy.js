@@ -1,9 +1,9 @@
 import { CONTENT } from './journeyContent'
-import juniousGray from '.././photos/JuniousGrey.jpeg'
+// import juniousGray from '.././photos/JuniousGrey.jpeg'
 
 export default function JourneyArmy () {
   return (
-    <div className='relative bg-woodGray py-16 sm:py-24'>
+    <div className='relative bg-woodGray py-16 sm:py-24 preserve3d'>
       <div className='lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-24 lg:items-start'>
         <div className='relative sm:py-16 lg:py-0'>
           <div aria-hidden='true' className='hidden sm:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-screen'>
@@ -30,16 +30,24 @@ export default function JourneyArmy () {
               <rect width={404} height={392} fill='url(#02f20b47-fd69-4224-a62a-4c9de5c763f7)' />
             </svg>
           </div>
-          <div className='relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0 lg:max-w-none lg:py-20'>
+          <div
+            className='relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0 lg:max-w-none lg:py-20 army-preserve3d'
+            // aria-hidden='true'
+          >
             {/* Testimonial card */}
-            <div className='relative pt-64 pb-10 rounded-2xl shadow-xl overflow-hidden'>
-              <img
+            <div
+              className='relative pt-64 pb-10 rounded-2xl overflow-hidden army-preserve3d'
+              // aria-hidden='true'
+            >
+              <div className='army-parallax bg-junious-grey bg-cover bg-no-repeat' aria-hidden='true' />
+              {/* <img
                 className='absolute inset-0 h-full w-full object-cover'
+                // aria-hidden='true'
                 src={juniousGray}
-                alt=''
-              />
+                alt='junious in a gray hat'
+              /> */}
 
-              <div className='relative px-8' />
+              {/* <div className='relative px-8' /> */}
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@ import { CONTENT } from './journeyContent'
 const JourneyUrbanArtistry = () => {
   return (
     <>
-      <div className='bg-yNBlue overflow-hidden'>
+      <div className='bg-yNBlue overflow-hidden preserve3d'>
         <div className='relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8'>
           <div className='hidden lg:block bg-daviesGrey absolute top-0 bottom-0 left-3/4 w-screen' />
           <div className='mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none'>
@@ -77,14 +77,13 @@ const JourneyUrbanArtistry = () => {
               </div>
               {/* >= lg screen sizes */}
               <div className='hidden lg:block lg:text-base mx-auto max-w-prose lg:max-w-none mt-8 lg:mt-32 lg:-mr-28 lg:ml-28 xl:-mr-36 xl:ml-36'>
-                {/* lg:-mt-96 lg:-ml-32  lg:mr-32 xl:-ml-44 xl:mr-44 */}
                 <figure>
                   <div
                     className='aspect-w-22 aspect-h-17 lg:aspect-none red-dance-parallax'
                     aria-hidden='true'
                   >
                     <img
-                      className='rounded-lg shadow-lg object-cover object-center bg-50 '
+                      className='rounded-lg shadow-lg object-cover object-center bg-50'
                       src={JuniousRedDance}
                       alt='Junious in front of Urban Artistry Sign'
                       width={1184}
