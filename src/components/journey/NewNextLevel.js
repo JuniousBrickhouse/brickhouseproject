@@ -9,7 +9,7 @@ export default function NewNextLevel () {
           <div className='absolute inset-0 opacity-50 filter saturate-0 mix-blend-multiply'>
             <img
               src='https://images.squarespace-cdn.com/content/v1/5b521e334cde7a741d47e768/1556040963000-MSMZER9EYAYVN5IENQ1Q/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/Junious+introducing+NLprogram+to+participants++%281+of+1%29.jpg'
-              alt=''
+              alt='Junious sitting at table'
               className='w-full h-full object-cover'
             />
           </div>
