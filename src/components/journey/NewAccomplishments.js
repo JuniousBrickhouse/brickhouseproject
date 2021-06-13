@@ -1,16 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from 'react'
-import { Popover, Transition } from '@headlessui/react'
-import { ChatIcon, XIcon } from '@heroicons/react/outline'
+import { ChatIcon } from '@heroicons/react/outline'
 import JuniousNoHat from '.././photos/JuniousNoHat.jpeg'
 import { CONTENT } from './journeyContent'
-
-const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' }
-]
 
 export default function NewAccomplishments ({ triggerPageChangeAnimation }) {
   return (
