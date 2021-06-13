@@ -1,6 +1,6 @@
 import { CONTENT } from './journeyContent'
 // import juniousWoods from '.././photos/juniousWoods.jpeg'
-import juniousWoods from 'src/components/photos/juniousWoods.jpeg'
+import juniousWoods from '../../components/photos/juniousWoods.jpeg'
 
 export default function JourneyNextLevel () {
   return (
