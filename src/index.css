@@ -15,6 +15,11 @@
   z-index: -3;
 }
 
+.army-preserve3d {
+  transform-style: preserve-3d;
+  z-index: 1;
+}
+
 .parallax {
   content: " ";
   position: absolute;
@@ -25,6 +30,17 @@
   transform: translateZ(-1px) scale(1.5);
   z-index: -2;
 }
+.army-parallax {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateZ(0.1px) scale(1);
+  z-index: 1;
+}
+
 .red-dance-parallax {
   content: " ";
   position: absolute;
@@ -33,10 +49,6 @@
   bottom: 0;
   left: 0;
   transform: translateZ(0.5px) scale(0.8);
-  /*Firefox*/
-  -moz-transform: translate3d(0.5px) scale(0.8);
-  /*Safari*/
-  /* -webkit-transform: translateZ(-1px) scale(0.8); */
   z-index: 1;
 }
 
@@ -48,9 +60,5 @@
   bottom: 0;
   left: 0;
   transform: translateZ(0.2px) scale(0.9);
-  /*Firefox*/
-  -moz-transform: translateZ(-1px) scale(0.9);
-  /*Safari*/
-  /* -webkit-transform: translateZ(-1px) scale(0.9); */
   z-index: 1;
 }
