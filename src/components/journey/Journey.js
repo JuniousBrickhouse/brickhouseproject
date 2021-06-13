@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react'
-// import JourneyIntro from './JourneyIntro'
-import NewIntro from './NewIntro'
 import JourneyNav from './JourneyNav'
 import JourneyArmy from './JourneyArmy'
 import JourneyUrbanArtistry from './JourneyUrbanArtistry'
-import useDocumentScrollThrottle from '../customComponents/useDocumentScrollThrottle'
 import JourneyNextLevel from './JourneyNextLevel'
 import JourneyAccomplishments from './JourneyAccomplishments'
+import useJourneyIntroOnScreen from '../customComponents/useJourneyIntroOnScreen'
+import JourneyIntro from './JourneyIntro'
 
 export default function Journey ({ triggerPageChangeAnimation }) {
   const [navBtnFade, setNavBtnFade] = useState(false)
@@ -15,30 +14,32 @@ export default function Journey ({ triggerPageChangeAnimation }) {
     window.scrollTo(0, 0)
   }, [])
 
-  const MINIMUM_SCROLL = 0
-  const TIMEOUT_DELAY = 0
-
-  useDocumentScrollThrottle(callbackData => {
-    const { previousScrollTop, currentScrollTop } = callbackData
-    const isScrolledDown = previousScrollTop < currentScrollTop
-    const isMinimumScrolled = currentScrollTop > MINIMUM_SCROLL
-
-    setNavBtnFade(currentScrollTop > 2)
-
-    setTimeout(() => {
-      setNavBtnFade(isScrolledDown && isMinimumScrolled)
-    }, TIMEOUT_DELAY)
+  const [introRef, journeyIntroIsVisible] = useJourneyIntroOnScreen({
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.78
   })
 
+  useEffect(() => {
+    if (journeyIntroIsVisible) {
+      setNavBtnFade(false)
+    } else {
+      setNavBtnFade(true)
+    }
+  }, [journeyIntroIsVisible])
+
   return (
-    <>
+    <div>
       <JourneyNav triggerPageChangeAnimation={triggerPageChangeAnimation} navBtnFade={navBtnFade} />
-      {/* <JourneyIntro /> */}
-      <NewIntro />
-      <JourneyArmy />
-      <JourneyUrbanArtistry />
-      <JourneyNextLevel />
-      <JourneyAccomplishments />
-    </>
+      <main className='h-screen overflow-x-hidden overflow-y-auto perspective'>
+        <span ref={introRef}>
+          <JourneyIntro />
+        </span>
+        <JourneyArmy />
+        <JourneyUrbanArtistry />
+        <JourneyNextLevel />
+        <JourneyAccomplishments />
+      </main>
+    </div>
   )
 }
