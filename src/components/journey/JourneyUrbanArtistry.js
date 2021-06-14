@@ -73,6 +73,18 @@ const JourneyUrbanArtistry = () => {
                 <p className='text-lg text-platinum'>
                   {CONTENT.urbanArtistry}
                 </p>
+                <footer className='mt-6 w-max'>
+                  <p className='flex flex-col font-medium'>
+                    <a
+                      href='https://urbanartistry.org/'
+                      target='_blank'
+                      rel='noreferrer noopener'
+                      className='hover:text-glaucous text-wildBlueYonder'
+                    >
+                      Visit Urban Artistry
+                    </a>
+                  </p>
+                </footer>
               </div>
               {/* >= lg screen sizes */}
               <div className='hidden lg:block lg:text-base mx-auto max-w-prose lg:max-w-none mt-8 lg:mt-32 lg:-mr-28 lg:ml-28 xl:-mr-36 xl:ml-36'>

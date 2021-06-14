@@ -19,6 +19,18 @@ export default function NewNextLevel () {
               <p className='text-xl font-medium sm:text-2xl'>
                 {CONTENT.nextLevel}
               </p>
+              <footer className='mt-6 w-max'>
+                <p className='flex flex-col font-medium'>
+                  <a
+                    href='https://www.nextlevel-usa.org/junious-brickhouse'
+                    target='_blank'
+                    rel='noreferrer noopener'
+                    className='text-yNBlue hover:text-indigoDye'
+                  >
+                    Visit NEXT LEVEL
+                  </a>
+                </p>
+              </footer>
             </blockquote>
           </div>
         </div>
