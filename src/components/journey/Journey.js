@@ -9,6 +9,7 @@ import JourneyIntro from './JourneyIntro'
 import NewNextLevel from './NewNextLevel'
 import NewAccomplishments from './NewAccomplishments'
 import Socials from '../../Socials'
+import JourneyAssassins from './JourneyAssassins'
 
 export default function Journey ({ triggerPageChangeAnimation }) {
   const [navBtnFade, setNavBtnFade] = useState(false)
@@ -41,6 +42,7 @@ export default function Journey ({ triggerPageChangeAnimation }) {
         <span>
           <JourneyArmy />
         </span>
+        <JourneyAssassins />
         <span className=''>
           <JourneyUrbanArtistry />
         </span>

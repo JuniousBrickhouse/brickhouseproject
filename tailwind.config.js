@@ -7,7 +7,6 @@ module.exports = {
     extend: {
       backgroundImage: theme => ({
         'junious-headshot': "url('./components/photos/GwrwqDWr.jpeg')",
-        'dancer-test': "url('./components/photos/people.jpg')",
         crewLil: "url('./components/photos/CrewLil.jpeg')",
         crewVsan: "url('./components/photos/CrewVsan.jpeg')",
         'junious-blue': "url('./components/photos/JuniousBlue.jpeg')",
