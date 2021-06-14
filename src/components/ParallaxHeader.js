@@ -19,7 +19,7 @@ export default function ParallaxHeader (topRef, showAnimation) {
           enter='transition-all sm:delay-3000 duration-4000 sm:transform ease-in-out'
           enterFrom='opacity-0'
           enterTo='opacity-100'
-          className='font-nunito font-thin text-5xl sm:text-4xl md:text-5xl lg:text-5xl row-start-2 place-self-center pt-20 sm:row-start-1 sm:col-start-2 md:col-start-2 lg:col-start-2 sm:place-self-end sm:pb-20 lg:pb-0 lg:place-self-center lg:pt-10 xl:text-left text-center'
+          className='font-allura text-5xl sm:text-4xl md:text-6xl lg:text-6xl xl:text-7xl row-start-2 place-self-center pt-20 sm:row-start-1 sm:col-start-2 md:col-start-2 lg:col-start-2 sm:place-self-end sm:pb-20 lg:pb-0 lg:place-self-center lg:pt-10 xl:text-left text-center'
         >
           Junious Brickhouse
         </Transition.Child>
