@@ -42,7 +42,9 @@ export default function Journey ({ triggerPageChangeAnimation }) {
         <span>
           <JourneyArmy />
         </span>
-        <JourneyAssassins />
+        <span className=''>
+          <JourneyAssassins />
+        </span>
         <span className=''>
           <JourneyUrbanArtistry />
         </span>
