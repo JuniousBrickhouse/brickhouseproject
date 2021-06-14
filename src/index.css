@@ -62,3 +62,36 @@
   transform: translateZ(0.2px) scale(0.9);
   z-index: 1;
 }
+
+.vsan-parallax {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateZ(0.2px) scale(0.7);
+  z-index: 1;
+}
+
+.junious-crew-parallax {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateZ(0.5px) scale(0.6);
+  z-index: 1;
+}
+
+.crew-lil-parallax {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateZ(0.3px) scale(0.65);
+  z-index: 1;
+}
