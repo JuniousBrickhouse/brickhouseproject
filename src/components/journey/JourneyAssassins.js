@@ -11,8 +11,8 @@ export default function Assassins () {
       <div className='relative max-w-7xl mx-auto'>
         <div className='text-center'>
           <h2 className='text-3xl tracking-tight font-extrabold text-platinum sm:text-4xl font-poppins'>Assassins Crew</h2>
-          <p className='mt-3 max-w-2xl mx-auto text-xl text-mediumCarmine sm:mt-4'>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque, ducimus sed.
+          <p className='mt-3 max-w-6xl mx-auto text-xl text-platinum sm:mt-4'>
+            Junious joined the Assassins Crew in 2000, while living abroad in Heidelberg, Germany. It was an effort for us to remember the roots of the music and the dance forms we were doing and the people in those communities that were sharing with us. We were a conglomerate of professionals and up-and-comingmovers and shakers coming together to represent not just on stages and in the industry but in the underground as well, where these dance forms came from. We were not just trying to be successful as artists, we wanted to be community-driven, so taking care of the underground and the people there was important to us. Those lessons and those people inspired Junious not only to open an Assassins chapter in DC but also to found his own organization, Urban Artistry, dedicated to sharing and preserving these dance cultures.
           </p>
         </div>
         {/* Screen sizes >= lg */}
