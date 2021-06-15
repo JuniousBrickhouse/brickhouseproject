@@ -8,6 +8,7 @@ import useJourneyIntroOnScreen from '../customComponents/useJourneyIntroOnScreen
 import JourneyIntro from './JourneyIntro'
 import Socials from '../../Socials'
 import JourneyAssassins from './JourneyAssassins'
+import DjScottyDivider from './DjScottyDivider'
 
 export default function Journey ({ triggerPageChangeAnimation }) {
   const [navBtnFade, setNavBtnFade] = useState(false)
@@ -44,6 +45,9 @@ export default function Journey ({ triggerPageChangeAnimation }) {
         <span className=''>
           <JourneyUrbanArtistry />
         </span>
+        <section className='relative h-screen preserve3d'>
+          <DjScottyDivider />
+        </section>
         <JourneyNextLevel />
         <JourneyAccomplishments triggerPageChangeAnimation={triggerPageChangeAnimation} />
         <Socials />

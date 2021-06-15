@@ -1,6 +1,7 @@
 import crewVsan from '../photos/CrewVsan.jpeg'
 import crewLil from '../photos/CrewLil.jpeg'
 import juniousCrew from '../photos/JuniousCrew.jpeg'
+import { CONTENT } from './journeyContent'
 
 export default function Assassins () {
   return (
@@ -12,12 +13,13 @@ export default function Assassins () {
         <div className='text-center'>
           <h2 className='text-3xl tracking-tight font-extrabold text-platinum sm:text-4xl font-poppins'>Assassins Crew</h2>
           <p className='mt-3 max-w-6xl mx-auto text-xl text-platinum sm:mt-4'>
-            Junious joined the Assassins Crew in 2000, while living abroad in Heidelberg, Germany. It was an effort for us to remember the roots of the music and the dance forms we were doing and the people in those communities that were sharing with us. We were a conglomerate of professionals and up-and-comingmovers and shakers coming together to represent not just on stages and in the industry but in the underground as well, where these dance forms came from. We were not just trying to be successful as artists, we wanted to be community-driven, so taking care of the underground and the people there was important to us. Those lessons and those people inspired Junious not only to open an Assassins chapter in DC but also to found his own organization, Urban Artistry, dedicated to sharing and preserving these dance cultures.
+            {CONTENT.assassins}
           </p>
         </div>
         {/* Screen sizes >= lg */}
-        <div className='hidden mt-12 max-w-lg mx-auto lg:grid gap-1 lg:grid-cols-3 lg:max-w-none preserve3d h-screen'>
-          <div className='relative'>
+        {/* first three images */}
+        <section className='hidden mt-12 max-w-lg mx-auto lg:grid gap-1 lg:grid-cols-3 lg:max-w-none relative'>
+          <div className='relative h-screen army-preserve3d'>
             <div className='bg-crewVsan bg-cover vsan-parallax -ml-10 -mr-16 rounded-md' />
           </div>
           <div className='relative'>
@@ -25,6 +27,18 @@ export default function Assassins () {
           </div>
           <div className='relative'>
             <div className='bg-crewLil bg-cover crew-lil-parallax -ml-24 -mr-2 rounded-md' />
+          </div>
+        </section>
+        {/* second three images */}
+        <div className='hidden -mt-32 max-w-lg mx-auto lg:grid gap-1 lg:grid-cols-3 lg:max-w-none preserve3d h-screen'>
+          <div className='relative'>
+            <div className='bg-assassinsDC2013 bg-cover assassins-dc-parallax ml-10 -mr-44 rounded-md' />
+          </div>
+          <div className='relative'>
+            <div className='bg-assassinsJuniousPose bg-cover assassins-junious-pose-parallax -mt-20 -ml-14 -mr-14 rounded-md' />
+          </div>
+          <div className='relative'>
+            <div className='bg-assassinsLowView bg-cover assassins-low-view-parallax mt-20 -ml-52 mr-12 rounded-md' />
           </div>
         </div>
         {/* Screen sizes <= md */}
