@@ -2,12 +2,10 @@ import { useEffect, useState } from 'react'
 import JourneyNav from './JourneyNav'
 import JourneyArmy from './JourneyArmy'
 import JourneyUrbanArtistry from './JourneyUrbanArtistry'
-// import JourneyNextLevel from './JourneyNextLevel'
-// import JourneyAccomplishments from './JourneyAccomplishments'
+import JourneyNextLevel from './JourneyNextLevel'
+import JourneyAccomplishments from './JourneyAccomplishments'
 import useJourneyIntroOnScreen from '../customComponents/useJourneyIntroOnScreen'
 import JourneyIntro from './JourneyIntro'
-import NewNextLevel from './NewNextLevel'
-import NewAccomplishments from './NewAccomplishments'
 import Socials from '../../Socials'
 import JourneyAssassins from './JourneyAssassins'
 
@@ -46,10 +44,8 @@ export default function Journey ({ triggerPageChangeAnimation }) {
         <span className=''>
           <JourneyUrbanArtistry />
         </span>
-        {/* <JourneyNextLevel /> */}
-        <NewNextLevel />
-        {/* <JourneyAccomplishments /> */}
-        <NewAccomplishments triggerPageChangeAnimation={triggerPageChangeAnimation} />
+        <JourneyNextLevel />
+        <JourneyAccomplishments triggerPageChangeAnimation={triggerPageChangeAnimation} />
         <Socials />
       </main>
     </div>
