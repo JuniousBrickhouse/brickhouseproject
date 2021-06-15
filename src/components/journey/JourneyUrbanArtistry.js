@@ -40,8 +40,13 @@ const JourneyUrbanArtistry = () => {
                 <rect width={404} height={384} fill='url(#de316486-4a29-4312-bdfc-fbce2132a2c1)' />
               </svg>
               {/* >= lg screen sizes */}
-              <div className='hidden lg:block relative text-base mx-auto max-w-prose lg:max-w-none lg:-ml-8 lg:mr-8 xl:-ml-0 xl:mr-0'>
-                <figure>
+              {/* <div className='hidden lg:block'>
+                <div className='relative'>
+                  <div className='bg-urbanA bg-cover UA-parallax w-full h-screen rounded-md' />
+                </div>
+              </div> */}
+              <div className='hidden lg:block text-base mx-auto max-w-prose lg:max-w-none lg:-ml-8 lg:mr-8 xl:-ml-0 xl:mr-0'>
+                <figure className='relative'>
                   <div className='aspect-w-22 aspect-h-17 lg:aspect-none UA-parallax' aria-hidden='true'>
                     <img
                       className='rounded-lg shadow-lg object-cover object-center bg-50'
@@ -87,11 +92,10 @@ const JourneyUrbanArtistry = () => {
                 </footer>
               </div>
               {/* >= lg screen sizes */}
-              <div className='hidden lg:block lg:text-base mx-auto max-w-prose lg:max-w-none mt-8 lg:mt-32 lg:-mr-28 lg:ml-28 xl:-mr-36 xl:ml-36'>
-                <figure>
+              <div className='hidden lg:block relative lg:text-base mx-auto max-w-prose lg:max-w-none mt-8 lg:mt-32 lg:-mr-28 lg:ml-28 xl:-mr-36 xl:ml-36'>
+                <figure className='red-dance-parallax' aria-hidden='true'>
                   <div
-                    className='aspect-w-22 aspect-h-17 lg:aspect-none red-dance-parallax'
-                    aria-hidden='true'
+                    className='aspect-w-22 aspect-h-17 lg:aspect-none'
                   >
                     <img
                       className='rounded-lg shadow-lg object-cover object-center bg-50'

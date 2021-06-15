@@ -4,7 +4,7 @@ import juniousCrew from '../photos/JuniousCrew.jpeg'
 
 export default function Assassins () {
   return (
-    <div className='relative bg-daviesGrey pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8'>
+    <div className='relative bg-daviesGrey pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8 preserve3d'>
       <div className='absolute inset-0'>
         <div className='bg-richBlack h-1/3 sm:h-2/3' />
       </div>
@@ -16,15 +16,24 @@ export default function Assassins () {
           </p>
         </div>
         {/* Screen sizes >= lg */}
-        <div className='hidden mt-12 max-w-lg mx-auto lg:grid gap-1 lg:grid-cols-3 lg:max-w-none h-screen army-preserve3d'>
+        <div className='hidden mt-12 max-w-lg mx-auto lg:grid gap-1 lg:grid-cols-3 lg:max-w-none h-screen'>
           <div className='relative'>
-            <div className='bg-crewVsan bg-cover vsan-parallax -ml-10 -mr-16 rounded-md' aria-hidden='true' />
+            <div
+              className='bg-crewVsan bg-cover vsan-parallax -ml-10 -mr-16 rounded-md'
+              aria-hidden='true'
+            />
           </div>
           <div className='relative'>
-            <div className='bg-junious-crew bg-cover junious-crew-parallax -ml-16 -mr-16 rounded-md' aria-hidden='true' />
+            <div
+              className='bg-junious-crew bg-cover junious-crew-parallax -ml-16 -mr-16 rounded-md'
+              aria-hidden='true'
+            />
           </div>
           <div className='relative'>
-            <div className='bg-crewLil bg-cover crew-lil-parallax -ml-24 -mr-2 rounded-md' aria-hidden='true' />
+            <div
+              className='bg-crewLil bg-cover crew-lil-parallax -ml-24 -mr-2 rounded-md'
+              aria-hidden='true'
+            />
           </div>
         </div>
         {/* Screen sizes <= md */}
