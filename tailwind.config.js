@@ -25,9 +25,20 @@ module.exports = {
         'photo-edit': "url('./components/photos/PhotoEdit.png')",
         'final-photo': "url('./components/photos/FinalPhoto.png')",
         '23Vertical': "url('./components/photos/logos/23Vertical.png')",
-        '23Raw': "url('./components/photos/logos/23Raw.png')"
-        // 'headshot-junious': "url('./components/photos/headshot.jpeg')"
-        // 'footer-texture': "url('/img/footer-texture.png')"
+        '23Raw': "url('./components/photos/logos/23Raw.png')",
+        assassinsDC2013: "url('./components/photos/assassinsDC2013.jpg')",
+        lyndaBrickhouse: "url('./components/photos/lyndaBrickhouse.jpg')",
+        juniousMountain: "url('./components/photos/juniousMountain.jpg')",
+        assassinsJuniousPose: "url('./components/photos/assassinsJuniousPose.jpg')",
+        assassinsLowView: "url('./components/photos/assassinsLowView.jpg')",
+        dimg: "url('./components/photos/dimg.jpg')",
+        djScotty: "url('./components/photos/djScotty.jpg')",
+        eg12D1Zr: "url('./components/photos/eg12D1Zr.jpeg')",
+        juniousWithAnotherPerson: "url('./components/photos/juniousWithAnotherPerson.jpg')",
+        juniousBillUp: "url('./components/photos/juniousBillUp.jpg')",
+        nubianClubCollaboration: "url('./components/photos/nubianClubCollaboration.jpeg')",
+        philWigginsAndFriends: "url('./components/photos/philWigginsAndFriends.jpg')",
+        ugPeople: "url('./components/photos/ugPeople.jpeg')"
 
       }),
       backgroundSize: {

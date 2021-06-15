@@ -1,81 +1,53 @@
-import { CONTENT } from './journeyContent'
+/* This example requires Tailwind CSS v2.0+ */
+import { ChatIcon } from '@heroicons/react/outline'
 import JuniousNoHat from '.././photos/JuniousNoHat.jpeg'
+import { CONTENT } from './journeyContent'
 
-const JourneyAccomplishments = () => {
+export default function JourneyAccomplishments ({ triggerPageChangeAnimation }) {
   return (
-    <>
-      <div className='bg-mediumCarmine overflow-hidden'>
-        <div className='relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8'>
-          <div className='hidden lg:block bg-yNBlue absolute top-0 bottom-0 left-3/4 w-screen' />
-          <div className='mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none'>
-            <div>
-              {/* <h2 className='text-base text-indigo-600 font-semibold tracking-wide uppercase'>Case Study</h2> */}
-              <h3 className='mt-2 text-3xl leading-8 font-extrabold tracking-tight text-yNBlue sm:text-4xl font-poppins'>
-                Junious Brickhouse
-              </h3>
-            </div>
-          </div>
-          <div className='mt-8 lg:grid lg:grid-cols-2 lg:gap-8'>
-            <div className='relative lg:row-start-1 lg:col-start-2'>
-              <svg
-                className='hidden lg:block absolute top-0 right-0 -mt-20 -mr-20'
-                width={404}
-                height={384}
-                fill='none'
-                viewBox='0 0 404 384'
-                aria-hidden='true'
-              >
-                <defs>
-                  <pattern
-                    id='de316486-4a29-4312-bdfc-fbce2132a2c1'
-                    x={0}
-                    y={0}
-                    width={20}
-                    height={20}
-                    patternUnits='userSpaceOnUse'
-                  >
-                    <rect x={0} y={0} width={4} height={4} className='text-platinum' fill='currentColor' />
-                  </pattern>
-                </defs>
-                <rect width={404} height={384} fill='url(#de316486-4a29-4312-bdfc-fbce2132a2c1)' />
-              </svg>
-              <div className='relative text-base mx-auto max-w-prose lg:max-w-none'>
-                <figure>
-                  <div className='aspect-w-12 aspect-h-7 lg:aspect-none'>
-                    <img
-                      className='rounded-lg shadow-lg object-cover object-center'
-                      src={JuniousNoHat}
-                    // 'https://images.unsplash.com/photo-1546913199-55e06682967e?ixlib=rb-1.2.1&auto=format&fit=crop&crop=focalpoint&fp-x=.735&fp-y=.55&w=1184&h=1376&q=80'
-                      alt='Junious not wearing a hat'
-                      width={1184}
-                      height={1376}
-                    />
-                  </div>
-                  {/* <figcaption className='mt-3 flex text-sm text-gray-500'>
-                  <CameraIcon className='flex-none w-5 h-5 text-gray-400' aria-hidden='true' />
-                  <span className='ml-2'>Photograph by Marcus O’Leary</span>
-                </figcaption> */}
-                </figure>
-              </div>
-            </div>
-            <div className='mt-8 lg:mt-0'>
-              <div className='text-base max-w-prose mx-auto lg:max-w-none'>
-                <p className='text-lg text-platinum'>
-                  {CONTENT.accomplishments}
-                </p>
-              </div>
-              <div className='mt-5 prose prose-indigo text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1'>
-                <p>
-                  {/* {CONTENT.childhood} */}
+    <div className='relative bg-indigoDye overflow-hidden'>
+      <div className='max-w-7xl mx-auto'>
+        <div className='relative z-10 pb-8 bg-indigoDye sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32'>
+          <svg
+            className='hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-woodGray transform translate-x-1/2'
+            fill='currentColor'
+            viewBox='0 0 100 100'
+            preserveAspectRatio='none'
+            aria-hidden='true'
+          >
+            <polygon points='50,0 100,0 50,100 0,100' />
+          </svg>
 
-                </p>
+          {/* This line sets the full length of the divider between the img and the text on xl */}
+          <div className='relative pt-6 px-4 sm:px-6 lg:px-8' />
+
+          <main className='mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28'>
+            <div className='sm:text-center lg:text-left'>
+              <p className='mt-3 text-base text-platinum sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0'>
+                {CONTENT.accomplishments}
+              </p>
+              <div className='mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start'>
+                <div className='rounded-md shadow'>
+                  <button
+                    className='bg-mediumCarmine hover:bg-fawn opacity-90 focus:ring-offset-fawn relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-md font-medium font-poppins rounded-md text-platinum focus:outline-none focus:ring-2 focus:ring-offset-2'
+                    onClick={() => triggerPageChangeAnimation('contactPage')}
+                  >
+                    <ChatIcon className='-ml-1 mr-2 h-5 w-5' />
+                    Contact
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
+          </main>
         </div>
       </div>
-    </>
+      <div className='lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2'>
+        <img
+          className='h-56 w-full object-contain sm:object-contain lg:object-cover sm:h-72 md:h-96 lg:w-full lg:h-full'
+          src={JuniousNoHat}
+          alt='Junious not wearing a hat'
+        />
+      </div>
+    </div>
   )
 }
-
-export default JourneyAccomplishments

@@ -1,6 +1,7 @@
 import crewVsan from '../photos/CrewVsan.jpeg'
 import crewLil from '../photos/CrewLil.jpeg'
 import juniousCrew from '../photos/JuniousCrew.jpeg'
+import { CONTENT } from './journeyContent'
 
 export default function Assassins () {
   return (
@@ -11,17 +12,24 @@ export default function Assassins () {
       <div className='relative max-w-7xl mx-auto'>
         <div className='text-center'>
           <h2 className='text-3xl tracking-tight font-extrabold text-platinum sm:text-4xl font-poppins'>Assassins Crew</h2>
-          <p className='mt-3 max-w-2xl mx-auto text-xl text-mediumCarmine sm:mt-4'>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque, ducimus sed.
+          <p className='mt-3 max-w-6xl mx-auto text-xl text-platinum sm:mt-4'>
+            {CONTENT.assassins}
           </p>
         </div>
         {/* Screen sizes >= lg */}
+<<<<<<< HEAD
         <div className='hidden mt-12 max-w-lg mx-auto lg:grid gap-1 lg:grid-cols-3 lg:max-w-none h-screen'>
           <div className='relative'>
             <div
               className='bg-crewVsan bg-cover vsan-parallax -ml-10 -mr-16 rounded-md'
               aria-hidden='true'
             />
+=======
+        {/* first three images */}
+        <section className='hidden mt-12 max-w-lg mx-auto lg:grid gap-1 lg:grid-cols-3 lg:max-w-none relative'>
+          <div className='relative h-screen army-preserve3d'>
+            <div className='bg-crewVsan bg-cover vsan-parallax -ml-10 -mr-16 rounded-md' />
+>>>>>>> fd53b1798830f7b0daead434e07765acef7ead37
           </div>
           <div className='relative'>
             <div
@@ -34,6 +42,18 @@ export default function Assassins () {
               className='bg-crewLil bg-cover crew-lil-parallax -ml-24 -mr-2 rounded-md'
               aria-hidden='true'
             />
+          </div>
+        </section>
+        {/* second three images */}
+        <div className='hidden -mt-32 max-w-lg mx-auto lg:grid gap-1 lg:grid-cols-3 lg:max-w-none preserve3d h-screen'>
+          <div className='relative'>
+            <div className='bg-assassinsDC2013 bg-cover assassins-dc-parallax ml-10 -mr-44 rounded-md' />
+          </div>
+          <div className='relative'>
+            <div className='bg-assassinsJuniousPose bg-cover assassins-junious-pose-parallax -mt-20 -ml-14 -mr-14 rounded-md' />
+          </div>
+          <div className='relative'>
+            <div className='bg-assassinsLowView bg-cover assassins-low-view-parallax mt-20 -ml-52 mr-12 rounded-md' />
           </div>
         </div>
         {/* Screen sizes <= md */}

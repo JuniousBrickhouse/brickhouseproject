@@ -8,7 +8,7 @@ const POSTS = [
     href: 'https://23hci.com/',
     id: 1,
     description:
-        'Junious founded 23rd and Hampton Community Initiatives in 2020 to offer his expertise as a consultant to organizations and individuals. Through 23rd and Hampton, Junious can be contracted for consulting in all his specialties, including Arts Administration, Program Management, Community Development, Diplomacy, Folklore, and Conflict Transformation',
+        'Junious founded 23rd and Hampton Community Initiatives in 2019 to offer his expertise as a consultant to organizations and individuals. Through 23rd and Hampton, Junious can be contracted for consulting in all his specialties, including Arts Administration, Program Management, Community Development, Diplomacy, Folklore, Dance, and Conflict Transformation.',
     imageUrl:
     'https://img1.wsimg.com/isteam/ip/93b63956-2d59-47b1-8349-dfc27f026e57/23rd%20%26%20Hampton%20Logo%201b%20copy.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1320,h:1000,cg:true,m/cr=w:1320,h:1000,a:cc'
   },
@@ -18,7 +18,7 @@ const POSTS = [
     href: 'https://www.nextlevel-usa.org/junious-brickhouse',
     id: 2,
     description:
-        'Having been with Next Level since its inception, serving as an Artist-Educator on the first trip to Senegal, Junious now serves as the Director of the program, following in the footsteps of Duke Ellington and the State Department’s Jazz Ambassadors . Junio us shapes the vision of this program and guides team members in delivering culturally sensitive and highly practical education in the areas of Artistic Excellence, Entrepreneurship, and Conflict Transformation.',
+        'Having been with Next Level since its inception, serving as an Artist-Educator on the first trip to Senegal, Junious now serves as the Director of the program.. Junious shapes the vision of this program and guides team members in delivering culturally sensitive and highly practical education in the areas of Artistic Excellence, Entrepreneurship, and Conflict Transformation with the goal of developing and sustaining artists and their communities long after the program is complete.',
     imageUrl: nextLevel
     // 'https://static1.squarespace.com/static/5b521e334cde7a741d47e768/t/5b5616f20e2e728fc44d8ecb/1620247551740/?format=1500w'
   },
@@ -28,7 +28,7 @@ const POSTS = [
     href: 'https://urbanartistry.org/',
     id: 3,
     description:
-        'Upon returning to the US in 2005 following 20 years of international service in the Army and as a civilian, Junious recognized the need for an institution to preserve and promote Urban Dance through structured mentorship, professional development, and community-building. He foundedthe non-profit Urban Artistry, Inc., which has been serving the DMV area and beyond throughclasses, mentorship, performances, and annual events such as the International Soul Societyfestiva',
+        'As Founder and Executive Director of Urban Artistry Inc. (www.urbanartistry.org), Junious has inspired and created a movement of artists dedicated to the authentic preservation of urban dance culture, specifically within communities of practice. While constantly engaged in research about urban dance culture and the communities from which it evolved, Junious created projects such as The Preservatory and the UA Digital Archives to encourage other artists to research and document these tradition bearers and their stories.',
     imageUrl: urbanArtistry
   }
 ]
