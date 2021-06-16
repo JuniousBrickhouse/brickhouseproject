@@ -1,6 +1,9 @@
 import crewVsan from '../photos/CrewVsan.jpeg'
 import crewLil from '../photos/CrewLil.jpeg'
 import juniousCrew from '../photos/JuniousCrew.jpeg'
+import assassinsDC2013 from '../photos/assassinsDC2013.jpg'
+import assassinsJuniousPose from '../photos/assassinsJuniousPose.jpg'
+import assassinsLowView from '../photos/assassinsLowView.jpg'
 import { CONTENT } from './journeyContent'
 
 export default function Assassins () {
@@ -16,9 +19,9 @@ export default function Assassins () {
           />
         </section>
 
-        <section className='relative h-screen preserve3d-no-z z-40 lg:-mt-52 lg:ml-16 lg:-mr-16 border-2 border-white rounded-md'>
+        <section className='relative h-screen preserve3d-no-z z-40 lg:-mt-52 lg:ml-16 lg:-mr-16'>
           <div
-            className='bg-junious-crew bg-cover bg-no-repeat junious-crew-parallax absolute top-0 right-0 bottom-0 left-0 z-30 rounded-md border-2 border-red-500 h-3/4 w-full'
+            className='bg-junious-crew bg-cover bg-no-repeat junious-crew-parallax absolute top-0 right-0 bottom-0 left-0 z-30 rounded-md h-3/4 w-full'
             aria-hidden='true'
           />
         </section>
@@ -87,6 +90,21 @@ export default function Assassins () {
           <div className='flex flex-col rounded-lg shadow-lg overflow-hidden'>
             <div className='flex-shrink-0'>
               <img className='h-full w-full object-cover' src={crewLil} alt='Crew Vsan' />
+            </div>
+          </div>
+          <div className='flex flex-col rounded-lg shadow-lg overflow-hidden'>
+            <div className='flex-shrink-0'>
+              <img className='h-full w-full object-cover' src={assassinsDC2013} alt='Crew Vsan' />
+            </div>
+          </div>
+          <div className='flex flex-col rounded-lg shadow-lg overflow-hidden'>
+            <div className='flex-shrink-0'>
+              <img className='h-full w-full object-cover' src={assassinsJuniousPose} alt='Crew Vsan' />
+            </div>
+          </div>
+          <div className='flex flex-col rounded-lg shadow-lg overflow-hidden'>
+            <div className='flex-shrink-0'>
+              <img className='h-full w-full object-cover' src={assassinsLowView} alt='Crew Vsan' />
             </div>
           </div>
         </div>
