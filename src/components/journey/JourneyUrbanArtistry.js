@@ -46,7 +46,7 @@ const JourneyUrbanArtistry = () => {
                 </div>
               </div> */}
               <div className='hidden lg:block text-base mx-auto max-w-prose lg:max-w-none lg:-ml-8 lg:mr-8 xl:-ml-0 xl:mr-0'>
-                <figure className='relative'>
+                <section className='relative'>
                   <div className='aspect-w-22 aspect-h-17 lg:aspect-none UA-parallax' aria-hidden='true'>
                     <img
                       className='rounded-lg shadow-lg object-cover object-center bg-50'
@@ -56,7 +56,7 @@ const JourneyUrbanArtistry = () => {
                       height={1376}
                     />
                   </div>
-                </figure>
+                </section>
               </div>
               {/* <= md screen sizes */}
               <div className='lg:hidden relative text-base mx-auto max-w-prose'>
@@ -93,9 +93,9 @@ const JourneyUrbanArtistry = () => {
               </div>
               {/* >= lg screen sizes */}
               <div className='hidden lg:block relative lg:text-base mx-auto max-w-prose lg:max-w-none mt-8 lg:mt-32 lg:-mr-28 lg:ml-28 xl:-mr-36 xl:ml-36'>
-                <figure className='red-dance-parallax' aria-hidden='true'>
+                <section className='relative' aria-hidden='true'>
                   <div
-                    className='aspect-w-22 aspect-h-17 lg:aspect-none'
+                    className='aspect-w-22 aspect-h-17 lg:aspect-none red-dance-parallax'
                   >
                     <img
                       className='rounded-lg shadow-lg object-cover object-center bg-50'
@@ -105,7 +105,7 @@ const JourneyUrbanArtistry = () => {
                       height={1376}
                     />
                   </div>
-                </figure>
+                </section>
               </div>
               {/* <= md screen sizes */}
               <div className='lg:hidden mx-auto max-w-prose mt-8'>
