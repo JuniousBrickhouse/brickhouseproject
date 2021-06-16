@@ -16,7 +16,7 @@ module.exports = {
         'junious-noHat': "url('./components/photos/JuniousNoHat.jpeg')",
         'junious-redDance': "url('./components/photos/JuniousRedDance.jpeg')",
         'junious-white': "url('./components/photos/JuniousWhite.jpeg')",
-        // juniousWoods: "url('./components/photos/juniousWoods.jpeg')",
+        juniousSpiritual: "url('./components/photos/juniousSpiritual.jpg')",
         'junious-barn': "url('./components/photos/JuniousBarn.jpeg')",
         urbanA: "url('./components/photos/UrbanA.jpeg')",
         '23Hampton': "url('./components/photos/logos/23Hampton.png')",
