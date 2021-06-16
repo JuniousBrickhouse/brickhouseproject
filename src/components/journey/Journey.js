@@ -9,6 +9,7 @@ import JourneyIntro from './JourneyIntro'
 import Socials from '../../Socials'
 import JourneyAssassins from './JourneyAssassins'
 import DjScottyDivider from './DjScottyDivider'
+import HatBillUpDivider from './HatBillUpDivider'
 
 export default function Journey ({ triggerPageChangeAnimation }) {
   const [navBtnFade, setNavBtnFade] = useState(false)
@@ -38,18 +39,31 @@ export default function Journey ({ triggerPageChangeAnimation }) {
         <span ref={introRef}>
           <JourneyIntro />
         </span>
+
         <span>
           <JourneyArmy />
         </span>
-        <JourneyAssassins />
-        <span className=''>
-          <JourneyUrbanArtistry />
-        </span>
+
         <section className='relative h-screen preserve3d'>
           <DjScottyDivider />
         </section>
+
+        <span className=''>
+          <JourneyAssassins />
+        </span>
+
+        <span className=''>
+          <JourneyUrbanArtistry />
+        </span>
+
+        <section className='relative h-screen preserve3d'>
+          <HatBillUpDivider />
+        </section>
+
         <JourneyNextLevel />
+
         <JourneyAccomplishments triggerPageChangeAnimation={triggerPageChangeAnimation} />
+
         <Socials />
       </main>
     </div>

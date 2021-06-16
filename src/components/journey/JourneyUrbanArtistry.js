@@ -10,7 +10,6 @@ const JourneyUrbanArtistry = () => {
           <div className='hidden lg:block bg-daviesGrey absolute top-0 bottom-0 left-3/4 w-screen' />
           <div className='mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none'>
             <div>
-              {/* <h2 className='text-base text-indigo-600 font-semibold tracking-wide uppercase'>Case Study</h2> */}
               <h3 className='mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl font-poppins'>
                 Urban Artistry
               </h3>
@@ -41,8 +40,13 @@ const JourneyUrbanArtistry = () => {
                 <rect width={404} height={384} fill='url(#de316486-4a29-4312-bdfc-fbce2132a2c1)' />
               </svg>
               {/* >= lg screen sizes */}
-              <div className='hidden lg:block relative text-base mx-auto max-w-prose lg:max-w-none lg:-ml-8 lg:mr-8 xl:-ml-0 xl:mr-0'>
-                <figure>
+              {/* <div className='hidden lg:block'>
+                <div className='relative'>
+                  <div className='bg-urbanA bg-cover UA-parallax w-full h-screen rounded-md' />
+                </div>
+              </div> */}
+              <div className='hidden lg:block text-base mx-auto max-w-prose lg:max-w-none lg:-ml-8 lg:mr-8 xl:-ml-0 xl:mr-0'>
+                <section className='relative'>
                   <div className='aspect-w-22 aspect-h-17 lg:aspect-none UA-parallax' aria-hidden='true'>
                     <img
                       className='rounded-lg shadow-lg object-cover object-center bg-50'
@@ -52,7 +56,7 @@ const JourneyUrbanArtistry = () => {
                       height={1376}
                     />
                   </div>
-                </figure>
+                </section>
               </div>
               {/* <= md screen sizes */}
               <div className='lg:hidden relative text-base mx-auto max-w-prose'>
@@ -88,11 +92,10 @@ const JourneyUrbanArtistry = () => {
                 </footer>
               </div>
               {/* >= lg screen sizes */}
-              <div className='hidden lg:block lg:text-base mx-auto max-w-prose lg:max-w-none mt-8 lg:mt-32 lg:-mr-28 lg:ml-28 xl:-mr-36 xl:ml-36'>
-                <figure>
+              <div className='hidden lg:block relative lg:text-base mx-auto max-w-prose lg:max-w-none mt-8 lg:mt-32 lg:-mr-28 lg:ml-28 xl:-mr-36 xl:ml-36'>
+                <section className='relative' aria-hidden='true'>
                   <div
                     className='aspect-w-22 aspect-h-17 lg:aspect-none red-dance-parallax'
-                    aria-hidden='true'
                   >
                     <img
                       className='rounded-lg shadow-lg object-cover object-center bg-50'
@@ -102,7 +105,7 @@ const JourneyUrbanArtistry = () => {
                       height={1376}
                     />
                   </div>
-                </figure>
+                </section>
               </div>
               {/* <= md screen sizes */}
               <div className='lg:hidden mx-auto max-w-prose mt-8'>
