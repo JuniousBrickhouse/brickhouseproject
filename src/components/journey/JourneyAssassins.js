@@ -3,7 +3,6 @@ import crewLil from '../photos/CrewLil.jpeg'
 import juniousCrew from '../photos/JuniousCrew.jpeg'
 import assassinsDC2013 from '../photos/assassinsDC2013.jpg'
 import assassinsJuniousPose from '../photos/assassinsJuniousPose.jpg'
-import assassinsLowView from '../photos/assassinsLowView.jpg'
 import { CONTENT } from './journeyContent'
 
 export default function Assassins () {
