@@ -10,6 +10,7 @@ import Socials from '../../Socials'
 import JourneyAssassins from './JourneyAssassins'
 import DjScottyDivider from './DjScottyDivider'
 import HatBillUpDivider from './HatBillUpDivider'
+import JourneyMother from './JourneyMother'
 
 export default function Journey ({ triggerPageChangeAnimation }) {
   const [navBtnFade, setNavBtnFade] = useState(false)
@@ -39,7 +40,7 @@ export default function Journey ({ triggerPageChangeAnimation }) {
         <span ref={introRef}>
           <JourneyIntro />
         </span>
-
+        <JourneyMother />
         <span>
           <JourneyArmy />
         </span>

@@ -34,7 +34,7 @@ module.exports = {
         dimg: "url('./components/photos/dimg.jpg')",
         djScotty: "url('./components/photos/djScotty.jpg')",
         eg12D1Zr: "url('./components/photos/eg12D1Zr.jpeg')",
-        juniousWithAnotherPerson: "url('./components/photos/juniousWithAnotherPerson.jpg')",
+        juniousWithWillietteHinton: "url('./components/photos/juniousWithWillietteHinton.jpg')",
         juniousBillUp: "url('./components/photos/juniousBillUp.jpg')",
         nubianClubCollaboration: "url('./components/photos/nubianClubCollaboration.jpeg')",
         philWigginsAndFriends: "url('./components/photos/philWigginsAndFriends.jpg')",

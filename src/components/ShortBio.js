@@ -22,11 +22,11 @@ export default function ShortBio ({ showAnimation, triggerPageChangeAnimation })
                   show={showAnimation.bioImage}
                   as='img'
                   enter='transition-all duration-3000 sm:transform ease-out'
-                  enterFrom='opacity-0 sm:-translate-x-full'
-                  enterTo='opacity-100 sm:translate-x-0'
+                  enterFrom='sm:opacity-0 sm:-translate-x-full'
+                  enterTo='sm:opacity-100 sm:translate-x-0'
                   leave='transition-all duration-3000 sm:transform'
-                  leaveFrom='opacity-100 sm:translate-x-0'
-                  leaveTo='opacity-0 sm:-translate-x-full'
+                  leaveFrom='sm:opacity-100 sm:translate-x-0'
+                  leaveTo='sm:opacity-0 sm:-translate-x-full'
                   className='object-cover object-top rounded-3xl shadow-2xl'
                   src={juniousBlue}
                   alt='Junious Brickhouse'
@@ -89,11 +89,11 @@ export default function ShortBio ({ showAnimation, triggerPageChangeAnimation })
               <Transition
                 show={showAnimation.bioImage}
                 enter='transition-all duration-3000 sm:transform ease-out delay-150'
-                enterFrom='opacity-0 sm:translate-x-full'
-                enterTo='opacity-100 sm:translate-x-0'
+                enterFrom='sm:opacity-0 sm:translate-x-full'
+                enterTo='sm:opacity-100 sm:translate-x-0'
                 leave='transition-all duration-3000 sm:transform'
-                leaveFrom='opacity-100 sm:translate-x-0'
-                leaveTo='opacity-0 sm:translate-x-full'
+                leaveFrom='sm:opacity-100 sm:translate-x-0'
+                leaveTo='sm:opacity-0 sm:translate-x-full'
                 className='text-2xl text-redBackground font-nunito font-semibold'
               >
                 {SHOTR_BIO.paragraph1}
@@ -102,11 +102,11 @@ export default function ShortBio ({ showAnimation, triggerPageChangeAnimation })
                 show={showAnimation.bioImage}
                 as='button'
                 enter='transition-all duration-3000 sm:transform ease-out delay-150'
-                enterFrom='opacity-0 sm:translate-x-full'
-                enterTo='opacity-100 sm:translate-x-0'
+                enterFrom='sm:opacity-0 sm:translate-x-full'
+                enterTo='sm:opacity-100 sm:translate-x-0'
                 leave='transition-all duration-3000 sm:transform'
-                leaveFrom='opacity-100 sm:translate-x-0'
-                leaveTo='opacity-0 sm:translate-x-full'
+                leaveFrom='sm:opacity-100 sm:translate-x-0'
+                leaveTo='sm:opacity-0 sm:translate-x-full'
                 className='inline-flex items-center px-3.5 py-2 border border-transparent text-sm leading-4 font-medium rounded-full shadow-sm text-white bg-mediumCarmine hover:bg-redBackground focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 self-end'
                 onClick={() => triggerPageChangeAnimation('journeyPage')}
               >
