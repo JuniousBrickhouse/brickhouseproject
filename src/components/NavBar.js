@@ -27,9 +27,9 @@ export default function NavBar ({ handleScroll, showSolidNav, triggerPageChangeA
 
   const changeNavBar = (current) => {
     if (showSolidNav) {
-      return current ? 'border-b-2 border-mediumCarmine text-white focus:outline-none' : 'text-white hover:text-white'
+      return current ? 'border-b-2 border-mediumCarmine text-platinum focus:outline-none' : 'text-platinum hover:text-platinum transform hover:scale-110'
     } else {
-      return current ? 'border-b-2 border-mediumCarmine text-richBlack focus:outline-none' : 'text-daviesGrey hover:text-spanishGrey'
+      return current ? 'border-b-2 border-mediumCarmine text-richBlack focus:outline-none' : 'text-richBlack transform hover:scale-110'
     }
   }
 

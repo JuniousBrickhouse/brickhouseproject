@@ -9,24 +9,25 @@ const SHOTR_BIO =
 
 export default function ShortBio ({ showAnimation, triggerPageChangeAnimation }) {
   return (
-  // <div className='bio'>
     <div className='relative py-32 bg-yNBlue z-30'>
       <div className='hidden absolute top-0 inset-x-0 h-screen bg-yNBlue lg:block' aria-hidden='true' />
       <div className='max-w-7xl mx-auto bg-platinum lg:bg-transparent lg:px-8'>
         <div className='lg:grid lg:grid-cols-12'>
-          <div className='relative z-10 lg:col-start-1 lg:row-start-1 lg:col-span-4 lg:py-16 lg:bg-transparent'>
+
+          {/* bio image for >= lg screen sizes */}
+          <div className='hidden lg:block relative z-10 lg:col-start-1 lg:row-start-1 lg:col-span-4 lg:py-16 lg:bg-transparent'>
             <div className='absolute inset-x-0 h-1/2 bg-yNBlue lg:hidden' aria-hidden='true' />
             <div className='max-w-md mx-auto px-4 sm:max-w-3xl sm:px-6 lg:max-w-none lg:p-0'>
               <div className='aspect-w-10 aspect-h-6 sm:aspect-w-2 sm:aspect-h-1 lg:aspect-w-1'>
                 <Transition
                   show={showAnimation.bioImage}
                   as='img'
-                  enter='transition-all duration-3000 sm:transform ease-out'
-                  enterFrom='sm:opacity-0 sm:-translate-x-full'
-                  enterTo='sm:opacity-100 sm:translate-x-0'
-                  leave='transition-all duration-3000 sm:transform'
-                  leaveFrom='sm:opacity-100 sm:translate-x-0'
-                  leaveTo='sm:opacity-0 sm:-translate-x-full'
+                  enter='transition-all duration-3000 transform ease-out'
+                  enterFrom='opacity-0 -translate-x-full'
+                  enterTo='opacity-100 translate-x-0'
+                  leave='transition-all duration-3000 transform'
+                  leaveFrom='opacity-100 translate-x-0'
+                  leaveTo='opacity-0 -translate-x-full'
                   className='object-cover object-top rounded-3xl shadow-2xl'
                   src={juniousBlue}
                   alt='Junious Brickhouse'
@@ -35,16 +36,35 @@ export default function ShortBio ({ showAnimation, triggerPageChangeAnimation })
               <Transition
                 show={showAnimation.bioImage}
                 as='p'
-                enter='transition-all duration-3000 sm:transform ease-out'
-                enterFrom='sm:opacity-0 sm:-translate-x-full'
-                enterTo='sm:opacity-100 sm:translate-x-0'
-                leave='transition-all duration-3000 sm:transform'
-                leaveFrom='sm:opacity-100 sm:translate-x-0'
-                leaveTo='sm:opacity-0 sm:-translate-x-full'
+                enter='transition-all duration-3000 transform ease-out'
+                enterFrom='opacity-0 -translate-x-full'
+                enterTo='opacity-100 translate-x-0'
+                leave='transition-all duration-3000 transform'
+                leaveFrom='opacity-100 translate-x-0'
+                leaveTo='opacity-0 -translate-x-full'
                 className='font-bold text-xs sm:text-md text-right font-poppins text-glaucous mt-2 sm:mt-0 sm:mb-10 md:mb-4 lg:mb-10'
               >
                 Photo by Michael G. Stewart
               </Transition>
+            </div>
+          </div>
+
+          {/* bio image for <= medium screen sizes */}
+          <div className='lg:hidden relative z-10'>
+            <div className='absolute inset-x-0 h-1/2 bg-yNBlue lg:hidden' aria-hidden='true' />
+            <div className='max-w-md mx-auto px-4 sm:max-w-3xl sm:px-6 lg:max-w-none lg:p-0'>
+              <div className='aspect-w-10 aspect-h-6 sm:aspect-w-2 sm:aspect-h-1 lg:aspect-w-1'>
+                <img
+                  className='object-cover object-top rounded-3xl shadow-2xl'
+                  src={juniousBlue}
+                  alt='Junious Brickhouse'
+                />
+              </div>
+              <p
+                className='font-bold text-xs sm:text-md text-right font-poppins text-glaucous mt-2 sm:mt-0 sm:mb-10 md:mb-4 lg:mb-10'
+              >
+                Photo by Michael G. Stewart
+              </p>
             </div>
           </div>
 
@@ -95,18 +115,17 @@ export default function ShortBio ({ showAnimation, triggerPageChangeAnimation })
                 <rect width={404} height={384} fill='url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)' />
               </svg>
             </div>
-            <div className='relative max-w-md mx-auto py-12 px-4 space-y-6 sm:max-w-3xl sm:py-16 sm:px-6 lg:max-w-none lg:p-0 lg:col-start-4 lg:col-span-6 flex flex-col'>
-              {/* <h2 className='text-3xl font-extrabold text-white' id='join-heading'>
-                Join our team
-              </h2> */}
+
+            {/* bio content for >= large screen sizes */}
+            <div className='hidden relative max-w-md mx-auto py-12 px-4 space-y-6 sm:max-w-3xl sm:py-16 sm:px-6 lg:max-w-none lg:p-0 lg:col-start-4 lg:col-span-6 lg:flex flex-col'>
               <Transition
                 show={showAnimation.bioImage}
-                enter='transition-all duration-3000 sm:transform ease-out delay-150'
-                enterFrom='sm:opacity-0 sm:translate-x-full'
-                enterTo='sm:opacity-100 sm:translate-x-0'
-                leave='transition-all duration-3000 sm:transform'
-                leaveFrom='sm:opacity-100 sm:translate-x-0'
-                leaveTo='sm:opacity-0 sm:translate-x-full'
+                enter='transition-all duration-3000 transform ease-out delay-150'
+                enterFrom='opacity-0 translate-x-full'
+                enterTo='opacity-100 translate-x-0'
+                leave='transition-all duration-3000 transform'
+                leaveFrom='opacity-100 translate-x-0'
+                leaveTo='opacity-0 translate-x-full'
                 className='text-2xl text-redBackground font-nunito font-semibold'
               >
                 {SHOTR_BIO.paragraph1}
@@ -114,22 +133,36 @@ export default function ShortBio ({ showAnimation, triggerPageChangeAnimation })
               <Transition
                 show={showAnimation.bioImage}
                 as='button'
-                enter='transition-all duration-3000 sm:transform ease-out delay-150'
-                enterFrom='sm:opacity-0 sm:translate-x-full'
-                enterTo='sm:opacity-100 sm:translate-x-0'
-                leave='transition-all duration-3000 sm:transform'
-                leaveFrom='sm:opacity-100 sm:translate-x-0'
-                leaveTo='sm:opacity-0 sm:translate-x-full'
+                enter='transition-all duration-3000 transform ease-out delay-150'
+                enterFrom='opacity-0 translate-x-full'
+                enterTo='opacity-100 translate-x-0'
+                leave='transition-all duration-3000 transform'
+                leaveFrom='opacity-100 translate-x-0'
+                leaveTo='opacity-0 translate-x-full'
                 className='inline-flex items-center px-3.5 py-2 border border-transparent text-sm leading-4 font-medium rounded-full shadow-sm text-white bg-mediumCarmine hover:bg-redBackground focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 self-end'
                 onClick={() => triggerPageChangeAnimation('journeyPage')}
               >
                 {SHOTR_BIO.journey}
               </Transition>
             </div>
+
+            {/* bio content for <= medium screen sizes */}
+            <div className='lg:hidden relative max-w-md mx-auto py-12 px-4 space-y-6 sm:max-w-3xl flex flex-col'>
+              <div
+                className='text-2xl text-redBackground font-nunito font-semibold'
+              >
+                {SHOTR_BIO.paragraph1}
+              </div>
+              <button
+                className='inline-flex items-center px-3.5 py-2 border border-transparent text-sm leading-4 font-medium rounded-full shadow-sm text-white bg-mediumCarmine hover:bg-redBackground focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 self-end'
+                onClick={() => triggerPageChangeAnimation('journeyPage')}
+              >
+                {SHOTR_BIO.journey}
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  // </div>
   )
 }
