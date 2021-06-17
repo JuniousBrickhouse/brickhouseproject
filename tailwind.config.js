@@ -61,6 +61,7 @@ module.exports = {
         70: '.7'
       },
       backgroundPosition: {
+        'x-35%': '35%',
         'x-90%': '90%'
       },
       fontSize: {

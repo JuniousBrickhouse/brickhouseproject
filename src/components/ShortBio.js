@@ -32,6 +32,19 @@ export default function ShortBio ({ showAnimation, triggerPageChangeAnimation })
                   alt='Junious Brickhouse'
                 />
               </div>
+              <Transition
+                show={showAnimation.bioImage}
+                as='p'
+                enter='transition-all duration-3000 sm:transform ease-out'
+                enterFrom='sm:opacity-0 sm:-translate-x-full'
+                enterTo='sm:opacity-100 sm:translate-x-0'
+                leave='transition-all duration-3000 sm:transform'
+                leaveFrom='sm:opacity-100 sm:translate-x-0'
+                leaveTo='sm:opacity-0 sm:-translate-x-full'
+                className='font-bold text-xs sm:text-md text-right font-poppins text-glaucous mt-2 sm:mt-0 sm:mb-10 md:mb-4 lg:mb-10'
+              >
+                Photo by Michael G. Stewart
+              </Transition>
             </div>
           </div>
 
