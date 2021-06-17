@@ -146,6 +146,8 @@ function App () {
         leave='transform-opacity duration-2000'
         leaveFrom='opacity-100'
         leaveTo='opacity-0'
+        className='overflow-visible'
+        id='other'
       >
         <Contact triggerPageChangeAnimation={triggerPageChangeAnimation} />
       </Transition>

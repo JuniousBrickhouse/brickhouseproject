@@ -2,9 +2,9 @@
 import lyndaBrickhouse from '.././photos/lyndaBrickhouse.jpg'
 import { CONTENT } from './journeyContent'
 
-export default function JourneyMother ({ triggerPageChangeAnimation }) {
+export default function JourneyMother () {
   return (
-    <div className='relative bg-mediumCarmine overflow-hidden'>
+    <div className='relative bg-mediumCarmine overflow-hidden border-b-8 border-richBlack'>
       <div className='max-w-7xl mx-auto'>
         <div className='relative z-10 pb-8 bg-mediumCarmine sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32'>
           <svg
@@ -21,9 +21,12 @@ export default function JourneyMother ({ triggerPageChangeAnimation }) {
           <div className='relative pt-6 px-4 sm:px-6 lg:px-8' />
 
           <main className='mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28'>
+            <div className='text-center sm:text-left'>
+              <h2 className='text-3xl tracking-tight font-extrabold text-platinum sm:text-4xl font-poppins'>Lynda Brickhouse</h2>
+            </div>
             <div className='sm:text-center lg:text-left'>
               <p className='mt-3 text-base text-platinum sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0'>
-                {CONTENT.accomplishments}
+                {CONTENT.mother}
               </p>
             </div>
           </main>

@@ -12,6 +12,7 @@ import DjScottyDivider from './DjScottyDivider'
 import HatBillUpDivider from './HatBillUpDivider'
 import JourneyMother from './JourneyMother'
 import SpiritualDivider from './SpiritualDivider'
+import Accomplishments2 from './Accomplishments2'
 
 export default function Journey ({ triggerPageChangeAnimation }) {
   const [navBtnFade, setNavBtnFade] = useState(false)
@@ -41,7 +42,13 @@ export default function Journey ({ triggerPageChangeAnimation }) {
         <span ref={introRef}>
           <JourneyIntro />
         </span>
+
         <JourneyMother />
+
+        <section className='relative h-screen preserve3d'>
+          <SpiritualDivider />
+        </section>
+
         <span>
           <JourneyArmy />
         </span>
@@ -54,10 +61,6 @@ export default function Journey ({ triggerPageChangeAnimation }) {
           <JourneyAssassins />
         </span>
 
-        <section className='relative h-screen preserve3d'>
-          <SpiritualDivider />
-        </section>
-
         <span className=''>
           <JourneyUrbanArtistry />
         </span>
@@ -68,7 +71,9 @@ export default function Journey ({ triggerPageChangeAnimation }) {
 
         <JourneyNextLevel />
 
-        <JourneyAccomplishments triggerPageChangeAnimation={triggerPageChangeAnimation} />
+        {/* <JourneyAccomplishments triggerPageChangeAnimation={triggerPageChangeAnimation} /> */}
+
+        <Accomplishments2 triggerPageChangeAnimation={triggerPageChangeAnimation} />
 
         <Socials />
       </main>
