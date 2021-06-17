@@ -56,6 +56,13 @@ module.exports = {
         '300%': '300%'
 
       },
+      scale: {
+        60: '.6',
+        70: '.7'
+      },
+      backgroundPosition: {
+        'x-90%': '90%'
+      },
       fontSize: {
         '50%': '50%',
         '60%': '60%',
@@ -83,7 +90,8 @@ module.exports = {
         earthYellow: '#D1A15D',
         fawn: '#D99F68',
         mediumCarmine: '#AA563B',
-        redBackground: '#7C321A'
+        redBackground: '#7C321A',
+        spiritualRed: '#822838'
 
       },
       fontFamily: {
