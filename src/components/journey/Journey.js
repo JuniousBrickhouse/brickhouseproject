@@ -62,7 +62,7 @@ export default function Journey ({ triggerPageChangeAnimation }) {
           <JourneyUrbanArtistry />
         </span>
 
-        <section className='relative h-screen preserve3d'>
+        <section className='relative h-60 bg-gray-500 bg-opacity-30 sm:bg-none sm:bg-opacity-0 sm:h-screen preserve3d'>
           <HatBillUpDivider />
         </section>
 
