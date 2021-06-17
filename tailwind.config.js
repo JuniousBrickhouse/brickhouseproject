@@ -116,20 +116,17 @@ module.exports = {
         wiggle: {
           '0%, 100%': { transform: 'rotate(-3deg)' },
           '50%': { transform: 'rotate(3deg)' }
-        },
-        grow: {
-          '0%': { transform: 'translateY(-25%)' },
-          '100%': { transform: 'translateY(0)' }
         }
       },
       animation: {
-        wiggle: 'wiggle 1s ease-in-out infinite',
-        grow: 'grow 1s'
+        wiggle: 'wiggle 1s ease-in-out infinite'
       }
     }
   },
   variants: {
-    extend: {}
+    extend: {
+      animation: ['hover', 'focus', 'responsive']
+    }
   },
   plugins: [
     require('@tailwindcss/forms'),
