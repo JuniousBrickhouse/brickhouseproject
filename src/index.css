@@ -6,11 +6,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* This is needed so that the scroolToTop in Jounrey.js works in FireFox */
-/* html {
-  overflow: hidden;
-} */
-
 .perspective {
   perspective: 2px;
 }

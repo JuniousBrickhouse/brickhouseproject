@@ -5,10 +5,10 @@ export default function Videos () {
     <>
       <div className='mx-auto w-full pb-20 bg-gray-50 z-50'>
 
-        <div className='bg-woodGray w-full'>
+        <div className='bg-daviesGrey w-full'>
           <div className='w-full mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:flex lg:justify-between'>
             <div className='max-w-xl'>
-              <h2 className='text-4xl font-extrabold text-mediumCarmine font-poppins sm:text-5xl sm:tracking-tight lg:text-6xl pb-20'>
+              <h2 className='text-4xl font-extrabold text-wildBlueYonder font-poppins sm:text-5xl sm:tracking-tight lg:text-6xl pb-20'>
                 Videos
               </h2>
               {/* <p className='mt-5 text-xl text-gray-400'>

@@ -6,10 +6,6 @@ import MessageSentModal from './MessageSentModal'
 import { Transition } from '@headlessui/react'
 import MessageErrorModal from './MessageErrorModal'
 
-// const SERVICE_ID = 'safe'
-// const TEMPLATE_ID = 'safe'
-// const USER_ID = 'safe'
-
 export default function Contact ({ triggerPageChangeAnimation }) {
   const [renderModal, setRenderModal] = useState(false)
   const [renderErrorModal, setRenderErrorModal] = useState(false)
@@ -25,9 +21,9 @@ export default function Contact ({ triggerPageChangeAnimation }) {
     to_name: 'Junious'
   })
 
-  console.log('renderModal', renderModal)
-  console.log('renderErrorModal', renderErrorModal)
-  console.log('error', error)
+  // console.log('renderModal', renderModal)
+  // console.log('renderErrorModal', renderErrorModal)
+  // console.log('error', error)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -59,7 +55,7 @@ export default function Contact ({ triggerPageChangeAnimation }) {
   }
 
   // For some reason tailwind responsive breakpoints aren't
-  // working for background images. It's duplication them. So I'm having to set
+  // working for background images. It's duplicating them. So I'm having to set
   // up this getWindowSize function and set the breakpoints
   // this way. Currently it is slow to respond. It works only
   // after the user scrolls.
