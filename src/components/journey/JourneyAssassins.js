@@ -7,20 +7,20 @@ import { CONTENT } from './journeyContent'
 
 export default function Assassins () {
   return (
-    <div className='relative bg-spiritualRed pt-16 pb-20 px-4 sm:px-6 lg:pt-14 lg:pb-0 lg:px-8'>
+    <div className='relative bg-sonicSilver bg-cover pt-16 pb-20 px-4 sm:px-6 lg:pt-14 lg:pb-0 lg:px-8'>
       <div className='relative max-w-7xl mx-auto pt-10'>
-        <div className='text-center sm:text-left'>
+        <div className='text-center sm:text-left -mt-96'>
           <h2 className='text-3xl tracking-tight font-extrabold text-platinum sm:text-4xl font-poppins'>Assassins Crew</h2>
         </div>
       </div>
 
       {/* first three images */}
-      <div className='hidden mt-20 max-w-lg mx-auto lg:grid gap-5 lg:grid-cols-3 lg:max-w-none'>
-        <div className='flex-shrink-0'>
-          <img className='h-full w-full object-cover rounded-lg shadow-lg' src={crewVsan} alt='Crew Vsan' />
-        </div>
+      <div className='hidden -mt-72 max-w-lg mx-auto lg:grid gap-5 lg:grid-cols-3 lg:max-w-none'>
         <div className='flex-shrink-0'>
           <img className='h-full w-full object-cover rounded-lg shadow-lg' src={juniousCrew} alt='Crew Vsan' />
+        </div>
+        <div className='flex-shrink-0'>
+          <img className='h-full w-full object-cover object-right rounded-lg shadow-lg' src={assassinsDC2013} alt='Crew Vsan' />
         </div>
         <div className='flex-shrink-0'>
           <img className='h-full w-full object-cover rounded-lg shadow-lg' src={crewLil} alt='Crew Vsan' />
@@ -35,14 +35,14 @@ export default function Assassins () {
         </div>
 
         {/* second set of images for >= lg screen sizes */}
-        <div className='hidden -mt-14 max-w-lg mx-auto lg:grid gap-10 lg:grid-cols-2 lg:max-w-none'>
+        {/* <div className='hidden -mt-14 max-w-lg mx-auto lg:grid gap-10 lg:grid-cols-2 lg:max-w-none'>
           <div className='flex-shrink-0 transform scale-70'>
             <img className='h-full w-full object-cover object-right rounded-lg shadow-lg' src={assassinsDC2013} alt='Crew Vsan' />
           </div>
           <div className='flex-shrink-0 transform scale-70'>
             <img className='h-full w-full object-cover rounded-lg shadow-lg' src={assassinsJuniousPose} alt='Junious performing a dance move' />
           </div>
-        </div>
+        </div> */}
 
         {/* pics for screen sizes <= md */}
         <div className='mt-12 max-w-lg mx-auto grid gap-5 lg:hidden'>
