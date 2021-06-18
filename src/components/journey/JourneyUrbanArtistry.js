@@ -1,3 +1,4 @@
+import RenderInBrowser from 'react-render-in-browser'
 import urbanArtistry from '.././photos/UrbanA.jpeg'
 import JuniousRedDance from '.././photos/JuniousRedDance.jpeg'
 import { CONTENT } from './journeyContent'
@@ -34,32 +35,44 @@ const JourneyUrbanArtistry = () => {
                     height={20}
                     patternUnits='userSpaceOnUse'
                   >
-                    <rect x={0} y={0} width={4} height={4} className='text-platinum' fill='currentColor' />
+                    <rect x={0} y={0} width={4} height={4} className='text-gray-200' fill='currentColor' />
                   </pattern>
                 </defs>
                 <rect width={404} height={384} fill='url(#de316486-4a29-4312-bdfc-fbce2132a2c1)' />
               </svg>
               {/* >= lg screen sizes */}
-              {/* <div className='hidden lg:block'>
-                <div className='relative'>
-                  <div className='bg-urbanA bg-cover UA-parallax w-full h-screen rounded-md' />
+              <RenderInBrowser except safari>
+                <div className='hidden lg:block text-base mx-auto max-w-prose lg:max-w-none lg:-ml-8 lg:mr-8 xl:-ml-0 xl:mr-0'>
+                  <section className='relative'>
+                    <div className='aspect-w-22 aspect-h-17 lg:aspect-none UA-parallax' aria-hidden='true'>
+                      <img
+                        className='rounded-lg shadow-lg object-cover object-center bg-50'
+                        src={urbanArtistry}
+                        alt='Junious in front of Urban Artistry Sign'
+                        width={1184}
+                        height={1376}
+                      />
+                    </div>
+                  </section>
                 </div>
-              </div> */}
-              <div className='hidden lg:block text-base mx-auto max-w-prose lg:max-w-none lg:-ml-8 lg:mr-8 xl:-ml-0 xl:mr-0'>
-                <section className='relative'>
-                  <div className='aspect-w-22 aspect-h-17 lg:aspect-none UA-parallax' aria-hidden='true'>
-                    <img
-                      className='rounded-lg shadow-lg object-cover object-center bg-50'
-                      src={urbanArtistry}
-                      alt='Junious in front of Urban Artistry Sign'
-                      width={1184}
-                      height={1376}
-                    />
-                  </div>
-                </section>
-              </div>
+              </RenderInBrowser>
+              <RenderInBrowser safari only>
+                <div className='hidden lg:block relative text-base mx-auto max-w-prose lg:max-w-none z-50'>
+                  <figure>
+                    <div className='aspect-w-22 aspect-h-17 lg:aspect-none z-50'>
+                      <img
+                        className='rounded-lg shadow-lg object-cover object-center'
+                        src={urbanArtistry}
+                        alt='Junious in front of Urban Artistry Sign'
+                        width={1184}
+                        height={1376}
+                      />
+                    </div>
+                  </figure>
+                </div>
+              </RenderInBrowser>
               {/* <= md screen sizes */}
-              <div className='lg:hidden relative text-base mx-auto max-w-prose'>
+              <div className='lg:hidden relative text-base mx-auto max-w-prose lg:max-w-none'>
                 <figure>
                   <div className='aspect-w-22 aspect-h-17'>
                     <img
@@ -92,21 +105,40 @@ const JourneyUrbanArtistry = () => {
                 </footer>
               </div>
               {/* >= lg screen sizes */}
-              <div className='hidden lg:block relative lg:text-base mx-auto max-w-prose lg:max-w-none mt-8 lg:mt-32 lg:-mr-28 lg:ml-28 xl:-mr-36 xl:ml-36'>
-                <section className='relative' aria-hidden='true'>
-                  <div
-                    className='aspect-w-22 aspect-h-17 lg:aspect-none red-dance-parallax'
-                  >
-                    <img
-                      className='rounded-lg shadow-lg object-cover object-center bg-50'
-                      src={JuniousRedDance}
-                      alt='Junious in front of Urban Artistry Sign'
-                      width={1184}
-                      height={1376}
-                    />
-                  </div>
-                </section>
-              </div>
+              <RenderInBrowser except safari>
+                <div className='hidden lg:block relative lg:text-base mx-auto max-w-prose lg:max-w-none mt-8 lg:mt-14 lg:-mr-28 lg:ml-28 xl:-mr-36 xl:ml-36'>
+                  <section className='relative' aria-hidden='true'>
+                    <div
+                      className='aspect-w-22 aspect-h-17 lg:aspect-none red-dance-parallax'
+                    >
+                      <img
+                        className='rounded-lg shadow-lg object-cover object-center bg-50'
+                        src={JuniousRedDance}
+                        alt='Junious in front of Urban Artistry Sign'
+                        width={1184}
+                        height={1376}
+                      />
+                    </div>
+                  </section>
+                </div>
+              </RenderInBrowser>
+              <RenderInBrowser safari only>
+                <div className='hidden lg:block relative lg:text-base mx-auto max-w-prose lg:max-w-none mt-10'>
+                  <section className='relative' aria-hidden='true'>
+                    <div
+                      className='aspect-w-22 aspect-h-17 lg:aspect-none'
+                    >
+                      <img
+                        className='rounded-lg shadow-lg object-cover object-center'
+                        src={JuniousRedDance}
+                        alt='Junious in front of Urban Artistry Sign'
+                        width={1184}
+                        height={1376}
+                      />
+                    </div>
+                  </section>
+                </div>
+              </RenderInBrowser>
               {/* <= md screen sizes */}
               <div className='lg:hidden mx-auto max-w-prose mt-8'>
                 {/* lg:-mt-96 lg:-ml-32  lg:mr-32 xl:-ml-44 xl:mr-44 */}
