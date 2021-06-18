@@ -80,60 +80,6 @@
   z-index: 1;
 }
 
-.junious-crew-parallax {
-  transform: translateZ(0.7px) scale(0.7);
-}
-/* .junious-crew-parallax {
-  content: " ";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transform: translateY(1px) scale(1);
-  z-index: 1;
-} */
-
-.crew-lil-parallax {
-  content: " ";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transform: translateZ(0.3px) scale(1);
-  z-index: 1;
-}
-
-.assassins-dc-parallax {
-  content: " ";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transform: translateZ(0.6px) scale(0.6);
-  z-index: 1;
-}
-
-.assassins-junious-pose-parallax {
-  content: " ";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transform: translateZ(0.8px) scale(0.5);
-  z-index: 1;
-}
-
-.assassins-low-view-parallax {
-  content: " ";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transform: translateZ(0.7px) scale(0.55);
-  z-index: 1;
+.neg-z-index {
+  z-index: -3;
 }
