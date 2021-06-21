@@ -10,10 +10,11 @@ import JourneyAssassins from './JourneyAssassins'
 import DjScottyDivider from './DjScottyDivider'
 import HatBillUpDivider from './HatBillUpDivider'
 import SpiritualDivider from './SpiritualDivider'
-import EndJourneyTwo from './EndJourneyTwo'
+// import EndJourneyTwo from './EndJourneyTwo'
 import JourneyMotherArmy from './JourneyMotherArmy'
 import NubianClubDivider from './NubianClubDivider'
 import DoorNoReturnDivider from './DoorNoReturnDivider'
+import WillietteHintonDivider from './WillietteHintonDivider'
 
 export default function Journey ({ triggerPageChangeAnimation }) {
   const [navBtnFade, setNavBtnFade] = useState(false)
@@ -77,8 +78,9 @@ export default function Journey ({ triggerPageChangeAnimation }) {
         {/* <JourneyAccomplishments triggerPageChangeAnimation={triggerPageChangeAnimation} /> */}
 
         {/* <Accomplishments2 triggerPageChangeAnimation={triggerPageChangeAnimation} /> */}
-        <section className='relative h-60 bg-gray-500 bg-opacity-30 sm:bg-none sm:bg-opacity-0 sm:h-screen preserve3d'>
-          <EndJourneyTwo />
+        <section className='relative h-screen preserve3d'>
+          {/* <EndJourneyTwo /> */}
+          <WillietteHintonDivider />
         </section>
 
         <Socials />

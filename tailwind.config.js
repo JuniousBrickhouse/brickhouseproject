@@ -62,6 +62,7 @@ module.exports = {
         70: '.7'
       },
       backgroundPosition: {
+        'x-43%': '43%',
         'x-35%': '35%',
         'x-90%': '90%',
         'y-40%': 'center top 40%'
