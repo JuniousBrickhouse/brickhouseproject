@@ -7,10 +7,12 @@ import { CONTENT } from './journeyContent'
 
 export default function Assassins () {
   return (
-    <div className='relative bg-sonicSilver bg-cover pt-16 pb-20 px-4 sm:px-6 lg:pt-14 lg:pb-0 lg:px-8'>
+    <div className='relative bg-sonicSilver bg-cover pt-16 pb-20 px-4 sm:px-6 lg:pt-14 lg:pb-10 lg:px-8'>
       <div className='relative max-w-7xl mx-auto pt-10'>
         <div className='text-center sm:text-left -mt-96'>
-          <h2 className='text-3xl tracking-tight font-extrabold text-platinum sm:text-4xl font-poppins'>Assassins Crew</h2>
+          <h2 className='text-3xl tracking-tight font-extrabold text-platinum sm:text-4xl font-poppins bg-spiritualRed bg-opacity-50 max-w-max px-4 py-2'>
+            Assassins Crew
+          </h2>
         </div>
       </div>
 

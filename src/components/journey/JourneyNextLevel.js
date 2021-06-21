@@ -69,7 +69,7 @@ export default function NewNextLevel () {
           </div>
         </div>
         <div className='hidden lg:grid col-start-1 justify-items-end'>
-          <blockquote className='hidden lg:block w-1/2 bg-yNBlue bg-opacity-50 font-nunito font-bold rounded-l-md text-right text-richBlack pr-4 text-sm'>Looking out the &ldquo;Door of No Return&rdquo; on Goree Island</blockquote>
+          <blockquote className='hidden lg:block w-1/2 bg-yNBlue bg-opacity-50 font-poppins font-bold rounded-l-md text-right text-platinum px-3 text-sm'>Looking out the &ldquo;Door of No Return&rdquo; on Goree Island, Senegal</blockquote>
         </div>
       </div>
     </div>

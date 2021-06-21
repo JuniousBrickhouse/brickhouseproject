@@ -8,7 +8,7 @@ import JourneyIntro from './JourneyIntro'
 import Socials from '../../Socials'
 import JourneyAssassins from './JourneyAssassins'
 import DjScottyDivider from './DjScottyDivider'
-// import HatBillUpDivider from './HatBillUpDivider'
+import HatBillUpDivider from './HatBillUpDivider'
 import SpiritualDivider from './SpiritualDivider'
 import EndJourneyTwo from './EndJourneyTwo'
 import JourneyMotherArmy from './JourneyMotherArmy'
@@ -58,12 +58,13 @@ export default function Journey ({ triggerPageChangeAnimation }) {
           <JourneyAssassins />
         </span>
 
-        <span className=''>
-          <JourneyUrbanArtistry />
-        </span>
+        <section className='relative h-screen preserve3d'>
+          <HatBillUpDivider />
+        </section>
+
+        <JourneyUrbanArtistry />
 
         <section className='hidden lg:block relative h-60 bg-gray-500 bg-opacity-30 sm:bg-none sm:bg-opacity-0 sm:h-screen preserve3d'>
-          {/* <HatBillUpDivider /> */}
           <NubianClubDivider />
         </section>
 
