@@ -37,8 +37,9 @@ module.exports = {
         juniousBillUp: "url('./components/photos/juniousBillUp.jpg')",
         nubianClubCollaboration: "url('./components/photos/nubianClubCollaboration.jpeg')",
         philWigginsAndFriends: "url('./components/photos/philWigginsAndFriends.jpg')",
-        ugPeople: "url('./components/photos/ugPeople.jpeg')",
-        army: "url('./components/photos/army.jpg')"
+        nextLevelMtnPose: "url('./components/photos/nextLevelMtnPose.jpeg')",
+        army: "url('./components/photos/army.jpg')",
+        doorNoReturn: "url('./components/photos/doorNoReturn.jpg')"
 
       }),
       backgroundSize: {
@@ -62,7 +63,8 @@ module.exports = {
       },
       backgroundPosition: {
         'x-35%': '35%',
-        'x-90%': '90%'
+        'x-90%': '90%',
+        'y-40%': 'center top 40%'
       },
       fontSize: {
         '50%': '50%',

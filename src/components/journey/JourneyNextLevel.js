@@ -1,38 +1,75 @@
 import { CONTENT } from './journeyContent'
+import doorNoReturn from '../photos/doorNoReturn.jpg'
+import eg12D1Zr from '../photos/eg12D1Zr.jpeg'
+import nextLevelMtnPose from '../photos/nextLevelMtnPose.jpeg'
+import nubianClubCollaboration from '../photos/nubianClubCollaboration.jpeg'
 
-/* This example requires Tailwind CSS v2.0+ */
-export default function JourneyNextLevel () {
+export default function NewNextLevel () {
   return (
-    <div className='bg-woodGray py-16 lg:py-24'>
-      <div className='relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='relative py-24 px-8 bg-burlyWood rounded-xl shadow-2xl overflow-hidden lg:px-16 lg:grid lg:grid-cols-2 lg:gap-x-8'>
-          <div className='absolute inset-0 opacity-50 filter saturate-0 mix-blend-multiply'>
-            <img
-              src='https://images.squarespace-cdn.com/content/v1/5b521e334cde7a741d47e768/1556040963000-MSMZER9EYAYVN5IENQ1Q/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/Junious+introducing+NLprogram+to+participants++%281+of+1%29.jpg'
-              alt='Junious sitting at table'
-              className='w-full h-full object-cover'
-            />
-          </div>
-          <div className='relative lg:col-start-2 lg:col-span-1'>
-            <p className='h-12 w-auto font-poppins font-extrabold text-3xl sm:text-4xl leading-8'>NEXT LEVEL</p>
-            <blockquote className='mt-6 text-platinum'>
-              <p className='text-xl font-medium sm:text-2xl'>
-                {CONTENT.nextLevel}
-              </p>
-              <footer className='mt-6 w-max'>
-                <p className='flex flex-col font-medium'>
+    <div className='relative bg-white'>
+      <div className='lg:absolute lg:inset-0'>
+        <div className='lg:absolute lg:inset-y-0 lg:left-0 lg:w-1/2'>
+          <img
+            className='hidden lg:block h-56 w-full object-cover lg:absolute lg:h-full'
+            src={doorNoReturn}
+            alt='Junious standing looking out of the Door of No Return on Goree Island.'
+          />
+          <img
+            className='block lg:hidden h-full w-full object-cover lg:absolute lg:h-full'
+            src={nubianClubCollaboration}
+            alt='Nubian Club Collaboration.'
+          />
+          <blockquote className='block relative lg:hidden text-right bottom-8 pr-4 font-nunito text-richBlack bg-yNBlue bg-opacity-50'>
+            Nubian Club Collaboration
+          </blockquote>
+        </div>
+      </div>
+
+      {/* <div className='z-50 bg-yNBlue -mt-6'>
+        <blockquote className='block lg:hidden z-40  ml-6 font-nunito text-richBlack bg-yNBlue bg-opacity-50'>
+          Nubian Club Collaboration
+        </blockquote>
+      </div> */}
+
+      <div className='relative pt-12 pb-6 px-4 sm:pt-10 sm:px-6 lg:px-8 lg:max-w-7xl lg:mx-auto lg:grid lg:grid-cols-2'>
+        <div className='lg:col-start-2 lg:pl-8'>
+          <div className='text-base max-w-prose mx-auto lg:max-w-lg lg:ml-auto lg:mr-0 space-y-4'>
+            <h3 className='mt-2 text-3xl leading-8 font-extrabold font-poppins tracking-tight text-gray-900 sm:text-4xl'>
+              NEXT LEVEL
+            </h3>
+            <div className='flex-shrink-0'>
+              <img
+                className='h-full w-full object-cover object-right rounded-lg shadow-lg'
+                src={nextLevelMtnPose}
+                alt='Junious posing with youth in Sengal'
+              />
+            </div>
+            <div className='mt-8 text-lg text-gray-500 font-nunito'>
+              {CONTENT.nextLevel}
+              <footer className='mt-2 w-max'>
+                <p className='flex flex-col font-medium text-sm'>
                   <a
                     href='https://www.nextlevel-usa.org/junious-brickhouse'
                     target='_blank'
                     rel='noreferrer noopener'
-                    className='text-yNBlue hover:text-indigoDye'
+                    className='hover:text-glaucous text-wildBlueYonder'
                   >
                     Visit NEXT LEVEL
                   </a>
                 </p>
               </footer>
-            </blockquote>
+            </div>
+            <div className='flex-shrink-0'>
+              <img
+                className='h-full w-full object-cover object-right rounded-lg shadow-lg'
+                src={eg12D1Zr}
+                alt='Junious posing with youth in Sengal'
+              />
+            </div>
           </div>
+        </div>
+        <div className='hidden lg:grid col-start-1 justify-items-end'>
+          <blockquote className='hidden lg:block w-1/2 bg-yNBlue bg-opacity-50 font-nunito font-bold rounded-l-md text-right text-richBlack pr-4 text-sm'>Looking out the &ldquo;Door of No Return&rdquo; on Goree Island</blockquote>
         </div>
       </div>
     </div>

@@ -8,10 +8,12 @@ import JourneyIntro from './JourneyIntro'
 import Socials from '../../Socials'
 import JourneyAssassins from './JourneyAssassins'
 import DjScottyDivider from './DjScottyDivider'
-import HatBillUpDivider from './HatBillUpDivider'
+// import HatBillUpDivider from './HatBillUpDivider'
 import SpiritualDivider from './SpiritualDivider'
 import EndJourneyTwo from './EndJourneyTwo'
 import JourneyMotherArmy from './JourneyMotherArmy'
+import NubianClubDivider from './NubianClubDivider'
+import DoorNoReturnDivider from './DoorNoReturnDivider'
 
 export default function Journey ({ triggerPageChangeAnimation }) {
   const [navBtnFade, setNavBtnFade] = useState(false)
@@ -60,8 +62,13 @@ export default function Journey ({ triggerPageChangeAnimation }) {
           <JourneyUrbanArtistry />
         </span>
 
-        <section className='relative h-60 bg-gray-500 bg-opacity-30 sm:bg-none sm:bg-opacity-0 sm:h-screen preserve3d'>
-          <HatBillUpDivider />
+        <section className='hidden lg:block relative h-60 bg-gray-500 bg-opacity-30 sm:bg-none sm:bg-opacity-0 sm:h-screen preserve3d'>
+          {/* <HatBillUpDivider /> */}
+          <NubianClubDivider />
+        </section>
+
+        <section className='block lg:hidden relative h-screen preserve3d'>
+          <DoorNoReturnDivider />
         </section>
 
         <JourneyNextLevel />
