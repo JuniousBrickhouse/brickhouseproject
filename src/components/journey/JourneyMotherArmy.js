@@ -2,7 +2,7 @@ import lyndaBrickhouse from '.././photos/lyndaBrickhouse.jpg'
 import { CONTENT } from './journeyContent'
 import army from '.././photos/army.jpg'
 
-export default function MotherJourney2 () {
+export default function JourneyMotherArmy () {
   return (
     <div className='relative bg-spiritualNecklace pt-16 pb-32 overflow-hidden'>
       <div className='relative'>

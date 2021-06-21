@@ -37,7 +37,8 @@ module.exports = {
         juniousBillUp: "url('./components/photos/juniousBillUp.jpg')",
         nubianClubCollaboration: "url('./components/photos/nubianClubCollaboration.jpeg')",
         philWigginsAndFriends: "url('./components/photos/philWigginsAndFriends.jpg')",
-        ugPeople: "url('./components/photos/ugPeople.jpeg')"
+        ugPeople: "url('./components/photos/ugPeople.jpeg')",
+        army: "url('./components/photos/army.jpg')"
 
       }),
       backgroundSize: {
@@ -91,7 +92,8 @@ module.exports = {
         fawn: '#D99F68',
         mediumCarmine: '#AA563B',
         redBackground: '#7C321A',
-        spiritualRed: '#822838'
+        spiritualRed: '#822838',
+        spiritualNecklace: '#d1b058'
 
       },
       fontFamily: {
