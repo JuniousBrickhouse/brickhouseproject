@@ -13,6 +13,7 @@ import HatBillUpDivider from './HatBillUpDivider'
 import JourneyMother from './JourneyMother'
 import SpiritualDivider from './SpiritualDivider'
 import Accomplishments2 from './Accomplishments2'
+import EndJourneyTwo from './EndJourneyTwo'
 
 export default function Journey ({ triggerPageChangeAnimation }) {
   const [navBtnFade, setNavBtnFade] = useState(false)
@@ -73,7 +74,10 @@ export default function Journey ({ triggerPageChangeAnimation }) {
 
         {/* <JourneyAccomplishments triggerPageChangeAnimation={triggerPageChangeAnimation} /> */}
 
-        <Accomplishments2 triggerPageChangeAnimation={triggerPageChangeAnimation} />
+        {/* <Accomplishments2 triggerPageChangeAnimation={triggerPageChangeAnimation} /> */}
+        <section className='relative h-60 bg-gray-500 bg-opacity-30 sm:bg-none sm:bg-opacity-0 sm:h-screen preserve3d'>
+          <EndJourneyTwo />
+        </section>
 
         <Socials />
       </main>
