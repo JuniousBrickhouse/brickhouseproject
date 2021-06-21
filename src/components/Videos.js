@@ -1,6 +1,6 @@
 import VideoCard from './VideoCard'
 
-export default function Videos () {
+function Videos () {
   return (
     <>
       <div className='mx-auto w-full pb-20 bg-gray-50 z-50'>
@@ -24,3 +24,5 @@ export default function Videos () {
     </>
   )
 }
+
+export default Videos

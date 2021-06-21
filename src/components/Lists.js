@@ -1,8 +1,11 @@
+import reflectionsThumbnail from './photos/reflectionsThumbnail.png'
+
 export const VIDEOS = [
   {
     title: 'NCTA Reflections 2020',
     videoUrl:
-        'https://www.youtube.com/embed/hy1eClkGDp0'
+        'https://www.youtube.com/embed/hy1eClkGDp0',
+    thumbnail: './photos/reflectionsThumbnail.png'
   },
   {
     title: 'World Learning Seeing Ourselves in Others 2020',
