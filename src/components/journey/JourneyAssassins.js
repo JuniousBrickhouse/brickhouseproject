@@ -8,9 +8,9 @@ import { CONTENT } from './journeyContent'
 export default function Assassins () {
   return (
     <div className='relative bg-sonicSilver bg-cover pt-16 pb-20 px-4 sm:px-6 lg:pt-14 lg:pb-10 lg:px-8'>
-      <div className='relative max-w-7xl mx-auto pt-10'>
-        <div className='text-center sm:text-left -mt-96'>
-          <h2 className='text-3xl tracking-tight font-extrabold text-platinum sm:text-4xl font-poppins bg-spiritualRed bg-opacity-50 max-w-max px-4 py-2'>
+      <div className='relative max-w-7xl mx-auto pt-0 lg:pt-10'>
+        <div className='text-left lg:-mt-96'>
+          <h2 className='text-3xl tracking-tight font-extrabold text-platinum sm:text-4xl font-poppins bg-spiritualRed bg-opacity-50 max-w-max px-4 py-2 text-left rounded-md'>
             Assassins Crew
           </h2>
         </div>
@@ -29,9 +29,9 @@ export default function Assassins () {
         </div>
       </div>
 
-      <div className='relative max-w-7xl mx-auto pt-14'>
+      <div className='relative max-w-7xl mx-auto pt-14 border-t-2 border-platinum lg:border-none mt-3'>
         <div className='text-center'>
-          <p className='mt-3 max-w-6xl mx-auto text-xl text-platinum sm:mt-4'>
+          <p className='mt-0 max-w-6xl mx-auto text-xl text-platinum sm:mt-4 text-left'>
             {CONTENT.assassins}
           </p>
         </div>

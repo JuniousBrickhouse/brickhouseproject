@@ -10,7 +10,7 @@ export default function JourneyMotherArmy () {
           <div className='px-4 max-w-3xl mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0'>
             <div>
               <div className='mt-6'>
-                <h2 className='text-3xl font-poppins font-extrabold tracking-tight text-mediumCarmine'>
+                <h2 className='text-3xl font-poppins font-extrabold tracking-tight text-spiritualRed'>
                   Lynda Brickhouse
                 </h2>
                 <p className='mt-4 text-lg font-nunito text-richBlack'>
@@ -35,7 +35,7 @@ export default function JourneyMotherArmy () {
           <div className='px-4 max-w-3xl mx-auto sm:px-6 lg:py-32 lg:max-w-none lg:mx-0 lg:px-0 lg:col-start-2'>
             <div>
               <div className='mt-6'>
-                <h2 className='text-3xl font-extrabold font-poppins tracking-tight text-mediumCarmine'>
+                <h2 className='text-3xl font-extrabold font-poppins tracking-tight text-spiritualRed'>
                   Military Service
                 </h2>
                 <p className='mt-4 text-lg font-nunito text-richBlack'>

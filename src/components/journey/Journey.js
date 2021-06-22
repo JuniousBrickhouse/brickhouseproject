@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import JourneyNav from './JourneyNav'
 import JourneyUrbanArtistry from './JourneyUrbanArtistry'
 import JourneyNextLevel from './JourneyNextLevel'
-// import JourneyAccomplishments from './JourneyAccomplishments'
+import Accomplishments2 from './Accomplishments2'
 import useJourneyIntroOnScreen from '../customComponents/useJourneyIntroOnScreen'
 import JourneyIntro from './JourneyIntro'
 import Socials from '../../Socials'
@@ -10,7 +10,6 @@ import JourneyAssassins from './JourneyAssassins'
 import DjScottyDivider from './DjScottyDivider'
 import HatBillUpDivider from './HatBillUpDivider'
 import SpiritualDivider from './SpiritualDivider'
-// import EndJourneyTwo from './EndJourneyTwo'
 import JourneyMotherArmy from './JourneyMotherArmy'
 import NubianClubDivider from './NubianClubDivider'
 import DoorNoReturnDivider from './DoorNoReturnDivider'
@@ -77,11 +76,12 @@ export default function Journey ({ triggerPageChangeAnimation }) {
 
         {/* <JourneyAccomplishments triggerPageChangeAnimation={triggerPageChangeAnimation} /> */}
 
-        {/* <Accomplishments2 triggerPageChangeAnimation={triggerPageChangeAnimation} /> */}
         <section className='relative h-screen preserve3d'>
           {/* <EndJourneyTwo /> */}
           <WillietteHintonDivider />
         </section>
+
+        <Accomplishments2 triggerPageChangeAnimation={triggerPageChangeAnimation} />
 
         <Socials />
       </main>
