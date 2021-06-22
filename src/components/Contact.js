@@ -1,5 +1,5 @@
 import { MailIcon, RefreshIcon } from '@heroicons/react/outline'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import * as emailjs from 'emailjs-com'
 import HamptonRaw from './photos/logos/23Raw.png'
 import MessageSentModal from './MessageSentModal'
@@ -11,6 +11,7 @@ export default function Contact ({ triggerPageChangeAnimation }) {
   const [renderErrorModal, setRenderErrorModal] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState([])
+  const [currentWindowSize, setCurrentWindowSize] = useState(null)
   const [formParams, setFormParams] = useState({
     first_name: '',
     last_name: '',
@@ -59,16 +60,27 @@ export default function Contact ({ triggerPageChangeAnimation }) {
   // up this getWindowSize function and set the breakpoints
   // this way. Currently it is slow to respond. It works only
   // after the user scrolls.
-  const getWindowSize = () => {
-    return window.innerWidth
-  }
 
-  setTimeout(() => {
-    window.addEventListener('resize', getWindowSize)
-  }, 250)
+  // const getWindowSize = () => {
+  //   return window.innerWidth
+  // }
+
+  useEffect(() => {
+    /* Inside of a "useEffect" hook add an event listener that updates
+       the "width" state variable when the window size changes */
+    window.addEventListener('resize', () => setCurrentWindowSize(window.innerWidth))
+
+    /* passing an empty array as the dependencies of the effect will cause this
+       effect to only run when the component mounts, and not each time it updates.
+       We only want the listener to be added once */
+  }, [])
+
+  // setTimeout(() => {
+  //   window.addEventListener('resize', getWindowSize)
+  // }, 250)
 
   const handleBackgroundImage = () => {
-    if (getWindowSize() < 640) {
+    if (currentWindowSize < 640) {
       return 'relative overflow-hidden h-96 py-10 px-6 bg-23Raw bg-cover bg-center flex'
     } else {
       return 'relative overflow-hidden sm:h-auto py-10 px-6 bg-cover bg-center sm:bg-yNBlue lg:bg-23Vertical lg:bg-no-repeat sm:px-10 xl:p-1 flex lg:ml-4 lg:-mr-4 lg:my-6 xl:my-0'
@@ -293,14 +305,14 @@ export default function Contact ({ triggerPageChangeAnimation }) {
                       >
                       <RefreshIcon className='h-4 w-4 mr-4 self-center animate-spin' />
                       Send
-                    </button>
+                      </button>
                     : <button
                         type='submit'
                         className='mt-2 w-full inline-flex items-center justify-center px-3 py-1.5 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-mediumCarmine hover:bg-fawn focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mediumCarmine sm:w-auto'
                       >
                       <MailIcon className='h-6 w-6 mr-2' />
                       Send
-                    </button>}
+                      </button>}
 
                   <button
                     type='button'
