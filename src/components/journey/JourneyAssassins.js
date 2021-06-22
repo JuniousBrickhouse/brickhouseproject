@@ -1,6 +1,6 @@
 import crewVsan from '../photos/CrewVsan.jpeg'
-import crewLil from '../photos/CrewLil.jpeg'
-import juniousCrew from '../photos/JuniousCrew.jpeg'
+import crewLil from '../photos/CrewLil.gif'
+import juniousCrew from '../photos/JuniousCrew.gif'
 import assassinsDC2013 from '../photos/assassinsDC2013.jpg'
 import assassinsJuniousPose from '../photos/assassinsJuniousPose.jpg'
 import { CONTENT } from './journeyContent'

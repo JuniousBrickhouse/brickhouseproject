@@ -1,5 +1,5 @@
 import { Transition } from '@headlessui/react'
-import juniousBlue from './photos/JuniousBlue.jpeg'
+import juniousBlue from './photos/JuniousBlue.gif'
 
 const SHOTR_BIO =
   {

@@ -1,6 +1,6 @@
 import RenderInBrowser from 'react-render-in-browser'
 import urbanArtistry from '.././photos/UrbanA.jpeg'
-import JuniousRedDance from '.././photos/JuniousRedDance.jpeg'
+import JuniousRedDance from '.././photos/JuniousRedDance.gif'
 import { CONTENT } from './journeyContent'
 
 const JourneyUrbanArtistry = () => {
