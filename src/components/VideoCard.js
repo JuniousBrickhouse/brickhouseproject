@@ -17,14 +17,14 @@ export default function VideoCard ({ showAnimation }) {
         {VIDEOS.map((video, idx) => (
           <li
             key={idx}
-            className='col-span-1 rounded-lg flex justify-center h-full w-full aspect-w-16 aspect-h-9'
+            className='relative col-span-1 rounded-md h-full w-full aspect-w-16 aspect-h-9'
           >
             {playVideo === idx
-              ? <iframe id='ytplayer' title={video.title} src={video.videoUrl} frameBorder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowFullScreen className='shadow-2xl rounded-md object-cover object-center' />
+              ? <iframe id='ytplayer' title={video.title} src={video.videoUrl} frameBorder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowFullScreen className='w-full h-full shadow-2xl rounded-md object-cover object-left' />
               : <img
                   src={video.customThumbnail}
                   alt={video.title}
-                  className='shadow-2xl rounded-md object-contain object-center'
+                  className='shadow-2xl rounded-md object-cover object-center'
                   onClick={() => playSelectedVideo(idx)}
                 />}
 

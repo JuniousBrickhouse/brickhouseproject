@@ -17,7 +17,7 @@ export default function Videos () {
             </div>
           </div>
         </div>
-        <span className=''>
+        <span>
           <VideoCard />
         </span>
       </div>
