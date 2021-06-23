@@ -59,9 +59,12 @@ export default function Contact ({ triggerPageChangeAnimation }) {
   // For some reason tailwind responsive breakpoints aren't
   // working for background images. It's duplicating them. So I'm having to set
   // up this useEffect to listen for innerWidth changes and set the breakpoints
-  // in the handleBackgrounImage function.
+  // in the handleBackgrounImage function. The current code is borrowed
+  // from https://blog.logrocket.com/developing-responsive-layouts-with-react-hooks/
   useEffect(() => {
     window.addEventListener('resize', () => setCurrentWindowSize(window.innerWidth))
+
+    return window.removeEventListener('resize', () => setCurrentWindowSize(window.innerWidth))
   }, [])
 
   const handleBackgroundImage = () => {
@@ -290,14 +293,14 @@ export default function Contact ({ triggerPageChangeAnimation }) {
                       >
                       <RefreshIcon className='h-4 w-4 mr-4 self-center animate-spin' />
                       Send
-                    </button>
+                      </button>
                     : <button
                         type='submit'
                         className='mt-2 w-full inline-flex items-center justify-center px-3 py-1.5 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-mediumCarmine hover:bg-fawn focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mediumCarmine sm:w-auto'
                       >
                       <MailIcon className='h-6 w-6 mr-2' />
                       Send
-                    </button>}
+                      </button>}
 
                   <button
                     type='button'
