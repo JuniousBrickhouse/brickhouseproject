@@ -74,10 +74,7 @@ export default function Journey ({ triggerPageChangeAnimation }) {
 
         <JourneyNextLevel />
 
-        {/* <JourneyAccomplishments triggerPageChangeAnimation={triggerPageChangeAnimation} /> */}
-
         <section className='relative h-screen preserve3d'>
-          {/* <EndJourneyTwo /> */}
           <WillietteHintonDivider />
         </section>
 
