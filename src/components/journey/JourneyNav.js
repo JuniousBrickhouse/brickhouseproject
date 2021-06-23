@@ -15,7 +15,7 @@ export default function JourneyNav ({ triggerPageChangeAnimation, navBtnFade }) 
                 <button
                   onClick={() => triggerPageChangeAnimation('homePage', 'journeyPage')}
                   type='button'
-                  className='inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-mediumCarmine hover:bg-sonicSilver focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
+                  className='inline-flex items-center ml-2 px-3 py-1.5 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-mediumCarmine hover:bg-sonicSilver focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
                 >
                   <ChevronDoubleLeftIcon className='pr-4 h-8 w-8' />
                   Home
