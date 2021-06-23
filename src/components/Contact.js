@@ -6,7 +6,7 @@ import MessageSentModal from './MessageSentModal'
 import { Transition } from '@headlessui/react'
 import MessageErrorModal from './MessageErrorModal'
 
-export default function Contact ({ triggerPageChangeAnimation }) {
+export default function Contact ({ triggerPageChangeAnimation, renderDestination }) {
   const [renderModal, setRenderModal] = useState(false)
   const [renderErrorModal, setRenderErrorModal] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -44,7 +44,7 @@ export default function Contact ({ triggerPageChangeAnimation }) {
   const handleModalClose = () => {
     setRenderModal(false)
     setIsLoading(false)
-    triggerPageChangeAnimation('')
+    triggerPageChangeAnimation(renderDestination.source, 'contactPage')
   }
 
   const handleErrorModalClose = () => {
@@ -293,19 +293,19 @@ export default function Contact ({ triggerPageChangeAnimation }) {
                       >
                       <RefreshIcon className='h-4 w-4 mr-4 self-center animate-spin' />
                       Send
-                      </button>
+                    </button>
                     : <button
                         type='submit'
                         className='mt-2 w-full inline-flex items-center justify-center px-3 py-1.5 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-mediumCarmine hover:bg-fawn focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mediumCarmine sm:w-auto'
                       >
                       <MailIcon className='h-6 w-6 mr-2' />
                       Send
-                      </button>}
+                    </button>}
 
                   <button
                     type='button'
                     className='mt-2 w-full inline-flex items-center justify-center px-3 py-1.5 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-mediumCarmine hover:bg-fawn focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-wildBlueYonder focus:ring-offset-wilring-wildBlueYonder sm:w-auto'
-                    onClick={() => triggerPageChangeAnimation('')}
+                    onClick={() => triggerPageChangeAnimation(renderDestination.source, 'contactPage')}
                   >
                     Cancel
                   </button>

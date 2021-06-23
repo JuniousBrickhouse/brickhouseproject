@@ -58,7 +58,7 @@ export default function JourneyAccomplishments ({ triggerPageChangeAnimation }) 
                   <div className='mt-6'>
                     <button
                       className='bg-mediumCarmine hover:bg-fawn opacity-90 focus:ring-offset-fawn relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-md font-medium font-poppins rounded-md text-platinum focus:outline-none focus:ring-2 focus:ring-offset-2'
-                      onClick={() => triggerPageChangeAnimation('contactPage')}
+                      onClick={() => triggerPageChangeAnimation('contactPage', 'journeyPage')}
                     >
                       <ChatIcon className='-ml-1 mr-2 h-5 w-5' />
                       Contact

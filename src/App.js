@@ -22,11 +22,14 @@ smoothscroll.polyfill()
 function App () {
   const dividerOneRef = useRef(null)
   const [showSolidNav, setShowSolidNav] = useState(false)
-  const [renderDestination, setRenderDestination] = useState('')
+  const [renderDestination, setRenderDestination] = useState({
+    destination: '',
+    source: ''
+  })
   const [showAnimation, setShowAnimation] = useState({
     headerAnimation: true,
     bioImage: false,
-    landingPage: true,
+    homePage: true,
     journeyPage: false,
     contactPage: false
   })
@@ -92,35 +95,71 @@ function App () {
     }
   }
 
-  const triggerPageChangeAnimation = (destination) => {
-    // console.log('destination', destination)
-    if (destination === 'journeyPage') {
-      setShowAnimation(state => ({ ...state, landingPage: false }))
+  // This functions handles all the animation and page navigations.
+  // It takes a destination and a source. The source is for the
+  // navigation history to take a user back to the page they
+  // were on. This method is needed since we are not changing the
+  // url during page changes. Navigation buttons can be found in
+  // JourneyNav.js, JourneyAccomplishments.js, NavBar.js. ShortBio.js.
+  const triggerPageChangeAnimation = (destination, source) => {
+    if (destination === 'journeyPage' && source === 'homePage') {
+      setShowAnimation(state => ({ ...state, homePage: false }))
       setTimeout(() => {
         setShowAnimation(state => ({ ...state, journeyPage: true }))
-        setRenderDestination(destination)
-        // setRenderJourney(!renderJourney)
+        setRenderDestination(state => ({
+          ...state,
+          destination: destination,
+          source: source
+        }))
       }, 2000)
-    } else if (destination === '') {
-      setShowAnimation(state => ({ ...state, journeyPage: false }))
+    } else if (destination === 'homePage' && (source === 'journeyPage' || source === 'contactPage')) {
+      setShowAnimation(state => ({
+        ...state,
+        journeyPage: false,
+        contactPage: false
+      }))
+      setTimeout(() => {
+        setShowAnimation(state => ({ ...state, homePage: true }))
+        setRenderDestination(state => ({
+          ...state,
+          destination: destination,
+          source: source
+        }))
+      }, 2000)
+    } else if (destination === 'journeyPage' && source === 'contactPage') {
       setShowAnimation(state => ({ ...state, contactPage: false }))
       setTimeout(() => {
-        setShowAnimation(state => ({ ...state, landingPage: true }))
-        setRenderDestination(destination)
-        // setRenderJourney(!renderJourney)
-        // setRenderContact(!renderContact)
+        setShowAnimation(state => ({ ...state, journeyPage: true }))
+        setRenderDestination(state => ({
+          ...state,
+          destination: destination,
+          source: source
+        }))
       }, 2000)
-    } else if (destination === 'contactPage') {
-      setShowAnimation(state => ({ ...state, landingPage: false }))
+    } else if (destination === 'contactPage' && source === 'homePage') {
+      setShowAnimation(state => ({ ...state, homePage: false }))
       setTimeout(() => {
         setShowAnimation(state => ({ ...state, contactPage: true }))
-        setRenderDestination(destination)
-        // setRenderContact(!renderContact)
+        setRenderDestination(state => ({
+          ...state,
+          destination: destination,
+          source: source
+        }))
+      }, 2000)
+    } else if (destination === 'contactPage' && source === 'journeyPage') {
+      setShowAnimation(state => ({ ...state, journeyPage: false }))
+      setTimeout(() => {
+        setShowAnimation(state => ({ ...state, contactPage: true }))
+        setRenderDestination(state => ({
+          ...state,
+          destination: destination,
+          source: source
+        }))
       }, 2000)
     }
   }
 
-  if (renderDestination === 'journeyPage') {
+  if (renderDestination.destination === 'journeyPage') {
     return (
       <Transition
         show={showAnimation.journeyPage}
@@ -136,7 +175,7 @@ function App () {
     )
   }
 
-  if (renderDestination === 'contactPage') {
+  if (renderDestination.destination === 'contactPage') {
     return (
       <Transition
         show={showAnimation.contactPage}
@@ -149,14 +188,14 @@ function App () {
         className='overflow-visible'
         id='other'
       >
-        <Contact triggerPageChangeAnimation={triggerPageChangeAnimation} />
+        <Contact triggerPageChangeAnimation={triggerPageChangeAnimation} renderDestination={renderDestination} />
       </Transition>
     )
   }
 
   return (
     <Transition
-      show={showAnimation.landingPage}
+      show={showAnimation.homePage}
       enter='transform-opacity duration-1000'
       enterFrom='opacity-0'
       enterTo='opacity-100'
