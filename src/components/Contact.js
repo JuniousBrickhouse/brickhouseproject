@@ -11,7 +11,7 @@ export default function Contact ({ triggerPageChangeAnimation }) {
   const [renderErrorModal, setRenderErrorModal] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState([])
-  const [currentWindowSize, setCurrentWindowSize] = useState(null)
+  const [currentWindowSize, setCurrentWindowSize] = useState(window.innerWidth)
   const [formParams, setFormParams] = useState({
     first_name: '',
     last_name: '',
@@ -25,6 +25,7 @@ export default function Contact ({ triggerPageChangeAnimation }) {
   // console.log('renderModal', renderModal)
   // console.log('renderErrorModal', renderErrorModal)
   // console.log('error', error)
+  // console.log('currentWindowSize', currentWindowSize)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -69,15 +70,7 @@ export default function Contact ({ triggerPageChangeAnimation }) {
     /* Inside of a "useEffect" hook add an event listener that updates
        the "width" state variable when the window size changes */
     window.addEventListener('resize', () => setCurrentWindowSize(window.innerWidth))
-
-    /* passing an empty array as the dependencies of the effect will cause this
-       effect to only run when the component mounts, and not each time it updates.
-       We only want the listener to be added once */
   }, [])
-
-  // setTimeout(() => {
-  //   window.addEventListener('resize', getWindowSize)
-  // }, 250)
 
   const handleBackgroundImage = () => {
     if (currentWindowSize < 640) {
