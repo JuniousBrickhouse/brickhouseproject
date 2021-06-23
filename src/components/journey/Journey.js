@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import JourneyNav from './JourneyNav'
 import JourneyUrbanArtistry from './JourneyUrbanArtistry'
 import JourneyNextLevel from './JourneyNextLevel'
-import Accomplishments2 from './Accomplishments2'
 import useJourneyIntroOnScreen from '../customComponents/useJourneyIntroOnScreen'
 import JourneyIntro from './JourneyIntro'
 import Socials from '../../Socials'
@@ -14,6 +13,7 @@ import JourneyMotherArmy from './JourneyMotherArmy'
 import NubianClubDivider from './NubianClubDivider'
 import DoorNoReturnDivider from './DoorNoReturnDivider'
 import WillietteHintonDivider from './WillietteHintonDivider'
+import JourneyAccomplishments from './JourneyAccomplishments'
 
 export default function Journey ({ triggerPageChangeAnimation }) {
   const [navBtnFade, setNavBtnFade] = useState(false)
@@ -78,7 +78,7 @@ export default function Journey ({ triggerPageChangeAnimation }) {
           <WillietteHintonDivider />
         </section>
 
-        <Accomplishments2 triggerPageChangeAnimation={triggerPageChangeAnimation} />
+        <JourneyAccomplishments triggerPageChangeAnimation={triggerPageChangeAnimation} />
 
         <Socials />
       </main>

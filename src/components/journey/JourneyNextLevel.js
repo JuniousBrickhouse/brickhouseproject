@@ -6,7 +6,7 @@ import nubianClubCollaboration from '../photos/nubianClubCollaboration.jpeg'
 
 export default function NewNextLevel () {
   return (
-    <div className='relative bg-white'>
+    <div className='relative bg-platinum'>
       <div className='lg:absolute lg:inset-0'>
         <div className='lg:absolute lg:inset-y-0 lg:left-0 lg:w-1/2'>
           <img
