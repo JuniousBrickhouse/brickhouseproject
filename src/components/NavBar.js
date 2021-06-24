@@ -27,7 +27,7 @@ export default function NavBar ({ handleScroll, showSolidNav, triggerPageChangeA
 
   const changeNavBar = (current) => {
     if (showSolidNav) {
-      return current ? 'border-b-2 border-mediumCarmine text-platinum focus:outline-none' : 'text-platinum hover:text-platinum transform hover:scale-110'
+      return current ? 'border-b-2 border-mediumCarmine text-white focus:outline-none' : 'text-white hover:text-platinum transform hover:scale-110'
     } else {
       return current ? 'border-b-2 border-mediumCarmine text-richBlack focus:outline-none' : 'text-richBlack transform hover:scale-110'
     }
@@ -42,7 +42,7 @@ export default function NavBar ({ handleScroll, showSolidNav, triggerPageChangeA
   }
 
   return (
-    <nav className={`${showSolidNav ? 'bg-yNBlue opacity-70 md:opacity-40' : 'bg-none'} fixed top-0 w-full z-50`}>
+    <nav className={`${showSolidNav ? 'bg-yNBlue opacity-70 md:opacity-50' : 'bg-none'} fixed top-0 w-full z-50`}>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='flex justify-between h-16'>
           <div className='flex'>

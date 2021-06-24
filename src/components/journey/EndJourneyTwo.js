@@ -15,7 +15,7 @@ export default function EndJourneyTwo () {
       <div className='relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8'>
         {/* <h1 className='text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl'>Get in touch</h1> */}
         <p className='mt-6 text-2xl text-white max-w-3xl bg-sonicSilver bg-opacity-60 border-2 p-10 border-sonicSilver rounded-md text-center'>
-          {CONTENT.accomplishmentsPart1}
+          {CONTENT.accomplishmentsConclusion}
           <br />
           <br />
           {CONTENT.accomplishmentsWiggins}

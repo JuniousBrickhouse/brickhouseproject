@@ -62,11 +62,11 @@ export default function OrgAffiliations ({ triggerPageChangeAnimation }) {
               <div className='flex-1 bg-platinum p-6 flex flex-col justify-between'>
                 <div className='flex-1'>
                   {post.id === 1 &&
-                    <p className='text-sm font-medium text-glaucous'>
+                    <p className='text-sm font-medium text-indigoDye'>
                       <button
                         type='button'
                         className='hover:underline'
-                        onClick={() => triggerPageChangeAnimation('contactPage')}
+                        onClick={() => triggerPageChangeAnimation('contactPage', 'homePage')}
                       >
                         Contact
                       </button>

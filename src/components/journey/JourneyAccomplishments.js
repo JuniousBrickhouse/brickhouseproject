@@ -22,10 +22,10 @@ export default function JourneyAccomplishments ({ triggerPageChangeAnimation }) 
             <div className='mt-8 border-t border-burlyWood pt-6'>
               <blockquote>
                 <div>
-                  <p className='text-base font-nunito text-mediumCarmine text-left sm:text-right'>
+                  <p className='text-base font-nunito text-burlyWood text-left sm:text-right'>
                     Phil Wiggins and Friends
                   </p>
-                  <p className='text-base font-nunito text-mediumCarmine text-left sm:text-right'>
+                  <p className='text-base font-nunito text-burlyWood text-left sm:text-right'>
                     Photo by Michael G. Stewart
                   </p>
                 </div>
@@ -52,7 +52,7 @@ export default function JourneyAccomplishments ({ triggerPageChangeAnimation }) 
                   Better understand your customers
                 </h2> */}
                 <p className='mt-4 text-lg text-platinum font-nunito'>
-                  {CONTENT.accomplishmentsPart1}
+                  {CONTENT.accomplishmentsConclusion}
                 </p>
                 <div className='mt-8 border-t border-burlyWood pt-6'>
                   <div className='mt-6'>
