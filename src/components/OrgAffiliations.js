@@ -24,7 +24,7 @@ const POSTS = [
   },
   {
     title: 'Urban Artistry, Inc.',
-    position: 'Founder and Artistic Director',
+    position: 'Founder and Executive Director',
     href: 'https://urbanartistry.org/',
     id: 3,
     description:
