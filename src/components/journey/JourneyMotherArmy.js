@@ -1,6 +1,7 @@
 import lyndaBrickhouse from '.././photos/lyndaBrickhouse.jpg'
 import { CONTENT } from './journeyContent'
-import army from '.././photos/army.jpg'
+import army from '.././photos/brickhouseArmy.png'
+import armyCloseUp from '.././photos/brickhouseArmyCloseup.png'
 
 export default function JourneyMotherArmy () {
   return (
@@ -44,15 +45,29 @@ export default function JourneyMotherArmy () {
               </div>
             </div>
           </div>
-          <div className='mt-12 sm:mt-16 lg:mt-0 lg:col-start-1'>
-            <div className='pr-4 pl-4 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full'>
+
+          {/* Img for screen sizes sm and md */}
+          <div className='hidden mt-12 sm:mt-16 sm:pl-6 sm:flex sm:justify-center lg:hidden'>
+            <div className='aspect-w-2 aspect-h-3 sm:aspect-w-10 sm:aspect-h-7 lg:aspect-w-3 lg:aspect-h-4 w-80 sm:w-5/6 lg:w-96'>
               <img
-                className='w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none'
-                src={army}
-                alt='Junious enlisting into the US Army'
+                className='object-cover shadow-lg rounded-lg'
+                src={armyCloseUp}
+                alt='Junious in US Army'
               />
             </div>
           </div>
+
+          {/* Img for screen sizes mobile, lg, and xl */}
+          <div className='mt-12 sm:mt-16 lg:mt-0 lg:col-start-1 pl-16 sm:pl-0 sm:hidden lg:flex justify-end'>
+            <div className='aspect-w-2 aspect-h-3 sm:aspect-w-10 sm:aspect-h-7 lg:aspect-w-3 lg:aspect-h-4 w-80 sm:w-5/6 xl:w-5/6'>
+              <img
+                className='object-cover shadow-lg rounded-lg'
+                src={army}
+                alt='Junious in US Army'
+              />
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
