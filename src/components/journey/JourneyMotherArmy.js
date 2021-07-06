@@ -2,6 +2,7 @@ import lyndaBrickhouse from '.././photos/lyndaBrickhouse.jpg'
 import { CONTENT } from './journeyContent'
 import army from '.././photos/brickhouseArmy.png'
 import armyCloseUp from '.././photos/brickhouseArmyCloseup.png'
+import junnie from '.././photos/JunnieAt3.gif'
 
 export default function JourneyMotherArmy () {
   return (
@@ -20,6 +21,7 @@ export default function JourneyMotherArmy () {
               </div>
             </div>
           </div>
+
           <div className='mt-12 sm:mt-16 lg:mt-0'>
             <div className='pl-4 pr-4 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full right-16 xl:right-0'>
               <img
@@ -29,7 +31,20 @@ export default function JourneyMotherArmy () {
               />
             </div>
           </div>
+
         </div>
+      </div>
+      <div className='mt-6 px-4 lg:px-0 lg:-mt-10 lg:ml-4 xl:ml-32'>
+        <div className='flex justify-center lg:justify-start'>
+          <img
+            className='w-full lg:w-1/2 rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 z-50'
+            src={junnie}
+            alt='Junious at age 3'
+          />
+        </div>
+        <footer>
+          <p className='font-nunito text-right lg:text-center lg:mr-28'>Junnie at age 3</p>
+        </footer>
       </div>
       <div className='mt-24'>
         <div className='lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24'>
