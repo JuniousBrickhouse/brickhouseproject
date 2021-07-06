@@ -43,7 +43,7 @@ export default function JourneyMotherArmy () {
           />
         </div>
         <footer>
-          <p className='font-nunito text-right lg:text-center lg:mr-28'>Junnie at age 3</p>
+          <p className='font-nunito text-right lg:text-center lg:mr-28 text-yNBlue'>Junnie at age 3</p>
         </footer>
       </div>
       <div className='mt-24'>
