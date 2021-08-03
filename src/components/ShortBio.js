@@ -3,9 +3,9 @@ import juniousBlue from './photos/JuniousBlue.gif'
 
 const SHOTR_BIO =
   {
-    paragraph1: 'I am a product of a many folk traditions: Breaking, Popping, House Dance, Locking, and Hip Hop. My training began with my mother teaching my sister and me to do the hustle in the living room, then riding on the handlebars of my cousin’s bike in Norfolk, Virginia to the rec center to learn break dancing from the older children. These traditions continue live in me, and I strive not just to preserve them but to develop them and ensure that they are sustainable for the generations that follow me. The many hats I wear keep me busy, and there is still much work to do.',    journey: 'Read more about my journey'
+    paragraph1: "I am a culmination of many folk traditions: Popping, Breaking, House Dance, Locking, and Hip Hop, to name a few of these forms, rooted in African American communities. My training began in '77 with my mother teaching my sister and I to do the Latin Hustle and The Funky Robot in our living room in Norfolk, VA. I vividly remember wanting to see how this movement lived outside of our housing projects. Eventually, I would depend on the kids in my neighborhood and the adults in my family to help me imagine what contributions I could make to these art forms. Today, these traditions continue live in me, with the same excitement and curiosity I had as a child. This curiosity is accompanied by the urgency to develop these traditions and ensure they are sustainable for generations to come. I know there is still much work to be done, but my commitment is unwaivering."
   }
-
+  
 export default function ShortBio ({ showAnimation, triggerPageChangeAnimation }) {
   return (
     <div className='relative py-32 bg-yNBlue z-30'>
