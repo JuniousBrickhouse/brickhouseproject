@@ -3,8 +3,7 @@ import juniousBlue from './photos/JuniousBlue.gif'
 
 const SHOTR_BIO =
   {
-    paragraph1: 'I am a product of a folk tradition, urban dance. From my mother teaching my sister and me to do the hustle in the living room, to riding on the handlebars of my cousin’s bike in Norfolk, Virginia to the rec center to learn break dancing from the older children, I received an education in urban dance (breaking, popping, house dance, locking, and hip-hop) and the culture that surrounded it. I was brought up and educated within this tradition and have become an educator and tradition bearer.',
-    journey: 'Read more about my journey'
+    paragraph1: 'I am a product of a many folk traditions: Breaking, Popping, House Dance, Locking, and Hip Hop. My training began with my mother teaching my sister and me to do the hustle in the living room, then riding on the handlebars of my cousin’s bike in Norfolk, Virginia to the rec center to learn break dancing from the older children. These traditions continue live in me, and I strive not just to preserve them but to develop them and ensure that they are sustainable for the generations that follow me. The many hats I wear keep me busy, and there is still much work to do.',    journey: 'Read more about my journey'
   }
 
 export default function ShortBio ({ showAnimation, triggerPageChangeAnimation }) {
