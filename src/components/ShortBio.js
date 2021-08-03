@@ -3,7 +3,9 @@ import juniousBlue from './photos/JuniousBlue.gif'
 
 const SHOTR_BIO =
   {
-    paragraph1: "I am a culmination of many folk traditions: Popping, Breaking, House Dance, Locking, and Hip Hop, to name a few of these forms, rooted in African American communities. My training began in '77 with my mother teaching my sister and I to do the Latin Hustle and The Funky Robot in our living room in Norfolk, VA. I vividly remember wanting to see how this movement lived outside of our housing projects. Eventually, I would depend on the kids in my neighborhood and the adults in my family to help me imagine what contributions I could make to these art forms. Today, these traditions continue live in me, with the same excitement and curiosity I had as a child. This curiosity is accompanied by the urgency to develop these traditions and ensure they are sustainable for generations to come. I know there is still much work to be done, but my commitment is unwaivering."
+    paragraph1: "I am a culmination of many folk traditions: Popping, Breaking, House Dance, Locking, and Hip Hop, to name a few of these forms, rooted in African American communities. My training began in '77 with my mother teaching my sister and I to do the Latin Hustle and The Funky Robot in our living room in Norfolk, VA. I vividly remember wanting to see how this movement lived outside of our housing projects. Eventually, I would depend on the kids in my neighborhood and the adults in my family to help me imagine what contributions I could make to these art forms. Today, these traditions continue live in me, with the same excitement and curiosity I had as a child. This curiosity is accompanied by the urgency to develop these traditions and ensure they are sustainable for generations to come. I know there is still much work to be done, but my commitment is unwaivering.",
+  
+    journey: 'Read more about my journey'
   }
   
 export default function ShortBio ({ showAnimation, triggerPageChangeAnimation }) {
